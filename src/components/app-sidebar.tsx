@@ -4,7 +4,6 @@ import {
 } from "lucide-react"
 import { mainMenu } from '@/config/menu'
 import { Link, NavLink } from 'react-router-dom'
-import { Button } from "@/components/ui/button"
 import {
     Popover,
     PopoverContent,
@@ -29,8 +28,7 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { cn } from '@/lib/utils'
-import { ModeToggle } from "./mode-toggle"
-import { AppLabel } from "./app-label"
+
 
 export function AppSidebar() {
     return (

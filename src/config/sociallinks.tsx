@@ -4,7 +4,7 @@ import {
   SiGoogle,
   SiX,
 } from "@icons-pack/react-simple-icons";
-import React from "react";
+
 
 export const socials = [
   {
