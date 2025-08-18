@@ -12,11 +12,15 @@ export function AppLogo() {
   console.log("Logo URL:", data.publicUrl);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 ">
       <Link to="/">
-      <Avatar className="hidden md:h-9 md:w-12 md:flex p-1">
-        <AvatarImage src={data.publicUrl} alt="logo" />
-        <AvatarFallback className="rounded-lg">SC</AvatarFallback>
+        <Avatar className="w-10 h-10 "> {/* standard navbar size with padding */}
+          <AvatarImage
+            src={data.publicUrl}
+            alt="logo"
+            className="w-full h-full object-contain" // no rounded corners
+          />
+          <AvatarFallback>SC</AvatarFallback>
         </Avatar>
       </Link>
     </div>
