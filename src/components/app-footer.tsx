@@ -1,4 +1,4 @@
-import { AppTechStackLogos } from "./app-tectstacklogos";
+import { AppTechStackLogos } from "./app-techstacklogos";
 
 export function AppFooter() {
     return (

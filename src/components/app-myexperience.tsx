@@ -26,7 +26,7 @@ export function MyExperience() {
             period: "March 2025 - Aug 2025",
             duration: "5 mos",
             location: "Philippines · Remote",
-            skills: ["React Native", "TypeScript"],
+            skills: ["React Native", "TypeScript", "Expo", "Supabase", "Firebase"],
             description:
                 "Developed a mobile application for an Australian startup clinic, implementing responsive UI and integrating backend APIs.",
         },
@@ -48,7 +48,7 @@ export function MyExperience() {
             period: "Aug 2024 - Feb 2025",
             duration: "7 mos",
             location: "Philippines · Remote",
-            skills: ["Expo", "Apigee", "Node.js", "GraphQL", "React Native", "TypeScript"],
+            skills: ["Expo", "Node.js", "GraphQL", "React Native", "TypeScript"],
             description:
                 "Developed end-to-end solutions using React Native and Node.js, integrating APIs and optimizing performance for web and mobile platforms.",
         },
@@ -59,7 +59,7 @@ export function MyExperience() {
             period: "Feb 2023 - Aug 2024",
             duration: "1 yr 7 mos",
             location: "Philippines · Remote",
-            skills: ["ReactJS", "React Native", "MobX"],
+            skills: ["ReactJS","React Native", "MobX"],
             description:
                 "Maintained and enhanced web and mobile applications, implementing state management with MobX and improving user experience.",
         },

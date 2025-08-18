@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {  AppHeading4, AppLabel, AppLabelTitle, AppParagraph } from "@/components/app-label";
+import {  AppHeading4, AppLabel, AppParagraph } from "@/components/app-label";
+import { AppTechStackLogos } from "./app-techstacklogos";
 
 interface AppCardProps {
     title: string;
@@ -64,9 +65,7 @@ export function AppCard({
                 {skills && skills.length > 0 && (
                     <div className="flex flex-wrap gap-2">
                         {skills.map((skill) => (
-                            <AppLabel key={skill}>
-                                <AppLabelTitle>{skill}</AppLabelTitle>
-                            </AppLabel>
+                            <AppTechStackLogos skills={[skill]} />
                         ))}
                     </div>
                 )}
