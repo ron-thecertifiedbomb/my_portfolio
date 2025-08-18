@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { motion } from "framer-motion";
 import { AppSocialLinks } from "./app-sociallinks";
 import { supabase } from "@/lib/supabase";
