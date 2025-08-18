@@ -10,7 +10,8 @@ export function AppSocialLinks() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gray-800 hover:scale-110 transition-transform"
+                    aria-label={social.label}
+                    className="flex items-center justify-center p-3 rounded-full bg-dark.foreground hover:scale-110 transition-transform duration-200"
                 >
                     {social.icon()}
                 </a>

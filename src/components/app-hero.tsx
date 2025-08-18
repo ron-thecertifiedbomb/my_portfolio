@@ -42,7 +42,7 @@ export default function AppHero() {
                     transition={{ duration: 0.8 }}
                 >
                     <AppHeading1 className="text-3xl md:text-5xl font-bold text-white">
-                        Hi, I'm a Full Stack Developer
+                        Hi, I'm Ronan Sibunga
                     </AppHeading1>
                     <AppParagraph className="text-sm md:text-lg text-white/90">
                         A Full Stack Developer with expertise in React, React Native, and Next.js, building seamless, responsive, and accessible applications across web and mobile platforms.

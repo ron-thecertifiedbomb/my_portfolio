@@ -29,6 +29,15 @@ export default function AboutMe() {
                 <CardContent className="px-8">
            
                     <AppParagraph>
+                        Beyond development, I am a versatile creative—experienced in video editing, animation, guitar playing, and travel—bringing artistic vision and technical precision to every project.
+
+                    </AppParagraph>
+
+
+                </CardContent>
+                <CardContent className="px-8">
+           
+                    <AppParagraph>
                         I thrive on solving complex problems, optimizing application performance, and implementing cutting-edge solutions that elevate user experiences. My approach combines clean code architecture, modern best practices, and a focus on maintainable, scalable applications. Constantly exploring new technologies, I am dedicated to pushing the limits of what’s possible within the React ecosystem while ensuring efficient, accessible, and engaging digital products.
 
                     </AppParagraph>

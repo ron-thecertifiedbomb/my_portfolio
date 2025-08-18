@@ -14,7 +14,7 @@ export function AppLogo() {
   return (
     <div className="flex items-center gap-2 ">
       <Link to="/">
-        <Avatar className="w-10 h-10 "> {/* standard navbar size with padding */}
+        <Avatar className="w-9 h-9 "> {/* standard navbar size with padding */}
           <AvatarImage
             src={data.publicUrl}
             alt="logo"
