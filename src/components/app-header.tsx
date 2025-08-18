@@ -1,9 +1,10 @@
 import { AppLogo } from "./app-logo";
 import { AppSidebar } from "./app-sidebar";
+import { ModeToggle } from "./mode-toggle";
 
 export function AppHeader() {
     return (
-        <header className="bg-background sticky top-0 z-50 mb-5">
+        <header className="bg-background sticky top-0 z-50 mb-8">
             <div className="max-w-7xl mx-auto px-2 sm:px-8">
                 {/* Full-width flex container with border */}
                 <div className="w-full flex items-center justify-between h-14 border-b">
@@ -15,6 +16,7 @@ export function AppHeader() {
                     {/* Right: Sidebar / Hamburger */}
                     <div className="flex items-center">
                         <AppSidebar />
+                        <ModeToggle />
                     </div>
                 </div>
             </div>

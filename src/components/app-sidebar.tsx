@@ -29,6 +29,8 @@ import {
     CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { cn } from '@/lib/utils'
+import { ModeToggle } from "./mode-toggle"
+import { AppLabel } from "./app-label"
 
 export function AppSidebar() {
     return (
@@ -36,19 +38,18 @@ export function AppSidebar() {
             <div className="flex items-center">
                 <Popover>
                     <PopoverTrigger asChild>
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-7 w-7 data-[state=open]:bg-accent"
-                        >
-                            <Menu />
-                        </Button>
+           
+                        <button className="h-10 w-10 p-2 bg-transparent rounded-full hover:bg-accent transition">
+                            <Menu size={24} />
+                        </button>
+             
                     </PopoverTrigger>
                     <PopoverContent
                         className="w-56 overflow-hidden rounded-lg p-0 absolute z-50 left-1/2 -translate-x-[95%]"
                     >
                         <Sidebar collapsible="none" className="bg-transparent">
                             <SidebarContent>
+                                
                                 <SidebarGroup>
                                     <SidebarGroupContent className="gap-0">
                                         <SidebarMenu>
@@ -108,10 +109,13 @@ export function AppSidebar() {
                                                 )
                                             )}
                                         </SidebarMenu>
+                                
+                                       
                                     </SidebarGroupContent>
                                 </SidebarGroup>
                             </SidebarContent>
                         </Sidebar>
+                    
                     </PopoverContent>
                 </Popover>
             </div>

@@ -76,10 +76,11 @@ export function MyExperience() {
     ];
 
     return (
-        <section className="max-w-7xl mx-auto py-12 px-4">
-            <div className="flex flex-col gap-4 mb-8">
+        <section id="myexperiences" className=" w-full max-w-7xl mx-auto py-9  px-3">
+            <div className="flex flex-col gap-4 mb-8 px-3">
                 <AppHeading1>My Experiences</AppHeading1>
                 <Separator />
+                
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {experiences.map((exp, index) => (
