@@ -33,31 +33,34 @@ import { cn } from '@/lib/utils'
 export function AppSidebar() {
     return (
         <SidebarProvider>
-            <div className="flex items-center md:hidden">
+            <div className="md:hidden flex items-center">
                 <Popover>
                     <PopoverTrigger asChild>
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="h-7 w-7 data-[state=open]:bg-accent">
+                            className="h-7 w-7 data-[state=open]:bg-accent"
+                        >
                             <Menu />
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent
-                        className="w-56 overflow-hidden rounded-lg p-0"
-                        align="start">
+                        className="w-56 overflow-hidden rounded-lg p-0 absolute z-50"
+                        align="start"
+                    >
                         <Sidebar collapsible="none" className="bg-transparent">
                             <SidebarContent>
                                 <SidebarGroup>
                                     <SidebarGroupContent className="gap-0">
                                         <SidebarMenu>
-                                            {mainMenu.map((item, index) => (
+                                            {mainMenu.map((item, index) =>
                                                 item.items && item.items.length > 0 ? (
                                                     <Collapsible
                                                         key={item.title}
                                                         asChild
                                                         defaultOpen={location.pathname.startsWith(item.url)}
-                                                        className="group/collapsible">
+                                                        className="group/collapsible"
+                                                    >
                                                         <SidebarMenuItem>
                                                             <CollapsibleTrigger asChild>
                                                                 <SidebarMenuButton tooltip={item.title}>
@@ -74,9 +77,11 @@ export function AppSidebar() {
                                                                                 <NavLink
                                                                                     to={subItem.url}
                                                                                     className={cn(
-                                                                                        'cursor-pointer',
-                                                                                        subItem.url === location.pathname && 'bg-muted'
-                                                                                    )}>
+                                                                                        "cursor-pointer",
+                                                                                        subItem.url === location.pathname &&
+                                                                                        "bg-muted"
+                                                                                    )}
+                                                                                >
                                                                                     <span>{subItem.title}</span>
                                                                                 </NavLink>
                                                                             </SidebarMenuSubButton>
@@ -92,16 +97,17 @@ export function AppSidebar() {
                                                             <Link
                                                                 to={item.url}
                                                                 className={cn(
-                                                                    'cursor-pointer',
-                                                                    item.url === location.pathname && 'bg-muted'
-                                                                )}>
-                                                                {item.icon && <item.icon className="!" />}
+                                                                    "cursor-pointer",
+                                                                    item.url === location.pathname && "bg-muted"
+                                                                )}
+                                                            >
+                                                                {item.icon && <item.icon />}
                                                                 <span>{item.title}</span>
                                                             </Link>
                                                         </SidebarMenuButton>
                                                     </SidebarMenuItem>
                                                 )
-                                            ))}
+                                            )}
                                         </SidebarMenu>
                                     </SidebarGroupContent>
                                 </SidebarGroup>
@@ -111,5 +117,5 @@ export function AppSidebar() {
                 </Popover>
             </div>
         </SidebarProvider>
-    )
+    );
 }
