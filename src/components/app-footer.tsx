@@ -1,15 +1,16 @@
-import { AppSocialLinks } from "./app-sociallinks";
+import { AppTechStackLogos } from "./app-tectstacklogos";
 
 export function AppFooter() {
     return (
-        <footer className="w-full  py-6 md:py-4 px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <footer className="w-full py-6 px-4 flex flex-col items-center gap-5">
+            {/* Logos always in a column */}
+            <div className="flex flex-col items-center gap-2">
+                <AppTechStackLogos />
+            </div>
             <p className="text-center text-sm md:text-base">
-                © {new Date().getFullYear()} Ronan Ramos Sibunga. All rights reserved.
+                © {new Date().getFullYear()} Ronan Ramos Sibunga
             </p>
 
-            <div className="flex items-center gap-4">
-                <AppSocialLinks />
-            </div>
         </footer>
     );
 }

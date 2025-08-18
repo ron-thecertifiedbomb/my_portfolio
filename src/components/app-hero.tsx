@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { AppHeading1, AppParagraph } from "@/components/app-label";
+import { AppHeading3, AppParagraph } from "@/components/app-label";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { AppSocialLinks } from "./app-sociallinks";
@@ -41,12 +41,13 @@ export default function AppHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <AppHeading1 className="text-3xl md:text-5xl font-bold text-white">
-                        Hi, I'm Ronan Sibunga
-                    </AppHeading1>
-                    <AppParagraph className="text-sm md:text-lg text-white/90">
-                        A Full Stack Developer with expertise in React, React Native, and Next.js, building seamless, responsive, and accessible applications across web and mobile platforms.
-                        In addition to development, I am a versatile multimedia artist—experienced in video editing, animation, guitar performance, and graphic design—bringing creativity and technical precision to every project.
+                    <AppHeading3 className="text-3xl md:text-4xl font-bold">
+                        Hey, I’m Ronan Sibunga.
+                    </AppHeading3>
+                    <AppParagraph className="text-sm md:text-lg">
+                  
+                        Full Stack Developer & Creative Explorer 
+                        I craft sleek, responsive apps with React, React Native, and Next.js—and when I’m not coding, I’m jamming on guitar, animating, editing videos, or designing visuals. Tech meets creativity, and magic happens.
                     </AppParagraph>
 
                     <div className="flex">
