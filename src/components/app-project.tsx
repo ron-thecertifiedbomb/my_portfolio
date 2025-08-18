@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AppExploreCard from "./app-explorecard";
-import { AppHeading1 } from "./app-label";
+import { AppHeading1, AppHeading3 } from "./app-label";
 import { Separator } from "@radix-ui/react-separator";
 
 interface Project {
@@ -36,28 +36,33 @@ export function AppProjects() {
     const [activeId, setActiveId] = useState<number | null>(mockProjects[0].id);
 
     const handleClick = (id: string | number) => {
-        setActiveId(Number(id)); // cast to number
+        setActiveId(Number(id));
     };
+
     return (
-        <section id="myprojects" className=" w-full max-w-7xl mx-auto py-9  px-3">
+        <section
+            id="myprojects"
+            className="hidden lg:block w-full max-w-7xl mx-auto py-9 px-3"
+        >
             <div className="flex flex-col gap-4 mb-8 px-3">
-                <AppHeading1>My Projects</AppHeading1>
+                <AppHeading3>My Projects</AppHeading3>
                 <Separator />
             </div>
-        <div className="flex items-center gap-4 overflow-x-auto">
-       
-            {mockProjects.map((project, index) => (
-                <AppExploreCard
-                    key={project.id}
-                    id={project.id}
-                    imgUrl={project.imgUrl}
-                    title={project.title}
-                    index={index}
-                    active={activeId}
-                    handleClick={handleClick}
-                />
-            ))}
+
+            {/* Hide on small screens */}
+            <div className="hidden sm:flex items-center gap-4 overflow-x-auto">
+                {mockProjects.map((project, index) => (
+                    <AppExploreCard
+                        key={project.id}
+                        id={project.id}
+                        imgUrl={project.imgUrl}
+                        title={project.title}
+                        index={index}
+                        active={activeId}
+                        handleClick={handleClick}
+                    />
+                ))}
             </div>
-            </section>
+        </section>
     );
 }

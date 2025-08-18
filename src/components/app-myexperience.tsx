@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
+import {  AppHeading3 } from "./app-label";
 import { AppCard } from "./app-card";
-import { AppHeading1 } from "./app-label";
+
 
 interface MyExperienceProps {
     title?: string;
@@ -78,7 +79,7 @@ export function MyExperience() {
     return (
         <section id="myexperiences" className=" w-full max-w-7xl mx-auto py-9  px-3">
             <div className="flex flex-col gap-4 mb-8 px-3">
-                <AppHeading1>My Experiences</AppHeading1>
+                <AppHeading3>My Experiences</AppHeading3>
                 <Separator />
                 
             </div>

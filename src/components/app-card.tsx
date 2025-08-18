@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { AppLabel, AppLabelTitle } from "@/components/app-label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {  AppHeading4, AppLabel, AppLabelTitle, AppParagraph } from "@/components/app-label";
 
 interface AppCardProps {
     title: string;
@@ -9,6 +9,9 @@ interface AppCardProps {
     description?: string;
     skills?: string[];
     links?: { label: string; url: string }[];
+    className?: string; // optional card class
+    style?: React.CSSProperties; // optional inline style
+    titleClassName?: string; // optional class for the title
 }
 
 export function AppCard({
@@ -19,22 +22,28 @@ export function AppCard({
     description,
     skills,
     links,
+    className,
+    style,
+    titleClassName,
 }: AppCardProps) {
     return (
-        <Card className="border hover:shadow-lg transition-shadow duration-300">
+        <Card className={`border hover:shadow-lg transition-shadow duration-300 ${className}`} style={style}>
             <CardHeader>
-                <CardTitle>{title}</CardTitle>
+                <CardTitle>
+                    <AppHeading4 className={titleClassName}>{title}</AppHeading4>
+                </CardTitle>
+
                 {(subtitle || period || location) && (
-                    <CardDescription className="text-sm text-muted-foreground">
-                        {subtitle && <>{subtitle} <br /></>}
-                        {period && <>{period} <br /></>}
-                        {location && <>{location}</>}
-                    </CardDescription>
+                    <div className="flex flex-col gap-1 mt-1">
+                        {subtitle && <AppLabel>{subtitle}</AppLabel>}
+                        {period && <AppLabel>{period}</AppLabel>}
+                        {location && <AppLabel>{location}</AppLabel>}
+                    </div>
                 )}
             </CardHeader>
 
             <CardContent className="space-y-3">
-                {description && <p className="text-gray-700 dark:text-gray-300">{description}</p>}
+                {description && <AppParagraph>{description}</AppParagraph>}
 
                 {links && links.length > 0 && (
                     <div className="flex flex-wrap gap-2">
@@ -44,7 +53,7 @@ export function AppCard({
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-600 dark:text-blue-400 underline text-sm"
+                                className="underline text-sm"
                             >
                                 {link.label}
                             </a>

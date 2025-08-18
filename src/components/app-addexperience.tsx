@@ -28,19 +28,32 @@ export default function AppAddExperience({
 }: MyExperienceProps) {
     return (
         <div className="space-y-3">
-            {title && <AppHeading3 className="text-muted-foreground">{title}</AppHeading3>}
+            {title && <AppHeading3 >{title}</AppHeading3>}
 
             <AppHeading2>{role}</AppHeading2>
 
-            <AppParagraph className="font-medium">
-                {company} · {type}
+            <AppParagraph>
+                {company}
+            </AppParagraph>
+            <AppParagraph>
+                {type}
+            </AppParagraph>
+            <AppParagraph>
+                {period} 
+
             </AppParagraph>
 
-            <AppParagraph className="text-sm text-muted-foreground">
-                {period} · {duration} <br />
+
+            <AppParagraph>
+                {duration}
+
+            </AppParagraph>
+
+
+            <AppParagraph>
                 {location}
-            </AppParagraph>
 
+            </AppParagraph>
             {description && <AppParagraph>{description}</AppParagraph>}
 
             {links && links.length > 0 && (
