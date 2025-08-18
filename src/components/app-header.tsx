@@ -7,8 +7,8 @@ import { AppNavbar } from './app-navbar'
 
 export function AppHeader() {
     return (
-        <header className="bg-background sticky top-0 z-50">
-            <div className="w-full max-w-7xl mx-auto flex items-center h-14 border-b">
+        <header className="bg-background sticky top-0 z-50 mb-5">
+            <div className="max-w-7xl mx-auto flex items-center h-14 border-b ">
                 <div className="flex items-center ">
                     <AppSidebar />
                         <AppLogo />
