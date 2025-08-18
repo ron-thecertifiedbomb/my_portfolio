@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+
 import { motion } from "framer-motion";
 import { AppSocialLinks } from "./app-sociallinks";
 import { supabase } from "@/lib/supabase";
-import { AppHeading2, AppHeading3, AppHeading4, AppParagraph } from "./app-label";
+import { AppHeading2, AppParagraph } from "./app-label";
 
 export default function AppHero() {
 
