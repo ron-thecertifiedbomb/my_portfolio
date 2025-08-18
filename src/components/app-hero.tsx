@@ -53,7 +53,7 @@ export default function AppHero() {
                     <div className="flex">
                         <AppSocialLinks />
                     </div>
-
+{/* 
                     <div className="mt-6 flex flex-wrap gap-4">
                         <Button variant="outline" asChild>
                             <a href="#contact">Contact Me</a>
@@ -61,7 +61,7 @@ export default function AppHero() {
                         <Button variant="outline" asChild>
                             <a href="#resume">My Resume</a>
                         </Button>
-                    </div>
+                    </div> */}
                 </motion.div>
 
                 {/* Hero Image */}
