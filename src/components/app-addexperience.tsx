@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AppHeading2, AppHeading3, AppParagraph, AppLabel, AppLabelTitle } from "@/components/app-label";
 
 interface MyExperienceProps {
