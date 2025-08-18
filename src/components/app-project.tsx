@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AppExploreCard from "./app-explorecard";
-import { AppHeading1, AppHeading3 } from "./app-label";
+import {  AppHeading3 } from "./app-label";
 import { Separator } from "@radix-ui/react-separator";
 
 interface Project {
