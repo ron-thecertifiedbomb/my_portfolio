@@ -1,13 +1,5 @@
+import { SiMongodb, SiNextdotjs, SiReact, SiRedux, SiSupabase, SiTailwindcss, SiTypescript } from "@icons-pack/react-simple-icons";
 
-import {
-    SiReact,
-    SiTypescript,
-    SiTailwindcss,
-    SiNextdotjs,
-    SiMongodb,
-    SiRedux,
-    SiSupabase,
-} from "react-icons/si";
 
 interface Tech {
     label: string;
