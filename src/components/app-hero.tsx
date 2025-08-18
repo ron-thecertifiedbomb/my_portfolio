@@ -6,6 +6,7 @@ import { AppSocialLinks } from "./app-sociallinks";
 import { supabase } from "@/lib/supabase";
 
 export default function AppHero() {
+    
     const [bgUrl, setBgUrl] = useState("");
     const [profileUrl, setProfileUrl] = useState("");
 
