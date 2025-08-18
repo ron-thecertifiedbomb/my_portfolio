@@ -33,7 +33,7 @@ import { cn } from '@/lib/utils'
 export function AppSidebar() {
     return (
         <SidebarProvider>
-            <div className="md:hidden flex items-center">
+            <div className="flex items-center">
                 <Popover>
                     <PopoverTrigger asChild>
                         <Button
@@ -45,8 +45,7 @@ export function AppSidebar() {
                         </Button>
                     </PopoverTrigger>
                     <PopoverContent
-                        className="w-56 overflow-hidden rounded-lg p-0 absolute z-50"
-                        align="start"
+                        className="w-56 overflow-hidden rounded-lg p-0 absolute z-50 left-1/2 -translate-x-[95%]"
                     >
                         <Sidebar collapsible="none" className="bg-transparent">
                             <SidebarContent>

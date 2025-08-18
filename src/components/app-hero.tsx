@@ -1,14 +1,15 @@
-import { AppHeading1, AppParagraph, AppLabel } from "@/components/app-label";
+import { AppHeading1, AppParagraph } from "@/components/app-label";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { AppSocialLinks } from "./app-sociallinks";
 
 export default function AppHero() {
     return (
-        <section className="relative  py-30 px-4 overflow-hidden">
+        <section className="relative py-16 px-2 sm:px-4 md:py-30 md:px-8 overflow-hidden">
 
             {/* Decorative Circles */}
-            <div className="absolute -top-32 -left-32 w-96 h-96 bg-white/20 rounded-full opacity-30 animate-pulse"></div>
-            <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-white/20 rounded-full opacity-30 animate-pulse"></div>
+            {/* <div className="absolute -top-24 -left-24 w-64 h-64 sm:-top-32 sm:-left-32 sm:w-96 sm:h-96 bg-white/20 rounded-full opacity-30 animate-pulse"></div>
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 sm:-bottom-32 sm:-right-32 sm:w-96 sm:h-96 bg-white/20 rounded-full opacity-30 animate-pulse"></div> */}
 
             <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center md:justify-between gap-12 relative z-10">
 
@@ -19,7 +20,7 @@ export default function AppHero() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <AppHeading1 className="text-4xl md:text-5xl font-bold">
+                    <AppHeading1 className="text2xl md:text-5xl font-bold">
                         Hi, I'm Ronan Sibunga
                     </AppHeading1>
 
@@ -27,16 +28,11 @@ export default function AppHero() {
                         A Full Stack Developer specializing in React, React Native, and Next.js. I create seamless, responsive, and accessible applications for web and mobile.
                     </AppParagraph>
 
-                    <div className="flex flex-wrap gap-3">
-                        <AppLabel >ReactJS</AppLabel>
-                        <AppLabel >React Native</AppLabel>
-                        <AppLabel>Next.js</AppLabel>
-                        <AppLabel >TypeScript</AppLabel>
-                        <AppLabel >Node.js</AppLabel>
+                    <div className="flex">
+                        <AppSocialLinks />
                     </div>
 
                     <div className="mt-6 flex flex-wrap gap-4">
-    
                         <Button variant="outline" asChild>
                             <a href="#contact">Contact Me</a>
                         </Button>
@@ -45,16 +41,16 @@ export default function AppHero() {
 
                 {/* Hero Image */}
                 <motion.div
-                    className="flex-1 flex justify-center md:justify-end"
+                    className="flex-1 flex justify-center md:justify-end pr-6"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 bg-white/10 backdrop-blur-sm">
+                    <div className="relative w-74 h-74 md:w-90 md:h-90 rounded-full  overflow-hidden">
                         <img
-                            src="/profile.png"
+                            src="/public/images/me.png"
                             alt="profile"
-                            className="w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover"
                         />
                     </div>
                 </motion.div>

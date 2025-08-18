@@ -14,7 +14,7 @@ export function AppLogo() {
   return (
     <div className="flex items-center gap-2">
       <Link to="/">
-      <Avatar className="hidden md:h-9 md:w-12 md:flex">
+      <Avatar className="hidden md:h-9 md:w-12 md:flex p-1">
         <AvatarImage src={data.publicUrl} alt="logo" />
         <AvatarFallback className="rounded-lg">SC</AvatarFallback>
         </Avatar>
