@@ -2,7 +2,6 @@
 import { supabase } from "@/lib/supabase";
 import { useEffect, useState } from "react";
 
-
 export function useFetchData<T>(
   table: string,
   orderBy?: { column: string; ascending?: boolean }
@@ -35,7 +34,7 @@ export function useFetchData<T>(
     };
 
     fetchData();
-  }, [table, orderBy?.column, orderBy?.ascending]);
+  }, []);
 
   return { data, loading, error };
 }

@@ -1,7 +1,5 @@
 import { useState } from "react";
 import AppExploreCard from "./app-explorecard";
-import { AppLabel } from "./app-label";
-import { Separator } from "@radix-ui/react-separator";
 import { AppSectionMotionTitle } from "./app-sectionmotiontitle";
 import { fadeIn } from "@/lib/motion";
 import { AppContentContainer } from "./app-contentcontainer";

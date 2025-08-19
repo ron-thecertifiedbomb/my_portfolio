@@ -1,6 +1,5 @@
 // components/app-sectiontitle.tsx
 
-import { Separator } from "@/components/ui/separator";
 import { AppLabel } from "@/components/app-label";
 import { AppMotionContent } from "@/components/app-motioncontent";
 import { Variants, TargetAndTransition, VariantLabels, Transition } from "framer-motion";
