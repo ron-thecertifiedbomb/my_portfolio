@@ -1,76 +1,48 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-// Headings
-export function AppHeading1({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-        <h1 className={cn("text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold", className)} {...props}>
-            {children}
-        </h1>
-    );
+type LabelVariant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "p"
+  | "label"
+  | "title"
+  | "description";
+
+interface AppLabelProps extends React.HTMLAttributes<HTMLElement> {
+  variant?: LabelVariant;
 }
 
-export function AppHeading2({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-        <h2 className={cn("text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold", className)} {...props}>
-            {children}
-        </h2>
-    );
-}
+export function AppLabel({
+  variant = "p",
+  className,
+  children,
+  ...props
+}: AppLabelProps) {
+  const Component =
+    variant === "p" ||
+    variant === "label" ||
+    variant === "title" ||
+    variant === "description"
+      ? "p"
+      : variant;
 
-export function AppHeading3({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-        <h3 className={cn("text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold", className)} {...props}>
-            {children}
-        </h3>
-    );
-}
+  const baseStyles: Record<LabelVariant, string> = {
+    h1: "text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold",
+    h2: "text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold",
+    h3: "text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold",
+    h4: "text-sm sm:text-lg md:text-xl lg:text-2xl font-medium",
+    p: "text-sm sm:text-base md:text-m leading-relaxed",
+    label: "text-sm sm:text-sm md:text-base lg:text-base",
+    title: "font-semibold text-xs sm:text-sm md:text-base",
+    description: "text-xs sm:text-sm md:text-base lg:text-base",
+  };
 
-export function AppHeading4({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-        <h4 className={cn("text-sm sm:text-lg md:text-xl lg:text-2xl font-medium", className)} {...props}>
-            {children}
-        </h4>
-    );
-}
-
-// Paragraph
-export function AppParagraph({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-    return (
-        <p
-            className={cn(
-                "text-sm sm:text-base md:text-m leading-relaxed",
-                className
-            )}
-            {...props}
-        >
-            {children}
-        </p>
-    );
-}
-
-// Label / Badge
-export function AppLabel({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-    return (
-        <p className={cn("text-sm sm:text-sm md:text-base lg:text-base", className)} {...props}>
-            {children}
-        </p>
-    );
-}
-
-// Label Title and Description
-export function AppLabelTitle({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-    return (
-        <p className={cn("font-semibold text-xs sm:text-sm md:text-base", className)} {...props}>
-            {children}
-        </p>
-    );
-}
-
-export function AppLabelDescription({ className, children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-    return (
-        <p className={cn("text-xs sm:text-sm md:text-base lg:text-base", className)} {...props}>
-            {children}
-        </p>
-    );
+  return (
+    <Component className={cn(baseStyles[variant], className)} {...props}>
+      {children}
+    </Component>
+  );
 }

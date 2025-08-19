@@ -1,75 +1,89 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {  AppHeading4, AppLabel, AppParagraph } from "@/components/app-label";
+import { AppLabel } from "@/components/app-label";
 import { AppTechStackLogos } from "./app-techstacklogos";
 
 interface AppCardProps {
-    title: string;
-    subtitle?: string;
-    period?: string;
-    location?: string;
-    description?: string;
-    skills?: string[];
-    links?: { label: string; url: string }[];
-    className?: string; // optional card class
-    style?: React.CSSProperties; // optional inline style
-    titleClassName?: string; // optional class for the title
+  title: string;
+  subtitle?: string;
+  period?: string;
+  location?: string;
+  description?: string;
+  skills?: string[];
+  links?: { label: string; url: string }[];
+  className?: string;
+  style?: React.CSSProperties;
+  titleClassName?: string;
 }
 
 export function AppCard({
-    title,
-    subtitle,
-    period,
-    location,
-    description,
-    skills,
-    links,
-    className,
-    style,
-    titleClassName,
+  title,
+  subtitle,
+  period,
+  location,
+  description,
+  skills,
+  links,
+  className,
+  style,
+  titleClassName,
 }: AppCardProps) {
-    return (
-        <Card className={`border hover:shadow-lg transition-shadow duration-300 ${className}`} style={style}>
-            <CardHeader>
-                <CardTitle>
-                    <AppHeading4 className={titleClassName}>{title}</AppHeading4>
-                </CardTitle>
+  return (
+    <Card
+      className={`w-full shadow-md rounded-xl ${className || ""}`}
+      style={style}
+    >
+      {/* Header */}
+      <CardHeader className="space-y-1">
+        <CardTitle>
+          <AppLabel
+            variant="h2"
+            className={`text-xl font-bold ${titleClassName || ""}`}
+          >
+            {title}
+          </AppLabel>
+        </CardTitle>
 
-                {(subtitle || period || location) && (
-                    <div className="flex flex-col gap-1 mt-1">
-                        {subtitle && <AppLabel>{subtitle}</AppLabel>}
-                        {period && <AppLabel>{period}</AppLabel>}
-                        {location && <AppLabel>{location}</AppLabel>}
-                    </div>
-                )}
-            </CardHeader>
+        {/* Meta info */}
+        <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+          {subtitle && <AppLabel>{subtitle}</AppLabel>}
+          {period && <AppLabel>{period}</AppLabel>}
+          {location && <AppLabel>{location}</AppLabel>}
+        </div>
+      </CardHeader>
 
-            <CardContent className="space-y-3">
-                {description && <AppParagraph>{description}</AppParagraph>}
+      {/* Content */}
+      <CardContent className="space-y-4">
+        {/* Description */}
+        {description && (
+          <AppLabel className="leading-relaxed">{description}</AppLabel>
+        )}
 
-                {links && links.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                        {links.map((link) => (
-                            <a
-                                key={link.url}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline text-sm"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
-                    </div>
-                )}
+        {/* Links */}
+        {links && links.length > 0 && (
+          <div className="flex flex-wrap gap-3">
+            {links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-600 hover:underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
 
-                {skills && skills.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                        {skills.map((skill) => (
-                            <AppTechStackLogos skills={[skill]} />
-                        ))}
-                    </div>
-                )}
-            </CardContent>
-        </Card>
-    );
+        {/* Skills */}
+        {skills && skills.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <AppTechStackLogos key={skill} skills={[skill]} />
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
 }

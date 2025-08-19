@@ -6,13 +6,12 @@ import { AppProjects } from "@/components/app-project";
 
 export default function Home() {
     return (
-        <>
-            <AppHero />
-            <AboutMe />
-            <MyExperience />
-            <AppProjects />
-            <AppGallery/>
-        </>
-
+      <>
+        <AppHero />
+        <AboutMe />
+        <MyExperience />
+        <AppProjects />
+        <AppGallery />
+      </>
     );
 }``

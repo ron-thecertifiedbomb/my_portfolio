@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AppExploreCard from "./app-explorecard";
-import {  AppHeading3 } from "./app-label";
+import { AppLabel } from "./app-label";
 import { Separator } from "@radix-ui/react-separator";
 
 interface Project {
@@ -40,29 +40,29 @@ export function AppProjects() {
     };
 
     return (
-        <section
-            id="myprojects"
-            className="hidden lg:block w-full max-w-7xl mx-auto py-9 px-3"
-        >
-            <div className="flex flex-col gap-4 mb-8 px-3">
-                <AppHeading3>My Projects</AppHeading3>
-                <Separator />
-            </div>
+      <section
+        id="myprojects"
+        className="hidden lg:block w-full max-w-7xl mx-auto py-9 px-3"
+      >
+        <div className="flex flex-col gap-4 mb-8 px-3">
+          <AppLabel variant="h3">My Projects</AppLabel>
+          <Separator />
+        </div>
 
-            {/* Hide on small screens */}
-            <div className="hidden sm:flex items-center gap-4 overflow-x-auto">
-                {mockProjects.map((project, index) => (
-                    <AppExploreCard
-                        key={project.id}
-                        id={project.id}
-                        imgUrl={project.imgUrl}
-                        title={project.title}
-                        index={index}
-                        active={activeId}
-                        handleClick={handleClick}
-                    />
-                ))}
-            </div>
-        </section>
+        {/* Hide on small screens */}
+        <div className="hidden sm:flex items-center gap-4 overflow-x-auto">
+          {mockProjects.map((project, index) => (
+            <AppExploreCard
+              key={project.id}
+              id={project.id}
+              imgUrl={project.imgUrl}
+              title={project.title}
+              index={index}
+              active={activeId}
+              handleClick={handleClick}
+            />
+          ))}
+        </div>
+      </section>
     );
 }

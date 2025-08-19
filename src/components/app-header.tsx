@@ -1,26 +1,18 @@
+import { AppContentContainer } from "./app-contentcontainer";
 import { AppLogo } from "./app-logo";
 import { AppSidebar } from "./app-sidebar";
 import { ModeToggle } from "./mode-toggle";
 
 export function AppHeader() {
-    return (
-        <header className="bg-background sticky top-0 z-50 mb-8">
-            <div className="max-w-7xl mx-auto px-2 sm:px-8">
-                {/* Full-width flex container with border */}
-                <div className="w-full flex items-center justify-between h-14 border-b">
-                    {/* Left: Logo */}
-                    <div className="flex items-center">
-                        <AppLogo />
-                    </div>
-
-                    {/* Right: Sidebar / Hamburger */}
-                    <div className="flex items-center">
-                        <AppSidebar />
-                        <ModeToggle />
-                    </div>
-                </div>
-            </div>
-        </header>
-
-    );
+  return (
+    <AppContentContainer className="sticky top-0 z-50">
+      <header className="w-full flex items-center justify-between h-14 border-b pl-2 pr-2">
+        <AppLogo />
+        <section className="flex items-center">
+          <AppSidebar />
+          <ModeToggle />
+        </section>
+      </header>
+    </AppContentContainer>
+  );
 }
