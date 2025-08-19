@@ -13,7 +13,7 @@ export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({ skills }) 
         : techStack;
 
     return (
-        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center">
+        <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
             {filteredStack.map((tech) => (
                 <a
                     key={tech.label}
@@ -23,7 +23,7 @@ export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({ skills }) 
                     aria-label={tech.label}
                     title={tech.label} // <-- simple popup on hover
                     className={cn(
-                        "flex items-center justify-center p-2 rounded-full hover:scale-110 transition-transform duration-200"
+                        "flex items-center justify-center p-1 rounded-full hover:scale-110 transition-transform duration-200"
                     )}
                 >
                     <span className="w-6 h-6">{tech.icon}</span>

@@ -2,6 +2,9 @@ import { useState } from "react";
 import AppExploreCard from "./app-explorecard";
 import { AppLabel } from "./app-label";
 import { Separator } from "@radix-ui/react-separator";
+import { AppSectionMotionTitle } from "./app-sectionmotiontitle";
+import { fadeIn } from "@/lib/motion";
+import { AppContentContainer } from "./app-contentcontainer";
 
 interface Project {
     id: number;
@@ -40,14 +43,15 @@ export function AppProjects() {
     };
 
     return (
-      <section
+      <AppContentContainer
         id="myprojects"
         className="hidden lg:block w-full max-w-7xl mx-auto py-9 px-3"
       >
-        <div className="flex flex-col gap-4 mb-8 px-3">
-          <AppLabel variant="h3">My Projects</AppLabel>
-          <Separator />
-        </div>
+        <AppSectionMotionTitle
+          title="My Projects"
+          variants={fadeIn("up", "tween", 0.3, 1)}
+          className="mb-6"
+        />
 
         {/* Hide on small screens */}
         <div className="hidden sm:flex items-center gap-4 overflow-x-auto">
@@ -63,6 +67,6 @@ export function AppProjects() {
             />
           ))}
         </div>
-      </section>
+      </AppContentContainer>
     );
 }

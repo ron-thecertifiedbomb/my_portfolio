@@ -12,7 +12,7 @@ export function AppMainContainer({
   ...props
 }: AppMainContainerProps) {
   return (
-    <div
+    <main
       className={cn(
         "flex min-h-screen w-full flex-col items-center justify-center", // full screen
         className
@@ -20,6 +20,6 @@ export function AppMainContainer({
       {...props}
     >
       {children}
-    </div>
+    </main>
   );
 }

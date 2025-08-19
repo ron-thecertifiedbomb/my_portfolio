@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AppLabel } from "@/components/app-label";
 import { AppTechStackLogos } from "./app-techstacklogos";
+import { AppContentContainer } from "./app-contentcontainer";
 
 interface AppCardProps {
   title?: string;
@@ -41,7 +42,7 @@ export function AppCard({
           {title && (
             <CardTitle>
               <AppLabel
-                variant="h2"
+                variant="h3"
                 className={`text-xl font-bold ${titleClassName || ""}`}
               >
                 {title}
@@ -49,20 +50,30 @@ export function AppCard({
             </CardTitle>
           )}
 
-          <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-            {subtitle && <AppLabel>{subtitle}</AppLabel>}
-            {period && <AppLabel>{period}</AppLabel>}
-            {location && <AppLabel>{location}</AppLabel>}
-          </div>
+          <AppContentContainer className="flex flex-col gap-1 text-sm">
+            {subtitle && (
+              <AppLabel variant="h4" className="font-medium">
+                {subtitle}
+              </AppLabel>
+            )}
+            {period && (
+              <AppLabel variant="p" className="font-medium">
+                {period}
+              </AppLabel>
+            )}
+            {location && (
+              <AppLabel variant="p"  className="font-light leading-7">
+                {location}
+              </AppLabel>
+            )}
+          </AppContentContainer>
         </CardHeader>
       )}
 
       {/* Content */}
       <CardContent className="p-0 space-y-4">
         {/* Description */}
-        {description && (
-          <AppLabel className="leading-relaxed">{description}</AppLabel>
-        )}
+        {description && <AppLabel variant="p">{description}</AppLabel>}
 
         {/* Links */}
         {links && links.length > 0 && (
@@ -83,11 +94,13 @@ export function AppCard({
 
         {/* Skills */}
         {skills && skills.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill) => (
-              <AppTechStackLogos key={skill} skills={[skill]} />
-            ))}
-          </div>
+          <AppContentContainer className="bg-stone-950 dark:bg-transparent p-1 rounded-lg">
+            <section className="flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <AppTechStackLogos key={skill} skills={[skill]} />
+              ))}
+            </section>
+          </AppContentContainer>
         )}
       </CardContent>
     </Card>

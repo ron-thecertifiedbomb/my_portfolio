@@ -1,4 +1,7 @@
+import { fadeIn } from "@/lib/motion";
 import { AppCarousel } from "./app-carousel";
+import { AppContentContainer } from "./app-contentcontainer";
+import { AppSectionMotionTitle } from "./app-sectionmotiontitle";
 
 export function AppGallery() {
     const images = [
@@ -9,18 +12,23 @@ export function AppGallery() {
     ];
 
     return (
-        <div className="w-full max-w-7xl mx-auto flex justify-center items-center p-9 ">
-            <AppCarousel
-                items={images}
-                renderItem={(img) => (
-                    <img
-                        src={img.src}
-                        alt={img.alt}
-                        className="h-full w-full object-cover rounded-xl"
-                    />
-                )}
-                maxWidth="max-w-4xl"
+      <AppContentContainer className="mt-8">
+        <AppSectionMotionTitle
+          title="My Gallery"
+          variants={fadeIn("up", "tween", 0.3, 1)}
+          className="mb-6"
+        />
+        <AppCarousel
+          items={images}
+          renderItem={(img) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="h-full w-full object-cover rounded-xl"
             />
-        </div>
+          )}
+          maxWidth="max-w-5xl"
+        />
+      </AppContentContainer>
     );
 }
