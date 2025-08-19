@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { AppLabel } from "./app-label";
 import { AppCard } from "./app-card";
+import { AppContentContainer } from "./app-contentcontainer";
 
 
 interface MyExperienceProps {
@@ -77,17 +78,15 @@ export function MyExperience() {
     ];
 
     return (
-      <section
-        id="myexperiences"
-        className=" w-full max-w-7xl mx-auto py-9  px-3"
-      >
-        <div className="flex flex-col gap-4 mb-8 px-3">
-          <AppLabel variant="h2">My Experiences</AppLabel>
+      <AppContentContainer className="mt-8">
+        <section className="flex flex-col mb-8 gap-4">
+          <AppLabel variant="h2" className="px-7">My Experiences</AppLabel>
           <Separator />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </section>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((exp, index) => (
             <AppCard
+               className="px-10"
               key={index}
               title={exp.role}
               subtitle={`${exp.company} · ${exp.type}`}
@@ -98,7 +97,7 @@ export function MyExperience() {
               links={exp.links}
             />
           ))}
-        </div>
-      </section>
+        </section>
+      </AppContentContainer>
     );
 }

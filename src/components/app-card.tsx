@@ -3,7 +3,7 @@ import { AppLabel } from "@/components/app-label";
 import { AppTechStackLogos } from "./app-techstacklogos";
 
 interface AppCardProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   period?: string;
   location?: string;
@@ -27,32 +27,38 @@ export function AppCard({
   style,
   titleClassName,
 }: AppCardProps) {
+  // check if header content exists
+  const hasHeader = title || subtitle || period || location;
+
   return (
     <Card
       className={`w-full shadow-md rounded-xl ${className || ""}`}
       style={style}
     >
-      {/* Header */}
-      <CardHeader className="space-y-1">
-        <CardTitle>
-          <AppLabel
-            variant="h2"
-            className={`text-xl font-bold ${titleClassName || ""}`}
-          >
-            {title}
-          </AppLabel>
-        </CardTitle>
+      {/* Header (render only if something exists) */}
+      {hasHeader && (
+        <CardHeader className="p-0 mb-2">
+          {title && (
+            <CardTitle>
+              <AppLabel
+                variant="h2"
+                className={`text-xl font-bold ${titleClassName || ""}`}
+              >
+                {title}
+              </AppLabel>
+            </CardTitle>
+          )}
 
-        {/* Meta info */}
-        <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-          {subtitle && <AppLabel>{subtitle}</AppLabel>}
-          {period && <AppLabel>{period}</AppLabel>}
-          {location && <AppLabel>{location}</AppLabel>}
-        </div>
-      </CardHeader>
+          <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+            {subtitle && <AppLabel>{subtitle}</AppLabel>}
+            {period && <AppLabel>{period}</AppLabel>}
+            {location && <AppLabel>{location}</AppLabel>}
+          </div>
+        </CardHeader>
+      )}
 
       {/* Content */}
-      <CardContent className="space-y-4">
+      <CardContent className="p-0 space-y-4">
         {/* Description */}
         {description && (
           <AppLabel className="leading-relaxed">{description}</AppLabel>
