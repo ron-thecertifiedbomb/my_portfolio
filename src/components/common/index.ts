@@ -14,3 +14,4 @@ export { AppMarquee } from "./AppMarquee";
 export { AppTechStackLogos } from "./AppTechStackLogos";
 export { AppTint } from "./AppTint";
 export { AppTransitioningText } from "./AppTransitionintText";
+export { AppSplashScreen } from "./AppSplashScreen";
