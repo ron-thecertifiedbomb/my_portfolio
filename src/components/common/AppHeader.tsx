@@ -38,7 +38,7 @@ export function AppHeader() {
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
       className="fixed top-0 left-0 w-full z-50 flex justify-center"
     >
-      <AppContentContainer className="w-full max-w-7xl">
+      <AppContentContainer className="w-full max-w-7xl"> 
         <motion.header
           initial={{ backgroundColor: "rgba(0,0,0,0)" }}
           animate={{
@@ -46,7 +46,7 @@ export function AppHeader() {
               ? "rgba(0,0,0,0.4)" // darker glass
               : "rgba(0,0,0,0)", // fully transparent
           }}
-          className="rounded-lg w-full flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30"
+          className="rounded-lg   max-w-7xl flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30"
         >
           <AppLogo logoUrl={logoUrl} />
           <section className="flex items-center justify-center">
