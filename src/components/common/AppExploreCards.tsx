@@ -42,7 +42,7 @@ export function AppExploreCards({
         objectFit="cover"
         src={imgUrl}
         alt={title}
-        className="absolute top-0 left-0 w-full h-full rounded-[24px]"
+        className="absolute top-0 left-0 w-full h-full rounded-[24px] mb-1.5"
       />
 
       {active !== id ? (
