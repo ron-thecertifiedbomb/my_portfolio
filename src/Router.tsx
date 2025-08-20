@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { AppLayout } from "./components/common/AppLayout";
+import { AppLayout } from "./components/layout/AppLayout";
 import NotMatch from "./pages/NotMatch";
 import Home from "./pages/Home";
 import Sample from "./pages/Sample";

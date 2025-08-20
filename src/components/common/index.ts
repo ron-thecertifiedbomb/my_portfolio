@@ -8,7 +8,7 @@ export { AppHeader } from "./AppHeader";
 export { AppImage } from "./AppImage";
 export { AppImageScreensaver } from "./AppImageScreenSaver";
 export { AppLabel } from "./AppLabel";
-export { AppLayout } from "./AppLayout";
+export { AppLayout } from "../layout/AppLayout";
 export { AppLogo } from "./AppLogo";
 export { AppMarquee } from "./AppMarquee";
 export { AppTechStackLogos } from "./AppTechStackLogos";
