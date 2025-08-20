@@ -55,19 +55,23 @@ export function AppTransitioningText({
         >
           {items[currentIndex].title && (
             <AppLabel
-              variant="h2"
-              className="mb-2 leading-tight text-transparent bg-clip-text bg-gradient-to-r 
-             from-gray-900 via-gray-600 to-gray-400 
-             dark:from-white dark:via-gray-300 dark:to-gray-500 
-             font-extrabold tracking-tight drop-shadow-lg"
+              variant="h1"
+              className="
+  
+    leading-tight
+    text-transparent bg-clip-text bg-gradient-to-r
+    from-gray-900 via-gray-600 to-gray-400
+    dark:from-white dark:via-gray-300 dark:to-gray-500
+    font-extrabold tracking-tight drop-shadow-lg
+  "
             >
               {items[currentIndex].title}
             </AppLabel>
           )}
           {items[currentIndex].description && (
             <AppLabel
-              variant="h3"
-              className="text-gray-900/80 dark:text-gray-100/80 text-lg sm:text-xl font-medium drop-shadow-md"
+              variant="p"
+              className="text-gray-900/80 dark:text-gray-100/80 font-medium drop-shadow-md"
             >
               {items[currentIndex].description}
             </AppLabel>

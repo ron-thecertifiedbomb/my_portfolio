@@ -21,7 +21,7 @@ export default function AppHero() {
       id: 2,
       title: "Multi-Skilled. Limitless Vision.",
       description:
-        "From front-end polish to back-end power — versatility is the craft.",
+        "From front-end polish to back-end power, versatility is the craft.",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export default function AppHero() {
       id: 4,
       title: "Innovation From Scratch.",
       description:
-        "Building foundations, not templates — every line of code matters.",
+        "Building foundations, not templates every line of code matters.",
     },
   ];
 
@@ -44,7 +44,14 @@ export default function AppHero() {
         auto={false}
         interval={7000}
         transitionDuration={2}
-        className="h-[600px] w-full rounded-2xl"
+        className="
+    h-[300px]  
+    sm:h-[400px] 
+    md:h-[500px] 
+    lg:h-[600px] 
+    w-full 
+    rounded-2xl
+  "
       >
         <AppTint className="absolute inset-0 bg-black/70" />
         <AppTransitioningText
