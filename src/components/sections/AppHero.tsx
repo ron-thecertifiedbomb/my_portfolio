@@ -23,10 +23,8 @@ export function AppHero() {
   const [phrases, setPhrases] = useState<HeroQuote[]>([]);
 
   useEffect(() => {
-    // Fetch hero images
+   
     fetchHeroImages().then((data) => setImages(data));
-
-    // Fetch hero quotes
     fetchHeroQuotes().then((data) => setPhrases(data));
   }, []);
 

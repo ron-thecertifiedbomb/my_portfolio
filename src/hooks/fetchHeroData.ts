@@ -1,5 +1,11 @@
 import { supabase } from "@/lib/supabase";
 
+export interface MyProject {
+  id: number;
+  title: string;
+  description: string;
+  imgUrl: string;
+}
 
 interface ScreensaverImage {
   src: string;
@@ -21,6 +27,7 @@ export async function fetchHeroImages(): Promise<ScreensaverImage[]> {
   return data?.map((item) => ({ src: item.image_url })) ?? [];
 }
 /** Fetch hero quotes from hero_section_quotes table */
+
 export async function fetchHeroQuotes(): Promise<
   { id: number; title: string; description: string }[]
 > {
@@ -31,6 +38,19 @@ export async function fetchHeroQuotes(): Promise<
 
   if (error) {
     console.error("Error fetching hero quotes:", error);
+    return [];
+  }
+
+  return data ?? [];
+}
+export async function fetchMyProjectsData(): Promise<MyProject[]> {
+  const { data, error } = await supabase
+    .from("my_projects")
+    .select("id, title, description, imgUrl")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching projects:", error);
     return [];
   }
 

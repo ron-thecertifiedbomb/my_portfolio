@@ -7,6 +7,7 @@ export interface AppExploreCardsProps {
   id: string | number;
   imgUrl: string;
   title: string;
+  description: string;
   index: number;
   active: string | number | null; // allow null
   handleClick: (id: string | number) => void;
@@ -18,6 +19,7 @@ export function AppExploreCards({
   title,
   index,
   active,
+  description,
   handleClick,
 }: AppExploreCardsProps) {
   return (
@@ -55,7 +57,7 @@ export function AppExploreCards({
             <Code />
           </div>
           <p className="font-normal text-[12px] sm:text-[16px] leading-[16px] sm:leading-[20px] text-white uppercase">
-            Turning Code into Creativity
+            {description}
           </p>
           <h2 className="mt-4 sm:mt-6 font-semibold text-[20px] sm:text-[32px] text-white">
             {title}

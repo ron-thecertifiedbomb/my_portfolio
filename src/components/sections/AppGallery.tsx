@@ -7,6 +7,7 @@ import {
 } from "@/components/layout";
 
 export function AppGallery() {
+  
   const images = [
     { id: 1, src: "/assets/bg.jpg", alt: "Background 1" },
     { id: 2, src: "/assets/bg.jpg", alt: "Background 2" },
