@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { AppContentContainer } from "../layout/AppContentContainer";
 import { AppLogo, AppSidebar } from "@/components/common";
-import { ModeToggle } from "../mode-toggle";
 import { useFetchLogo } from "@/hooks/fetchLogo";
 
 export function AppHeader() {
@@ -39,12 +38,12 @@ export function AppHeader() {
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
       className="fixed top-0 left-0 w-full  z-50 flex justify-center"
     >
-      {/* Transparent header with thicker bottom border */}
+    
       <AppContentContainer className="bg-transparent w-full max-w-7xl">
         <header className="bg-transparent w-full  flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30">
           <AppLogo logoUrl={logoUrl} />
           <section className="flex items-center justify-center">
-            {/* <ModeToggle /> */}
+
             <AppSidebar />
           </section>
         </header>
