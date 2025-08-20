@@ -25,55 +25,62 @@ export function AppTransitioningText({
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!items || items.length === 0) return;
+
     const id = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % items.length);
     }, interval);
+
     return () => clearInterval(id);
-  }, [items.length, interval]);
+  }, [items, interval]);
+
+  if (!items || items.length === 0) return null; // ❌ Prevents rendering if no items
+
+  const currentItem = items[currentIndex];
 
   return (
     <AppContentContainer
       className={`
-    relative
-    inline-block
-    p-10
-    rounded-3xl
-    bg-white/5 dark:bg-black/5
-    shadow-2xl shadow-black/60
-    text-center
-    ${className}
-  `}
+        relative
+        inline-block
+        p-10
+        rounded-3xl
+        bg-white/5 dark:bg-black/5
+        shadow-2xl shadow-black/60
+        text-center
+        ${className}
+      `}
     >
       <AnimatePresence mode="wait">
         <motion.div
-          key={items[currentIndex].id}
+          key={currentItem.id}
           className="flex flex-col items-center justify-center relative z-10"
-          initial={false} // 👈 prevents fade-in
-          animate={{ opacity: 1 }} // 👈 forces constant visibility
-          exit={{ opacity: 1 }} // 👈 no fade on exit
+          initial={false}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 1 }}
           transition={{ duration: transitionDuration }}
         >
-          {items[currentIndex].title && (
+          {currentItem.title && (
             <AppLabel
               variant="h1"
-              className="
-  
+              className={`
     leading-tight
-    text-transparent bg-clip-text bg-gradient-to-r
-    from-gray-900 via-gray-600 to-gray-400
+    text-transparent bg-clip-text
+    bg-gradient-to-r
+    from-[var(--primary)] via-[var(--secondary)] to-[var(--muted)]
     dark:from-white dark:via-gray-300 dark:to-gray-500
     font-extrabold tracking-tight drop-shadow-lg
-  "
+  `}
             >
-              {items[currentIndex].title}
+              {currentItem.title}
             </AppLabel>
           )}
-          {items[currentIndex].description && (
+          {currentItem.description && (
             <AppLabel
               variant="p"
-              className="text-gray-900/80 dark:text-gray-100/80 font-medium drop-shadow-md"
+              className="text-[var(--foreground)]/80 dark:text-gray-100/80 font-medium drop-shadow-md"
             >
-              {items[currentIndex].description}
+              {currentItem.description}
             </AppLabel>
           )}
         </motion.div>

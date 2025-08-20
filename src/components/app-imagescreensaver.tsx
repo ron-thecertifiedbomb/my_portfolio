@@ -1,13 +1,12 @@
 import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppContentContainer } from "./app-contentcontainer";
-import { AppTint } from "./app-tint";
+import { AppImage } from "./app-image"; // import your AppImage
 
-type ScreensaverImage = {
-  id: number | string;
+interface ScreensaverImage {
   src: string;
   alt?: string;
-};
+}
 
 type AppImageScreensaverProps = {
   images: ScreensaverImage[];
@@ -42,19 +41,25 @@ export function AppImageScreensaver({
     <AppContentContainer
       className={`relative overflow-hidden rounded-xl ${className}`}
     >
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={images[currentIndex].id}
-          src={images[currentIndex].src}
-          alt={images[currentIndex].alt || ""}
-          className="absolute top-0 left-0 h-full w-full object-cover"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: transitionDuration }}
-        />
-      </AnimatePresence>
-      <AppContentContainer className="absolute inset-0 flex items-center justify-center text-white text-center pointer-events-none">
+      {images.length > 0 && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            className="absolute top-0 left-0 h-full w-full rounded-xl overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: transitionDuration }}
+          >
+            <AppImage
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt || ""}
+              className="h-full w-full rounded-xl"
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
+      <AppContentContainer className="absolute inset-0 flex items-center justify-center text-white text-center pointer-events-none rounded-xl">
         {children}
       </AppContentContainer>
     </AppContentContainer>
