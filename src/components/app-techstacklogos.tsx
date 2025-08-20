@@ -1,21 +1,17 @@
 import { techStack } from "@/config/techstack";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface AppTechStackLogosProps {
-  skills?: string[]; 
+  skills?: string[];
 }
 
-export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({
-  skills,
-}) => {
-
+export const AppTechStackLogos = ({ skills }: AppTechStackLogosProps) => {
   const filteredStack = skills?.length
     ? techStack.filter((tech) => skills.includes(tech.label))
     : techStack;
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex gap-4 justify-center">
       {filteredStack.map((tech) => (
         <a
           key={tech.label}

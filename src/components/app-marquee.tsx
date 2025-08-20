@@ -1,4 +1,4 @@
-"use client";
+
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -6,9 +6,9 @@ import { AppTechStackLogos } from "./app-techstacklogos";
 
 interface AppMarqueeProps {
   className?: string;
-  speed?: number; // pixels per second
-  scale?: number; // shrink factor for logos
-  gap?: string; // control spacing between logos
+  speed?: number;
+  scale?: number; 
+  gap?: string; 
 }
 
 export function AppMarquee({
