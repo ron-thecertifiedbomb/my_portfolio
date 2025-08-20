@@ -115,15 +115,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-     @apply bg-background text-foreground;
+    @apply bg-background text-foreground;
   }
 
+  /* Hide scrollbars by default */
   .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
-}
+    display: none; /* Chrome, Safari, Opera */
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;      /* Firefox */
+  }
 }

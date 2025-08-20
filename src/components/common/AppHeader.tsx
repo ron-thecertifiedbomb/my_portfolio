@@ -37,15 +37,15 @@ export function AppHeader() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className="fixed top-0 left-0 w-full z-50"
+      className="fixed top-0 left-0 w-full  z-50 flex justify-center"
     >
       {/* Transparent header with thicker bottom border */}
-      <AppContentContainer className="bg-transparent">
-        <header className="w-full flex items-center justify-between h-16 border-b-1 border-white/30 dark:border-neutral-500/30 sm:px-2">
+      <AppContentContainer className="bg-transparent w-full max-w-7xl">
+        <header className="bg-transparent w-full  flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30">
           <AppLogo logoUrl={logoUrl} />
           <section className="flex items-center justify-center">
+            {/* <ModeToggle /> */}
             <AppSidebar />
-            <ModeToggle />
           </section>
         </header>
       </AppContentContainer>

@@ -1,4 +1,3 @@
-// src/components/app-motioncontent.tsx
 import { ReactNode, CSSProperties } from "react";
 import {
   motion,
@@ -11,6 +10,7 @@ import {
 interface AppMotionContentProps {
   children: ReactNode;
   className?: string;
+  hideScrollbar?: boolean; // new prop to hide scrollbars
   initial?: boolean | TargetAndTransition | VariantLabels;
   animate?: boolean | TargetAndTransition | VariantLabels;
   transition?: Transition;
@@ -22,8 +22,9 @@ interface AppMotionContentProps {
 export function AppMotionContent({
   children,
   className = "",
-  initial = { opacity: 0, scale: 0.95 }, // 🔹 subtle zoom + fade
-  animate = { opacity: 1, scale: 1 }, // 🔹 zoom to normal
+  hideScrollbar = false,
+  initial = { opacity: 0, scale: 0.95 }, // subtle zoom + fade
+  animate = { opacity: 1, scale: 1 }, // zoom to normal
   transition = { duration: 0.8, ease: "easeOut" },
   style,
   variants,
@@ -31,7 +32,7 @@ export function AppMotionContent({
 }: AppMotionContentProps) {
   return (
     <motion.section
-      className={`w-full ${className}`}
+      className={`w-full ${hideScrollbar ? "scrollbar-hide" : ""} ${className}`}
       initial={initial}
       animate={animate}
       transition={transition}

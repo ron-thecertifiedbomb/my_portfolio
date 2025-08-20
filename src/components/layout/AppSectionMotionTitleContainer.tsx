@@ -1,7 +1,5 @@
-// components/app-sectiontitle.tsx
-
 import { AppLabel } from "@/components/common";
-import { AppMotionContent } from "@/components/layout";;
+import { AppMotionContent } from "@/components/layout";
 import {
   Variants,
   TargetAndTransition,
@@ -33,6 +31,7 @@ export function AppSectionMotionTitleContainer({
       initial={initial}
       animate={animate}
       transition={transition}
+      hideScrollbar={true} // hide scrollbars
     >
       <AppLabel variant="h1">{title}</AppLabel>
     </AppMotionContent>
