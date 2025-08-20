@@ -3,8 +3,9 @@ interface AppContentContainerProps {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
-  fitContent?: boolean; // new prop to shrink width to content
-  hideScrollbar?: boolean; // new prop to hide scrollbars
+  fitContent?: boolean; // shrink width to content
+  hideScrollbar?: boolean; // hide scrollbars
+  withPadding?: boolean; // apply horizontal padding
 }
 
 export function AppContentContainer({
@@ -14,13 +15,14 @@ export function AppContentContainer({
   style,
   fitContent = false,
   hideScrollbar = false,
+  withPadding = false, // false by default
 }: AppContentContainerProps) {
   return (
     <section
       id={id}
       className={`${fitContent ? "inline-block" : "w-full max-w-7xl mx-auto"} ${
-        hideScrollbar ? "scrollbar-hide" : ""
-      } ${className || ""}`}
+        withPadding && !fitContent ? "px-4 sm:px-6 md:px-8 lg:px-0" : ""
+      } ${hideScrollbar ? "scrollbar-hide" : ""} ${className || ""}`}
       style={style}
     >
       {children}

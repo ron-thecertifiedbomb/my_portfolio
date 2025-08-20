@@ -8,7 +8,7 @@ import {
 
 export function AppAboutMe() {
   return (
-    <AppContentContainer>
+    <AppContentContainer withPadding={true}>
       <AppSectionMotionTitleContainer
         title="About Me"
         variants={fadeIn("up", "tween", 0.3, 1)}

@@ -85,7 +85,7 @@ export function AppMyExperience() {
   ];
 
   return (
-    <AppContentContainer>
+    <AppContentContainer withPadding={true}>
       <AppSectionMotionTitleContainer
         title="My Experiences"
         variants={slideIn("left", "tween", 0.3, 1)}
@@ -93,7 +93,7 @@ export function AppMyExperience() {
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
           <AppCard
-            className="px-4 sm:px-10"
+  
             key={index}
             title={exp.role}
             subtitle={`${exp.company} · ${exp.type}`}

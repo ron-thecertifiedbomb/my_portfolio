@@ -31,7 +31,7 @@ export function AppHero() {
   }, []);
 
   return (
-    <AppMotionContent className="flex-1 space-y-6 mt-20 rounded-xl">
+    <AppMotionContent className="flex-1 space-y-6 mt-18 sm:mt-20 rounded-xl">
       <AppImageScreensaver
         images={images}
         auto={true}

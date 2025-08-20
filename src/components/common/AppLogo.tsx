@@ -10,7 +10,7 @@ interface AppLogoProps {
 
 export function AppLogo({ logoUrl, className }: AppLogoProps) {
   return (
-    <AppContentContainer className={cn("flex items-center gap-2", className)}>
+    <AppContentContainer className={cn("flex items-center p-4", className)}>
       <Link to="/">
         <Avatar className="w-9 h-9 sm:w-10 sm:h-10">
           <AvatarImage
@@ -18,7 +18,7 @@ export function AppLogo({ logoUrl, className }: AppLogoProps) {
             alt="logo"
             className="w-full h-full object-contain"
           />
-          <AvatarFallback>SC</AvatarFallback>
+          <AvatarFallback>RS</AvatarFallback>
         </Avatar>
       </Link>
     </AppContentContainer>

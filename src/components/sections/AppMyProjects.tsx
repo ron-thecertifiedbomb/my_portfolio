@@ -45,10 +45,7 @@ export function AppProjects() {
   };
 
   return (
-    <AppContentContainer
-      id="myprojects"
-      className="hidden lg:block w-full max-w-7xl mx-auto py-9 px-3"
-    >
+    <AppContentContainer withPadding={true}>
       <AppSectionMotionTitleContainer
         title="My Projects"
         variants={fadeIn("up", "tween", 0.3, 1)}
@@ -56,7 +53,7 @@ export function AppProjects() {
       />
 
       {/* Hide on small screens */}
-      <div className="hidden sm:flex items-center gap-4 overflow-x-auto scrollbar-hide">
+      <AppContentContainer className="sm:flex items-center gap-4   overflow-x-auto scrollbar-hide ">
         {mockProjects.map((project, index) => (
           <AppExploreCards
             key={project.id}
@@ -68,7 +65,7 @@ export function AppProjects() {
             handleClick={handleClick}
           />
         ))}
-      </div>
+      </AppContentContainer>
     </AppContentContainer>
   );
 }

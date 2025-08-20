@@ -15,23 +15,24 @@ export function AppGallery() {
   ];
 
   return (
-    <AppContentContainer className="mt-8">
+    <AppContentContainer withPadding={true}>
       <AppSectionMotionTitleContainer
         title="My Gallery"
         variants={fadeIn("up", "tween", 0.3, 1)}
-        className="mb-6"
       />
-      <AppCarousel
-        items={images}
-        renderItem={(img) => (
-          <img
-            src={img.src}
-            alt={img.alt}
-            className="h-full w-full object-cover rounded-xl"
-          />
-        )}
-        maxWidth="max-w-5xl"
-      />
+      <AppContentContainer>
+        <AppCarousel
+          items={images}
+          renderItem={(img) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="h-full w-full object-cover rounded-xl"
+            />
+          )}
+          maxWidth="max-w-5xl"
+        />
+      </AppContentContainer>
     </AppContentContainer>
   );
 }
