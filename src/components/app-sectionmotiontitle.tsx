@@ -23,16 +23,13 @@ export function AppSectionMotionTitle({
 }: AppSectionMotionTitleProps) {
   return (
     <AppMotionContent
-      className={`w-full ${className}`}
+      className={`w-full p-3 sm:p-5 md:p-5 ${className}`}
       variants={variants}
       initial={initial}
       animate={animate}
       transition={transition}
     >
-      <AppLabel variant="h3" className="px-2 sm:px-7">
-        {title}
-      </AppLabel>
-
+      <AppLabel variant="h1">{title}</AppLabel>
     </AppMotionContent>
   );
 }

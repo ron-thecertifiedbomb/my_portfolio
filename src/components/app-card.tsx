@@ -38,12 +38,12 @@ export function AppCard({
     >
       {/* Header (render only if something exists) */}
       {hasHeader && (
-        <CardHeader className="p-0 mb-2">
+        <CardHeader>
           {title && (
             <CardTitle>
               <AppLabel
                 variant="h3"
-                className={`text-xl font-bold ${titleClassName || ""}`}
+                className={` ${titleClassName || ""}`}
               >
                 {title}
               </AppLabel>
@@ -52,17 +52,17 @@ export function AppCard({
 
           <AppContentContainer className="flex flex-col gap-1 text-sm">
             {subtitle && (
-              <AppLabel variant="h4" className="font-medium">
+              <AppLabel variant="h4">
                 {subtitle}
               </AppLabel>
             )}
             {period && (
-              <AppLabel variant="p" className="font-medium">
+              <AppLabel variant="p" >
                 {period}
               </AppLabel>
             )}
             {location && (
-              <AppLabel variant="p" className="font-light leading-7">
+              <AppLabel variant="p">
                 {location}
               </AppLabel>
             )}
@@ -71,7 +71,7 @@ export function AppCard({
       )}
 
       {/* Content */}
-      <CardContent className="p-0 space-y-4">
+      <CardContent>
         {/* Description */}
         {description && <AppLabel variant="p">{description}</AppLabel>}
 

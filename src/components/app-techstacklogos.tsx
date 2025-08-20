@@ -1,17 +1,21 @@
 import { techStack } from "@/config/techstack";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 interface AppTechStackLogosProps {
-  skills?: string[];
+  skills?: string[]; // optional array to filter displayed tech
 }
 
-export const AppTechStackLogos = ({ skills }: AppTechStackLogosProps) => {
+export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({
+  skills,
+}) => {
+  // filter stack if skills array is provided
   const filteredStack = skills?.length
     ? techStack.filter((tech) => skills.includes(tech.label))
     : techStack;
 
   return (
-    <div className="flex gap-4 justify-center">
+    <div className="flex  gap-3 sm:gap-4 justify-center">
       {filteredStack.map((tech) => (
         <a
           key={tech.label}
@@ -21,12 +25,10 @@ export const AppTechStackLogos = ({ skills }: AppTechStackLogosProps) => {
           aria-label={tech.label}
           title={tech.label}
           className={cn(
-            "flex items-center justify-center w-7 h-7 rounded-full bg-transparent text-white shadow-md hover:scale-110 transition-transform duration-200 overflow-hidden"
+            "flex items-center justify-center w-12 h-12 rounded-full bg-transparent text-white transition-transform duration-200 hover:scale-110"
           )}
         >
-          <span className="flex items-center justify-center w-full h-full">
-            {tech.icon}
-          </span>
+          <span className="w-6 h-6">{tech.icon}</span>
         </a>
       ))}
     </div>

@@ -84,11 +84,10 @@ export function MyExperience() {
   ];
 
   return (
-    <AppContentContainer className="mt-8">
+    <AppContentContainer>
       <AppSectionMotionTitle
         title="My Experiences"
         variants={slideIn("left", "tween", 0.3, 1)}
-        className="mb-6"
       />
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
