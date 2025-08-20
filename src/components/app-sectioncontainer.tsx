@@ -1,4 +1,3 @@
-// app-sectioncontainer.tsx
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +15,12 @@ export function AppSectionContainer({
   return (
     <section
       id={id}
-      className={cn("w-full max-w-7xl mx-auto", className)}
+      className={cn(
+        // add horizontal padding only on mobile & tablet
+        "px-4 sm:px-6 md:px-8 lg:px-0",
+        "w-full max-w-7xl mx-auto",
+        className
+      )}
       {...props}
     >
       {component}

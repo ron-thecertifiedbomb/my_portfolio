@@ -52,7 +52,7 @@ export function AppProjects() {
         />
 
         {/* Hide on small screens */}
-        <div className="hidden sm:flex items-center gap-4 overflow-x-auto">
+        <div className="hidden sm:flex items-center gap-4 overflow-x-auto scrollbar-hide">
           {mockProjects.map((project, index) => (
             <AppExploreCard
               key={project.id}
