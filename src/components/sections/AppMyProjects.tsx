@@ -43,11 +43,11 @@ export function AppProjects() {
         className="mb-6"
       />
 
-      <AppContentContainer className="sm:flex sm:items-center sm:gap-4 overflow-x-auto scrollbar-hide h-[400px]">
+      <AppContentContainer className="flex flex-col sm:flex-row sm:items-center gap-4 overflow-x-auto scrollbar-hide h-[400px]">
         {projects.map((project, index) => (
           <AppExploreCards
             key={project.id}
-            id={project.id} 
+            id={project.id}
             imgUrl={project.imgurl}
             title={project.title}
             description={project.description}

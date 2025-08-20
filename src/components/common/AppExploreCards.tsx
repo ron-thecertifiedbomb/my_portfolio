@@ -1,6 +1,6 @@
 import { fadeIn } from "@/lib/motion";
 import { motion } from "framer-motion";
-import { Code } from "lucide-react";
+// import { Code } from "lucide-react";
 import { AppLabel, AppImage } from "@/components/common";
 
 export interface AppExploreCardsProps {
@@ -28,7 +28,7 @@ export function AppExploreCards({
       className={`
         relative flex items-center justify-center cursor-pointer
         transition-[flex] duration-[0.2s] ease-out-flex
-        min-w-[150px] sm:min-w-[170px] md:min-w-[200px]
+        min-w-[160px] sm:min-w-[180px] md:min-w-[200px]
         ${
           active === id
             ? "flex-[3.5] lg:flex-[3.5]"
@@ -53,10 +53,10 @@ export function AppExploreCards({
           ""
         </h3>
       ) : (
-        <div className="absolute bottom-0 w-full p-4 sm:p-8 flex flex-col justify-start bg-black/70 rounded-b-[24px]">
-          <div className="flex items-center justify-center w-12 h-12 sm:w-15 sm:h-15 rounded-[24px] bg-white/10 mb-4">
+        <div className="absolute bottom-0 w-full p-3 sm:p-8 flex flex-col justify-start bg-black/70 rounded-b-[24px]">
+          {/* <div className="flex items-center justify-center w-8 h-8 sm:w-15 sm:h-15 rounded-[24px] bg-white/10 mb-2">
             <Code />
-          </div>
+          </div> */}
           <AppLabel
             variant="h4"
             className="font-semibold tracking-tight mb-4 underline underline-offset-10"
