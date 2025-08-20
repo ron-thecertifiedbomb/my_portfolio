@@ -1,21 +1,18 @@
 import { techStack } from "@/config/techstack";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface AppTechStackLogosProps {
   skills?: string[]; // optional array to filter displayed tech
 }
 
-export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({
-  skills,
-}) => {
+export function AppTechStackLogos({ skills }: AppTechStackLogosProps) {
   // filter stack if skills array is provided
   const filteredStack = skills?.length
     ? techStack.filter((tech) => skills.includes(tech.label))
     : techStack;
 
   return (
-    <div className="flex  gap-3 sm:gap-4 justify-center">
+    <div className="flex gap-3 sm:gap-4 justify-center">
       {filteredStack.map((tech) => (
         <a
           key={tech.label}
@@ -33,4 +30,4 @@ export const AppTechStackLogos: React.FC<AppTechStackLogosProps> = ({
       ))}
     </div>
   );
-};
+}

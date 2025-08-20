@@ -37,7 +37,7 @@ export function AppSidebar() {
                 <Popover>
                     <PopoverTrigger asChild>
            
-                        <button className="h-10 w-10 p-2 bg-transparent rounded-full hover:bg-accent transition">
+                        <button className="flex justify-center h-10 w-10 bg-transparent rounded-full hover:bg-accent transition items-center">
                             <Menu size={24} />
                         </button>
              

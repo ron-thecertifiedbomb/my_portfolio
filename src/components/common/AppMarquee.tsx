@@ -1,14 +1,12 @@
-
-
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { AppTechStackLogos } from "./app-techstacklogos";
+import { AppTechStackLogos } from "./AppTechStackLogos";
 
 interface AppMarqueeProps {
   className?: string;
   speed?: number;
-  scale?: number; 
-  gap?: string; 
+  scale?: number;
+  gap?: string;
 }
 
 export function AppMarquee({

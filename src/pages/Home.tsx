@@ -1,20 +1,22 @@
-import AboutMe from "@/components/app-aboutme";
-import { AppGallery } from "@/components/app-gallery";
-import AppHero from "@/components/app-hero";
-import AppMarqueeSection from "@/components/app-marqueesection";
 
-import { MyExperience } from "@/components/app-myexperience";
-import { AppProjects } from "@/components/app-project";
+import { AppGallery } from "@/components/sections/AppGallery";
+import {
+  AppHero,
+  AppAboutMe,
+  AppMarqueeSection,
+  AppProjects,
+  AppMyExperience,
+} from "@/components/sections";
 
 export default function Home() {
-    return (
-      <>
-        <AppHero />
-     <AppMarqueeSection />
-        <AboutMe />
-        <MyExperience />
-        <AppProjects />
-        <AppGallery />
-      </>
-    );
+  return (
+    <>
+      <AppHero />
+      <AppMarqueeSection />
+      <AppAboutMe />
+      <AppMyExperience />
+      <AppProjects />
+      <AppGallery />
+    </>
+  );
 }

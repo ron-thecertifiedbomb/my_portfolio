@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AppMotionContent } from "./app-motioncontent";
-import { AppTransitioningText } from "./app-transitioningtext";
-import { AppTint } from "./app-tint";
-import { AppImageScreensaver } from "./app-imagescreensaver";
+import { AppMotionContent } from "../layout/AppMotionContent";
+import { AppTransitioningText } from "../common/AppTransitionintText";
+import { AppTint } from "../common/AppTint";
+import { AppImageScreensaver } from "../common/AppImageScreenSaver";
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
-
 
 interface HeroQuote {
   id: number;
@@ -19,9 +18,7 @@ interface ScreensaverImage {
   alt?: string;
 }
 
-
-
-export default function AppHero() {
+export function AppHero() {
   const [images, setImages] = useState<ScreensaverImage[]>([]);
   const [phrases, setPhrases] = useState<HeroQuote[]>([]);
 

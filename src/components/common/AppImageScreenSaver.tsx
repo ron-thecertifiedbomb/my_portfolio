@@ -1,7 +1,7 @@
 import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AppContentContainer } from "./app-contentcontainer";
-import { AppImage } from "./app-image"; // import your AppImage
+import { AppContentContainer } from "../layout/AppContentContainer";
+import { AppImage } from "./AppImage"; // import your AppImage
 
 interface ScreensaverImage {
   src: string;

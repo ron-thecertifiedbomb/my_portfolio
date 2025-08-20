@@ -1,8 +1,9 @@
-
 import { slideIn } from "@/lib/motion";
-import { AppCard } from "./app-card";
-import { AppContentContainer } from "./app-contentcontainer";
-import { AppSectionMotionTitle, } from "./app-sectionmotiontitle";
+import { AppCard } from "../common/AppCard";
+import {
+  AppSectionMotionTitleContainer,
+  AppContentContainer,
+} from "@/components/layout";
 
 interface MyExperienceProps {
   title?: string;
@@ -17,7 +18,7 @@ interface MyExperienceProps {
   links?: { label: string; url: string }[];
 }
 
-export function MyExperience() {
+export function AppMyExperience() {
   const experiences: MyExperienceProps[] = [
     {
       role: "Full Stack Developer",
@@ -85,7 +86,7 @@ export function MyExperience() {
 
   return (
     <AppContentContainer>
-      <AppSectionMotionTitle
+      <AppSectionMotionTitleContainer
         title="My Experiences"
         variants={slideIn("left", "tween", 0.3, 1)}
       />

@@ -1,10 +1,15 @@
 // components/app-sectiontitle.tsx
 
-import { AppLabel } from "@/components/app-label";
-import { AppMotionContent } from "@/components/app-motioncontent";
-import { Variants, TargetAndTransition, VariantLabels, Transition } from "framer-motion";
+import { AppLabel } from "@/components/common";
+import { AppMotionContent } from "@/components/layout";;
+import {
+  Variants,
+  TargetAndTransition,
+  VariantLabels,
+  Transition,
+} from "framer-motion";
 
-interface AppSectionMotionTitleProps {
+interface AppSectionMotionTitleContainerProps {
   title: string;
   variants?: Variants;
   initial?: boolean | TargetAndTransition | VariantLabels;
@@ -13,14 +18,14 @@ interface AppSectionMotionTitleProps {
   className?: string;
 }
 
-export function AppSectionMotionTitle({
+export function AppSectionMotionTitleContainer({
   title,
   variants,
   initial,
   animate,
   transition,
   className,
-}: AppSectionMotionTitleProps) {
+}: AppSectionMotionTitleContainerProps) {
   return (
     <AppMotionContent
       className={`w-full p-3 sm:p-5 md:p-5 ${className}`}

@@ -1,4 +1,4 @@
-import { AppLabel } from "@/components/app-label";
+import { AppLabel } from "@/components/common/AppLabel";
 
 interface MyExperienceProps {
   title?: string; // optional category or title

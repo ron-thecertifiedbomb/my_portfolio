@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
-import { AppHeader } from "./app-header";
-import { AppFooter } from "./app-footer";
-import { AppMainContainer } from "./app-maincontainer";
-import { AppSectionContainer } from "./app-sectioncontainer";
+import { AppHeader } from "./AppHeader";
+import { AppFooter } from "./AppFooter";
+import { AppMainContainer } from "../layout/AppMainContainer";
+import { AppSectionContainer } from "../layout/AppSectionContainer";
 
 export function AppLayout() {
   return (

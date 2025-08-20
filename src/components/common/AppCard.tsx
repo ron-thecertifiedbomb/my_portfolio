@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AppLabel } from "@/components/app-label";
-import { AppTechStackLogos } from "./app-techstacklogos";
-import { AppContentContainer } from "./app-contentcontainer";
+import { AppLabel } from "@/components/common/AppLabel";
+import { AppTechStackLogos } from "./AppTechStackLogos";
+import { AppContentContainer } from "../layout/AppContentContainer";
 
 interface AppCardProps {
   title?: string;
@@ -41,31 +41,16 @@ export function AppCard({
         <CardHeader>
           {title && (
             <CardTitle>
-              <AppLabel
-                variant="h3"
-                className={` ${titleClassName || ""}`}
-              >
+              <AppLabel variant="h3" className={` ${titleClassName || ""}`}>
                 {title}
               </AppLabel>
             </CardTitle>
           )}
 
           <AppContentContainer className="flex flex-col gap-1 text-sm">
-            {subtitle && (
-              <AppLabel variant="h4">
-                {subtitle}
-              </AppLabel>
-            )}
-            {period && (
-              <AppLabel variant="p" >
-                {period}
-              </AppLabel>
-            )}
-            {location && (
-              <AppLabel variant="p">
-                {location}
-              </AppLabel>
-            )}
+            {subtitle && <AppLabel variant="h4">{subtitle}</AppLabel>}
+            {period && <AppLabel variant="p">{period}</AppLabel>}
+            {location && <AppLabel variant="p">{location}</AppLabel>}
           </AppContentContainer>
         </CardHeader>
       )}
