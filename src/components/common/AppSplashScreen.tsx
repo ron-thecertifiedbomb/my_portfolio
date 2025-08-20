@@ -6,12 +6,14 @@ interface AppSplashScreenProps {
   logoUrl?: string;
   text?: string;
   className?: string;
+  onFinish?: () => void; // callback when animation ends
 }
 
 export function AppSplashScreen({
   logoUrl,
   text = "Loading...",
   className,
+  onFinish,
 }: AppSplashScreenProps) {
   return (
     <AppMainContainer
@@ -21,26 +23,24 @@ export function AppSplashScreen({
         className
       )}
     >
-      {/* Container for logo + text */}
-      <motion.div className="flex flex-col items-center justify-center gap-4">
+      <motion.div
+        className="flex flex-col items-center justify-center gap-4"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ type: "spring", stiffness: 120, damping: 12 }}
+        onAnimationComplete={onFinish}
+      >
         {logoUrl && (
-          <motion.img
+          <img
             src={logoUrl}
             alt="logo"
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 120, damping: 12 }}
           />
         )}
-        <motion.p
-          className="text-black dark:text-white text-lg sm:text-2xl font-semibold text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
+        <p className="text-black dark:text-white text-lg sm:text-2xl font-semibold text-center">
           {text}
-        </motion.p>
+        </p>
       </motion.div>
     </AppMainContainer>
   );

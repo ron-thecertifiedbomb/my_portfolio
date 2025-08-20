@@ -15,7 +15,11 @@ export function AppLayout() {
   useEffect(() => {
     if (loading) {
       sessionStorage.setItem("splashShown", "true");
-      const timer = setTimeout(() => setLoading(false), 5000); // 5s splash
+
+      const timer = setTimeout(() => {
+        setLoading(false); // **unmount splash**
+      }, 5000); // 5 seconds
+
       return () => clearTimeout(timer);
     }
   }, [loading]);
@@ -25,6 +29,7 @@ export function AppLayout() {
       <AppSplashScreen
         logoUrl="/assets/splash.png"
         text="Welcome to My Portfolio"
+        onFinish={() => setLoading(false)} // fallback if you want animation-based finish
       />
     );
   }
