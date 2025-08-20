@@ -1,7 +1,7 @@
 import { fadeIn } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { Code } from "lucide-react";
-import { AppImage } from "./AppImage";
+import { AppLabel, AppImage } from "@/components/common";
 
 export interface AppExploreCardsProps {
   id: string | number;
@@ -27,7 +27,7 @@ export function AppExploreCards({
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className={`
         relative flex items-center justify-center cursor-pointer
-        transition-[flex] duration-[0.7s] ease-out-flex
+        transition-[flex] duration-[0.2s] ease-out-flex
         min-w-[150px] sm:min-w-[170px] md:min-w-[200px]
         ${
           active === id
@@ -39,9 +39,10 @@ export function AppExploreCards({
       onClick={() => handleClick(id)}
     >
       <AppImage
+        objectFit="cover"
         src={imgUrl}
         alt={title}
-        className="absolute top-0 left-0 w-full h-full object-cover rounded-[24px]"
+        className="absolute top-0 left-0 w-full h-full rounded-[24px]"
       />
 
       {active !== id ? (
@@ -49,19 +50,22 @@ export function AppExploreCards({
           className="absolute z-0 text-white font-semibold text-[14px] sm:text-[18px] lg:text-[26px] 
           lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]"
         >
-          {title}
+          ""
         </h3>
       ) : (
-        <div className="absolute bottom-0 w-full p-6 sm:p-8 flex flex-col justify-start bg-black/50 rounded-b-[24px]">
+        <div className="absolute bottom-0 w-full p-4 sm:p-8 flex flex-col justify-start bg-black/70 rounded-b-[24px]">
           <div className="flex items-center justify-center w-12 h-12 sm:w-15 sm:h-15 rounded-[24px] bg-white/10 mb-4">
             <Code />
           </div>
-          <p className="font-normal text-[12px] sm:text-[16px] leading-[16px] sm:leading-[20px] text-white uppercase">
-            {description}
-          </p>
-          <h2 className="mt-4 sm:mt-6 font-semibold text-[20px] sm:text-[32px] text-white">
+          <AppLabel
+            variant="h4"
+            className="font-semibold tracking-tight mb-4 underline underline-offset-10"
+          >
             {title}
-          </h2>
+          </AppLabel>
+          <AppLabel variant="p" className="font-medium leading-6">
+            {description}
+          </AppLabel>
         </div>
       )}
     </motion.div>

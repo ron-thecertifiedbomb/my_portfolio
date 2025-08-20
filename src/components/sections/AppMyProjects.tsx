@@ -10,7 +10,7 @@ import { fetchMyProjectsData } from "@/hooks/fetchHeroData";
 
 interface MyProject {
   id: number;
-  imgUrl: string;
+  imgurl: string;
   title: string;
   description: string;
 }
@@ -43,12 +43,12 @@ export function AppProjects() {
         className="mb-6"
       />
 
-      <AppContentContainer className="sm:flex items-center gap-4 overflow-x-auto scrollbar-hide h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
+      <AppContentContainer className="sm:flex items-center gap-4 overflow-x-auto scrollbar-hide h-[400px] ">
         {projects.map((project, index) => (
           <AppExploreCards
             key={project.id}
             id={project.id}
-            imgUrl={project.imgUrl}
+            imgUrl={project.imgurl}
             title={project.title}
             description={project.description}
             index={index}

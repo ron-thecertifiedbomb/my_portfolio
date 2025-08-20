@@ -4,7 +4,7 @@ export interface MyProject {
   id: number;
   title: string;
   description: string;
-  imgUrl: string;
+  imgurl: string;
 }
 
 interface ScreensaverImage {
@@ -46,7 +46,7 @@ export async function fetchHeroQuotes(): Promise<
 export async function fetchMyProjectsData(): Promise<MyProject[]> {
   const { data, error } = await supabase
     .from("my_projects")
-    .select("id, title, description, imgUrl")
+    .select("id, title, description, imgurl")
     .order("id", { ascending: true });
 
   if (error) {
