@@ -10,7 +10,7 @@ import {
 import { AppSplashScreen } from "@/components/common/AppSplashScreen";
 
 export default function Home() {
-  // Initialize loading to true only if splash hasn't been shown
+
   const [loading, setLoading] = useState(() => {
     const splashShown = sessionStorage.getItem("splashShown");
     return splashShown ? false : true;

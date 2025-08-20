@@ -31,7 +31,7 @@ export function AppHero() {
   }, []);
 
   return (
-    <AppMotionContent className="flex-1 space-y-6 mt-5 rounded-xl">
+    <AppMotionContent className="flex-1 space-y-6 mt-18 rounded-xl">
       <AppImageScreensaver
         images={images}
         auto={true}
@@ -43,10 +43,10 @@ export function AppHero() {
           md:h-[500px] 
           lg:h-[600px] 
           w-full 
-          rounded-2xl
+         rounded-xl
         "
       >
-        <AppTint className="absolute inset-0 bg-black/70" />
+        <AppTint className="absolute inset-0 bg-black/70 rounded-xl" />
         <AppTransitioningText
           items={phrases}
           interval={6000}
