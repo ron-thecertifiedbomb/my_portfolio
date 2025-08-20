@@ -1,11 +1,12 @@
-// app-motioncontent.tsx
-
-
-// app-motioncontent.tsx
-
-
+// src/components/app-motioncontent.tsx
 import { ReactNode, CSSProperties } from "react";
-import { motion, TargetAndTransition, VariantLabels, Transition, Variants } from "framer-motion";
+import {
+  motion,
+  TargetAndTransition,
+  VariantLabels,
+  Transition,
+  Variants,
+} from "framer-motion";
 
 interface AppMotionContentProps {
   children: ReactNode;
@@ -14,15 +15,15 @@ interface AppMotionContentProps {
   animate?: boolean | TargetAndTransition | VariantLabels;
   transition?: Transition;
   style?: CSSProperties;
-  variants?: Variants; // added support for variants
-  custom?: number; // for variant functions that take a parameter
+  variants?: Variants;
+  custom?: number;
 }
 
 export function AppMotionContent({
   children,
   className = "",
-  initial = { opacity: 0, y: 40 },
-  animate = { opacity: 1, y: 0 },
+  initial = { opacity: 0, scale: 0.95 }, // 🔹 subtle zoom + fade
+  animate = { opacity: 1, scale: 1 }, // 🔹 zoom to normal
   transition = { duration: 0.8, ease: "easeOut" },
   style,
   variants,
@@ -35,7 +36,7 @@ export function AppMotionContent({
       animate={animate}
       transition={transition}
       variants={variants}
-      custom={custom} // allows passing a number to variants functions
+      custom={custom}
       style={style}
     >
       {children}
