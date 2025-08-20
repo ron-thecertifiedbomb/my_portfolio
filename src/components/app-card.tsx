@@ -62,7 +62,7 @@ export function AppCard({
               </AppLabel>
             )}
             {location && (
-              <AppLabel variant="p"  className="font-light leading-7">
+              <AppLabel variant="p" className="font-light leading-7">
                 {location}
               </AppLabel>
             )}
@@ -92,9 +92,8 @@ export function AppCard({
           </div>
         )}
 
-        {/* Skills */}
         {skills && skills.length > 0 && (
-          <AppContentContainer className="bg-stone-950 dark:bg-transparent p-1 rounded-lg">
+          <AppContentContainer className="bg-stone-950 dark:bg-transparent p-1 rounded-lg inline-block">
             <section className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <AppTechStackLogos key={skill} skills={[skill]} />
