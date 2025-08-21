@@ -35,10 +35,11 @@ export function AppProjects() {
 
   return (
     <AppContentContainer className="p-4 sm:p-6 lg:p-8">
-      <AppLabel variant="h2" className="mb-4">
+      <AppLabel variant="h1" className="mb-4 md:mb-6 lg:mb-8">
         My Projects
       </AppLabel>
-      <AppContentContainer className="flex flex-col sm:flex-row sm:items-center gap-4 overflow-x-auto scrollbar-hide h-[400px]">
+
+      <AppContentContainer className="flex flex-col lg:flex-row gap-4 overflow-x-auto scrollbar-hide h-auto lg:h-auto">
         {projects.map((project, index) => (
           <AppExploreCards
             key={project.id}
