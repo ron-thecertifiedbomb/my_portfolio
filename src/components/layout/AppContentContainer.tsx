@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 
 interface AppContentContainerProps {
@@ -13,10 +12,7 @@ export function AppContentContainer({
   className,
 }: AppContentContainerProps) {
   return (
-    <section
-      id={id}
-      className={cn("w-full", className)}
-    >
+    <section id={id} className={cn("", className)}>
       {children}
     </section>
   );

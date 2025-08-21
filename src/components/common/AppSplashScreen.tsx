@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { AppMainContainer } from "../layout";
 import { AppImage, AppLabel } from "@/components/common";
 
 interface AppSplashScreenProps {
   logoUrl?: string;
   text?: string;
   className?: string;
-  onFinish?: () => void; 
+  onFinish?: () => void;
 }
 
 export function AppSplashScreen({
@@ -16,9 +15,11 @@ export function AppSplashScreen({
   onFinish,
 }: AppSplashScreenProps) {
   return (
-    <AppMainContainer className={className}>
+    <div
+      className={`h-screen w-screen flex items-center justify-center ${className}`}
+    >
       <motion.div
-        className="flex flex-col items-center justify-center gap-4"
+        className="flex flex-col items-center justify-center gap-4 px-4"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0 }}
@@ -29,13 +30,11 @@ export function AppSplashScreen({
           <AppImage
             src={logoUrl}
             alt="logo"
-            className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+            className="w-20 max-w-[40vw] sm:w-24 sm:max-w-[25vw] h-auto object-contain"
           />
         )}
-        <AppLabel variant="h2">
-          {text}
-        </AppLabel>
+        <AppLabel variant="h2">{text}</AppLabel>
       </motion.div>
-    </AppMainContainer>
+    </div>
   );
 }
