@@ -12,13 +12,13 @@ export function AppLogo({ logoUrl, className }: AppLogoProps) {
 
   
   return (
-    <div className={cn("flex items-center", className)}>
+    <div className={cn("h-12 w-12", className)}>
       <Link to="/" className="inline-flex">
         {logoUrl ? (
           <AppImage
             src={logoUrl}
             alt="logo"
-            className="max-h-8 w-auto object-contain"
+            className="object-contain"
           />
         ) : (
           <span className="text-lg font-bold">RS</span> // fallback text
