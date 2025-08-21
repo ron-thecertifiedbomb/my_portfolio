@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { AppMainContainer } from "../layout";
-import { AppImage } from "@/components/common";
+import { AppImage, AppLabel } from "@/components/common";
 
 interface AppSplashScreenProps {
   logoUrl?: string;
@@ -32,9 +32,9 @@ export function AppSplashScreen({
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
           />
         )}
-        <p className="text-black dark:text-white text-lg sm:text-2xl font-semibold text-center">
+        <AppLabel variant="h2">
           {text}
-        </p>
+        </AppLabel>
       </motion.div>
     </AppMainContainer>
   );

@@ -17,8 +17,8 @@ export function AppLayout() {
       sessionStorage.setItem("splashShown", "true");
 
       const timer = setTimeout(() => {
-        setLoading(false); 
-      }, 5000); 
+        setLoading(false);
+      }, 5000);
 
       return () => clearTimeout(timer);
     }
@@ -29,16 +29,18 @@ export function AppLayout() {
       <AppSplashScreen
         logoUrl="/assets/splash.png"
         text="Welcome to My Portfolio"
-        onFinish={() => setLoading(false)} 
+        onFinish={() => setLoading(false)}
       />
     );
   }
 
   return (
     <AppMainContainer>
-      <AppSectionContainer component={<AppHeader />} />
-      <AppSectionContainer component={<Outlet />} />
-      <AppSectionContainer component={<AppFooter />} />
+      <AppSectionContainer>
+        <AppHeader />
+        <Outlet />
+        <AppFooter />
+      </AppSectionContainer>
     </AppMainContainer>
   );
 }

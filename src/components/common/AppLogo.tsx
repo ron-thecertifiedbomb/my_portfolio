@@ -1,26 +1,29 @@
-import { AppContentContainer } from "../layout/AppContentContainer";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { AppImage } from "@/components/common";
+import { Link } from "react-router-dom";
 
 interface AppLogoProps {
   logoUrl: string | null;
-  className?: string; // optional custom class
+  className?: string;
 }
 
 export function AppLogo({ logoUrl, className }: AppLogoProps) {
+
+
+  
   return (
-    <AppContentContainer className={cn("flex items-center p-4", className)}>
-      <Link to="/">
-        <Avatar className="w-9 h-9 sm:w-10 sm:h-10">
-          <AvatarImage
-            src={logoUrl ?? ""}
+    <div className={cn("flex items-center", className)}>
+      <Link to="/" className="inline-flex">
+        {logoUrl ? (
+          <AppImage
+            src={logoUrl}
             alt="logo"
-            className="w-full h-full object-contain"
+            className="max-h-10 sm:max-h-12 w-auto object-contain"
           />
-          <AvatarFallback>RS</AvatarFallback>
-        </Avatar>
+        ) : (
+          <span className="text-lg font-bold">RS</span> // fallback text
+        )}
       </Link>
-    </AppContentContainer>
+    </div>
   );
 }

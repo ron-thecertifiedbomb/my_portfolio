@@ -5,9 +5,19 @@ import { AppLogo, AppSidebar } from "@/components/common";
 import { useFetchLogo } from "@/hooks/fetchLogo";
 
 export function AppHeader() {
-  const logoUrl = useFetchLogo("portfolio-assets", "logo.png");
+  const logoUrl = useFetchLogo("portfolio-assets", "logoRound.png");
+  const fallbackLogo = "/avatars/logoRound.png"; // public folder fallback
+  const [finalLogo, setFinalLogo] = useState<string>(fallbackLogo);
+
   const [visible, setVisible] = useState(false);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  // Pick supabase logo if available, else fallback
+  useEffect(() => {
+    if (logoUrl) {
+      setFinalLogo(logoUrl);
+    }
+  }, [logoUrl]);
 
   // Slide down on first load
   useEffect(() => {
@@ -38,7 +48,7 @@ export function AppHeader() {
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
       className="fixed top-0 left-0 w-full z-50 flex justify-center"
     >
-      <AppContentContainer className="w-full max-w-7xl"> 
+      <AppContentContainer className="w-full max-w-7xl">
         <motion.header
           initial={{ backgroundColor: "rgba(0,0,0,0)" }}
           animate={{
@@ -46,9 +56,9 @@ export function AppHeader() {
               ? "rgba(0,0,0,0.4)" // darker glass
               : "rgba(0,0,0,0)", // fully transparent
           }}
-          className="rounded-lg   max-w-7xl flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30"
+          className="rounded-b-lg flex items-center justify-between h-16 border-b-2 border-white/30 dark:border-neutral-500/30 pl-2 pr-2"
         >
-          <AppLogo logoUrl={logoUrl} />
+          <AppLogo logoUrl={finalLogo} />
           <section className="flex items-center justify-center">
             <AppSidebar />
           </section>
