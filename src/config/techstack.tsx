@@ -13,94 +13,94 @@ import {
   SiGraphql,
   SiCss,
   SiMobx,
-  SiFirebase, // <-- Firebase icon
+  SiFirebase,
 } from "@icons-pack/react-simple-icons";
 
 interface Tech {
   label: string;
   icon: React.ReactNode;
-  url?: string; // optional link to tech website
+  url?: string;
 }
 
 export const techStack: Tech[] = [
   {
     label: "ReactJS",
-    icon: <SiReact className="w-6 h-6 text-blue-400" />,
+    icon: <SiReact className="text-blue-400" />,
     url: "https://reactjs.org/",
   },
   {
     label: "React Native",
-    icon: <SiReact className="w-6 h-6 text-cyan-400" />,
+    icon: <SiReact className="text-cyan-400" />,
     url: "https://reactnative.dev/",
   },
   {
     label: "TypeScript",
-    icon: <SiTypescript className="w-6 h-6 text-blue-600" />,
+    icon: <SiTypescript className="text-blue-600" />,
     url: "https://www.typescriptlang.org/",
   },
   {
     label: "TailwindCSS",
-    icon: <SiTailwindcss className="w-6 h-6 text-teal-400" />,
+    icon: <SiTailwindcss className="text-teal-400" />,
     url: "https://tailwindcss.com/",
   },
   {
     label: "Next.js",
-    icon: <SiNextdotjs className="w-6 h-6 text-white" />,
+    icon: <SiNextdotjs className="text-white" />,
     url: "https://nextjs.org/",
   },
   {
     label: "MongoDB",
-    icon: <SiMongodb className="w-6 h-6 text-green-500" />,
+    icon: <SiMongodb className="text-green-500" />,
     url: "https://www.mongodb.com/",
   },
   {
     label: "Redux",
-    icon: <SiRedux className="w-6 h-6 text-purple-600" />,
+    icon: <SiRedux className="text-purple-600" />,
     url: "https://redux.js.org/",
   },
   {
     label: "Supabase",
-    icon: <SiSupabase className="w-6 h-6 text-green-400" />,
+    icon: <SiSupabase className="text-green-400" />,
     url: "https://supabase.com/",
   },
   {
     label: "Expo",
-    icon: <SiExpo className="w-6 h-6 text-purple-500" />,
+    icon: <SiExpo className="text-purple-500" />,
     url: "https://expo.dev/",
   },
   {
     label: "Node.js",
-    icon: <SiNodedotjs className="w-6 h-6 text-green-600" />,
+    icon: <SiNodedotjs className="text-green-600" />,
     url: "https://nodejs.org/",
   },
   {
     label: "JavaScript",
-    icon: <SiJavascript className="w-6 h-6 text-yellow-400" />,
+    icon: <SiJavascript className="text-yellow-400" />,
     url: "https://www.javascript.com/",
   },
   {
     label: "HTML5",
-    icon: <SiHtml5 className="w-6 h-6 text-orange-500" />,
+    icon: <SiHtml5 className="text-orange-500" />,
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
     label: "GraphQL",
-    icon: <SiGraphql className="w-6 h-6 text-pink-500" />,
+    icon: <SiGraphql className="text-pink-500" />,
     url: "https://graphql.org/",
   },
   {
     label: "CSS",
-    icon: <SiCss className="w-6 h-6 text-blue-500" />,
+    icon: <SiCss className="text-blue-500" />,
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     label: "MobX",
-    icon: <SiMobx className="w-6 h-6 text-purple-400" />,
+    icon: <SiMobx className="text-purple-400" />,
     url: "https://mobx.js.org/",
   },
   {
     label: "Firebase",
-    icon: <SiFirebase className="w-6 h-6 text-yellow-500" />,
+    icon: <SiFirebase className="text-yellow-500" />,
     url: "https://firebase.google.com/",
-  }, // <-- added Firebase
+  },
 ];

@@ -41,7 +41,10 @@ export function AppCard({
         <CardHeader>
           {title && (
             <CardTitle>
-              <AppLabel variant="h3" className={` ${titleClassName || ""}`}>
+              <AppLabel
+                variant="h2"
+                className={` ${titleClassName || " tracking-wide"}`}
+              >
                 {title}
               </AppLabel>
             </CardTitle>
@@ -78,10 +81,14 @@ export function AppCard({
         )}
 
         {skills && skills.length > 0 && (
-          <AppContentContainer className="bg-stone-950 dark:bg-transparent p-1 rounded-lg inline-block">
-            <section className="flex flex-wrap gap-2">
+          <AppContentContainer className="bg-stone-950 dark:bg-transparent rounded-lg inline-block mt-4">
+            <section className="flex flex-wrap gap-3">
               {skills.map((skill) => (
-                <AppTechStackLogos key={skill} skills={[skill]} />
+                <AppTechStackLogos
+                  className="w-6 h-6"
+                   key={skill}
+                  skills={[skill]}
+                />
               ))}
             </section>
           </AppContentContainer>

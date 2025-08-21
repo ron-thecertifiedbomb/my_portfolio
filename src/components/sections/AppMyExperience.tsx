@@ -38,7 +38,7 @@ export function AppMyExperience() {
       period: "Aug 2024 - Feb 2025",
       duration: "7 mos",
       location: "Philippines · Remote",
-      skills: ["React.js", "React Native", "Next.js", "TypeScript"],
+      skills: ["ReactJS", "React Native", "Next.js", "TypeScript"],
       description:
         "Led front-end development and collaborated on cross-functional projects, building scalable React applications and mobile solutions.",
     },
@@ -86,7 +86,7 @@ export function AppMyExperience() {
 
   return (
     <AppContentContainer className="p-4 sm:p-6 lg:p-8">
-      <AppLabel variant="h2" className="mb-4">
+      <AppLabel variant="h1" className="mb-4 md:mb-6 lg:mb-8">
         My Experience
       </AppLabel>
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">

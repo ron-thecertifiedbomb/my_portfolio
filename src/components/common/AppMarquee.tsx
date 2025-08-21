@@ -1,44 +1,54 @@
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { AppTechStackLogos } from "./AppTechStackLogos";
 
 interface AppMarqueeProps {
   className?: string;
+  iconClassName?: string;
   speed?: number;
   scale?: number;
-  gap?: string;
+  gap?: number; // spacing in px
 }
 
 export function AppMarquee({
   className,
+  iconClassName = "w-14 h-14",
   speed = 50,
   scale = 1,
-  gap = "gap-4",
+  gap = 16,
 }: AppMarqueeProps) {
+  const gapStyle = { gap: `${gap}px` };
+
+  // We render icons twice to create an infinite loop
+  const logos = [
+    <AppTechStackLogos className={iconClassName} />,
+    <AppTechStackLogos className={iconClassName} />,
+  ];
+
   return (
-    <div className={cn("relative overflow-hidden", className)}>
+    <div className={`relative overflow-hidden ${className}`}>
       <motion.div
-        className={cn("flex flex-nowrap items-center", gap)}
-        animate={{ x: ["0%", "-100%"] }}
+        className="flex flex-nowrap items-center"
+        style={{ ...gapStyle }}
+        animate={{ x: ["0px", "-50%"] }} // slide by half of the total width
         transition={{
           repeat: Infinity,
           ease: "linear",
           duration: 40 * (50 / speed),
         }}
       >
-        {/* Duplicate for seamless loop */}
-        <div
-          className={cn("flex flex-nowrap items-center", gap)}
-          style={{ transform: `scale(${scale})`, minWidth: "fit-content" }}
-        >
-          <AppTechStackLogos />
-        </div>
-        <div
-          className={cn("flex flex-nowrap items-center", gap)}
-          style={{ transform: `scale(${scale})`, minWidth: "fit-content" }}
-        >
-          <AppTechStackLogos />
-        </div>
+        {logos.map((logo, i) => (
+          <div
+            key={i}
+            className="flex flex-nowrap items-center"
+            style={{
+              ...gapStyle,
+              transform: `scale(${scale})`,
+              minWidth: "fit-content",
+            }}
+          >
+            {logo}
+          </div>
+        ))}
       </motion.div>
     </div>
   );

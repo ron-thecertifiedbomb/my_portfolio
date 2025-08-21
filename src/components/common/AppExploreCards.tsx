@@ -25,16 +25,23 @@ export function AppExploreCards({
   return (
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className={`
-    relative flex items-center justify-center cursor-pointer
-    transition-[flex] duration-[0.3s] ease-out
-    w-full md:w-full lg:min-w-[160px]
-    ${
-      active === id
-        ? "h-[250px] md:h-[300px] lg:h-[400px] lg:flex-[4.2]" /* active card taller on mobile/tablet, wider on desktop */
-        : "h-[30px] md:h-[50px] lg:h-[400px] lg:flex-[1]" /* inactive card shorter on mobile/tablet, narrower on desktop */
-    }
-  `}
+      layout // enables smooth flex/width animation
+      animate={{
+        height:
+          window.innerWidth >= 1024
+            ? 400 // desktop: keep fixed height
+            : active === id
+            ? 300 // tablet/mobile active
+            : 50, // tablet/mobile inactive
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 25,
+      }}
+      className={`relative flex items-center justify-center cursor-pointer w-full md:w-full lg:min-w-[160px] ${
+        active === id ? "lg:flex-[4.2]" : "lg:flex-[1]"
+      }`}
       onClick={() => handleClick(id)}
     >
       <div className="relative w-full h-full rounded-[17px] overflow-hidden">
