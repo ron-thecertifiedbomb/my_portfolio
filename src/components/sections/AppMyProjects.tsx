@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { AppExploreCards } from "@/components/common/AppExploreCards";
 import {
-  AppSectionMotionTitleContainer,
   AppContentContainer,
 } from "@/components/layout";
 import { fadeIn } from "@/lib/motion";
 import { fetchMyProjectsData } from "@/hooks/fetchHeroData";
-// your Supabase fetch function
+import { AppLabel } from "@/components/common";
+
 
 interface MyProject {
   id: number;
@@ -36,13 +36,15 @@ export function AppProjects() {
   if (!projects.length) return null; 
 
   return (
-    <AppContentContainer withPadding={true}>
-      <AppSectionMotionTitleContainer
-        title="My Projects"
+    <AppContentContainer>
+      <AppLabel
+        variant="h2"
+        initial="hidden"
+        animate="show"
         variants={fadeIn("up", "tween", 0.3, 1)}
-        className="mb-6"
-      />
-
+      >
+        About Me
+      </AppLabel>
       <AppContentContainer className="flex flex-col sm:flex-row sm:items-center gap-4 overflow-x-auto scrollbar-hide h-[400px]">
         {projects.map((project, index) => (
           <AppExploreCards

@@ -7,10 +7,9 @@ import {
   Variants,
 } from "framer-motion";
 
-interface AppMotionContentProps {
+interface AppMotionContentContainerProps {
   children: ReactNode;
   className?: string;
-  hideScrollbar?: boolean; // new prop to hide scrollbars
   initial?: boolean | TargetAndTransition | VariantLabels;
   animate?: boolean | TargetAndTransition | VariantLabels;
   transition?: Transition;
@@ -19,20 +18,19 @@ interface AppMotionContentProps {
   custom?: number;
 }
 
-export function AppMotionContent({
+export function AppMotionContentContainer({
   children,
   className = "",
-  hideScrollbar = false,
-  initial = { opacity: 0, scale: 0.95 }, // subtle zoom + fade
-  animate = { opacity: 1, scale: 1 }, // zoom to normal
+  initial = { opacity: 0, scale: 0.95 },
+  animate = { opacity: 1, scale: 1 },
   transition = { duration: 0.8, ease: "easeOut" },
   style,
   variants,
   custom,
-}: AppMotionContentProps) {
+}: AppMotionContentContainerProps) {
   return (
     <motion.section
-      className={`w-full ${hideScrollbar ? "scrollbar-hide" : ""} ${className}`}
+      className={`w-full ${className}`}
       initial={initial}
       animate={animate}
       transition={transition}

@@ -1,9 +1,10 @@
 import { slideIn } from "@/lib/motion";
 import { AppCard } from "../common/AppCard";
 import {
-  AppSectionMotionTitleContainer,
+  // AppSectionMotionTitleContainer,
   AppContentContainer,
 } from "@/components/layout";
+import { AppLabel } from "../common";
 
 interface MyExperienceProps {
   title?: string;
@@ -85,15 +86,18 @@ export function AppMyExperience() {
   ];
 
   return (
-    <AppContentContainer withPadding={true}>
-      <AppSectionMotionTitleContainer
-        title="My Experiences"
-        variants={slideIn("left", "tween", 0.3, 1)}
-      />
+    <AppContentContainer>
+      <AppLabel
+        variant="h2"
+        initial="hidden"
+        animate="show"
+        variants={slideIn("up", "tween", 0.3, 1)}
+      >
+        About Me
+      </AppLabel>
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
           <AppCard
-  
             key={index}
             title={exp.role}
             subtitle={`${exp.company} · ${exp.type}`}

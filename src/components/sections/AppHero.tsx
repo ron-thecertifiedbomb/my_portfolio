@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AppMotionContent } from "../layout/AppMotionContent";
 import { AppTransitioningText } from "../common/AppTransitionintText";
 import { AppTint } from "../common/AppTint";
 import { AppImageScreensaver } from "../common/AppImageScreenSaver";
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
+import { AppMotionContentContainer } from "@/components/layout/";
 
 interface HeroQuote {
   id: number;
@@ -23,13 +23,12 @@ export function AppHero() {
   const [phrases, setPhrases] = useState<HeroQuote[]>([]);
 
   useEffect(() => {
-   
     fetchHeroImages().then((data) => setImages(data));
     fetchHeroQuotes().then((data) => setPhrases(data));
   }, []);
 
   return (
-    <AppMotionContent className="flex-1 space-y-6 mt-18 sm:mt-20 rounded-xl">
+    <AppMotionContentContainer className="flex-1 space-y-6 mt-18 sm:mt-20 rounded-xl">
       <AppImageScreensaver
         images={images}
         auto={true}
@@ -51,6 +50,6 @@ export function AppHero() {
           transitionDuration={2}
         />
       </AppImageScreensaver>
-    </AppMotionContent>
+    </AppMotionContentContainer>
   );
 }
