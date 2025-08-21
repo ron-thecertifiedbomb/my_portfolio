@@ -4,7 +4,9 @@ import { AppContentContainer } from "@/components/layout";
 export function AppAboutMe() {
   return (
     <AppContentContainer className="p-4 sm:p-6 lg:p-8">
-      <AppLabel variant="h2" className="mb-4">About Me</AppLabel>
+      <AppLabel variant="h2" className="mb-4 font-semibold tracking-tight ">
+        About Me
+      </AppLabel>
       <AppCard description="I’m a passionate React Developer with extensive experience building dynamic, high-performance applications for both web and mobile platforms." />
     </AppContentContainer>
   );

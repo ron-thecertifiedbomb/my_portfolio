@@ -1,8 +1,7 @@
 import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppContentContainer } from "../layout/AppContentContainer";
-import { AppLabel } from "./AppLabel";
-
+import { AppLabel } from "@/components/common";
 export type TransitioningTextItem = {
   id: number | string;
   title?: ReactNode;

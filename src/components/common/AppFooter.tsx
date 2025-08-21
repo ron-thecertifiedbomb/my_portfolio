@@ -1,11 +1,13 @@
-
-
+import { AppContentContainer } from "@/components/layout";
+import { AppLabel } from "@/components/common";
 export function AppFooter() {
   return (
-    <footer className="w-full py-6 px-4 flex flex-col items-center gap-5">
-      <p className="text-center text-sm md:text-base">
-        © {new Date().getFullYear()} Ronan Ramos Sibunga
-      </p>
-    </footer>
+    <AppContentContainer>
+      <footer className="w-full py-6 flex flex-col items-center gap-5">
+        <AppLabel variant="p" className="font-semibold tracking-tight">
+          © {new Date().getFullYear()} Ronan Ramos Sibunga{" "}
+        </AppLabel>
+      </footer>
+    </AppContentContainer>
   );
 }
