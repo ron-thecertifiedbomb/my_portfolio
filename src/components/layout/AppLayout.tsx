@@ -17,8 +17,8 @@ export function AppLayout() {
       sessionStorage.setItem("splashShown", "true");
 
       const timer = setTimeout(() => {
-        setLoading(false); // **unmount splash**
-      }, 5000); // 5 seconds
+        setLoading(false); 
+      }, 5000); 
 
       return () => clearTimeout(timer);
     }
@@ -29,7 +29,7 @@ export function AppLayout() {
       <AppSplashScreen
         logoUrl="/assets/splash.png"
         text="Welcome to My Portfolio"
-        onFinish={() => setLoading(false)} // fallback if you want animation-based finish
+        onFinish={() => setLoading(false)} 
       />
     );
   }

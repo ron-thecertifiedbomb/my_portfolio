@@ -1,28 +1,22 @@
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { AppMainContainer } from "../layout";
+import { AppImage } from "@/components/common";
 
 interface AppSplashScreenProps {
   logoUrl?: string;
   text?: string;
   className?: string;
-  onFinish?: () => void; // callback when animation ends
+  onFinish?: () => void; 
 }
 
 export function AppSplashScreen({
   logoUrl,
   text = "Loading...",
-  className,
+  className = "",
   onFinish,
 }: AppSplashScreenProps) {
   return (
-    <AppMainContainer
-      className={cn(
-        "fixed inset-0 flex items-center justify-center z-50",
-        "bg-white dark:bg-black",
-        className
-      )}
-    >
+    <AppMainContainer className={className}>
       <motion.div
         className="flex flex-col items-center justify-center gap-4"
         initial={{ opacity: 0, scale: 0 }}
@@ -32,7 +26,7 @@ export function AppSplashScreen({
         onAnimationComplete={onFinish}
       >
         {logoUrl && (
-          <img
+          <AppImage
             src={logoUrl}
             alt="logo"
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
