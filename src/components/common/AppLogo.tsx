@@ -18,7 +18,7 @@ export function AppLogo({ logoUrl, className }: AppLogoProps) {
           <AppImage
             src={logoUrl}
             alt="logo"
-            className="max-h-10 sm:max-h-12 w-auto object-contain"
+            className="max-h-8 sm:max-h-10 w-auto object-contain"
           />
         ) : (
           <span className="text-lg font-bold">RS</span> // fallback text
