@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { AppTechStackLogos } from "./AppTechStackLogos";
 
 interface AppMarqueeProps {
@@ -16,39 +17,52 @@ export function AppMarquee({
   scale = 1,
   gap = 16,
 }: AppMarqueeProps) {
-  const gapStyle = { gap: `${gap}px` };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [contentWidth, setContentWidth] = useState(0);
 
-  // We render icons twice to create an infinite loop
-  const logos = [
-    <AppTechStackLogos className={iconClassName} />,
-    <AppTechStackLogos className={iconClassName} />,
-  ];
+  // Measure content width
+  useEffect(() => {
+    if (containerRef.current) {
+      setContentWidth(containerRef.current.scrollWidth / 2); // one repetition
+    }
+  }, []);
+
+  const gapStyle = { gap: `${gap}px` };
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <motion.div
+        ref={containerRef}
         className="flex flex-nowrap items-center"
         style={{ ...gapStyle }}
-        animate={{ x: ["0px", "-50%"] }} // slide by half of the total width
+        animate={{ x: [-0, -contentWidth] }}
         transition={{
           repeat: Infinity,
           ease: "linear",
-          duration: 40 * (50 / speed),
+          duration: contentWidth ? contentWidth / speed : 0,
         }}
       >
-        {logos.map((logo, i) => (
-          <div
-            key={i}
-            className="flex flex-nowrap items-center"
-            style={{
-              ...gapStyle,
-              transform: `scale(${scale})`,
-              minWidth: "fit-content",
-            }}
-          >
-            {logo}
-          </div>
-        ))}
+        {/* Duplicate for seamless loop */}
+        <div
+          className="flex flex-nowrap items-center"
+          style={{
+            ...gapStyle,
+            transform: `scale(${scale})`,
+            minWidth: "fit-content",
+          }}
+        >
+          <AppTechStackLogos className={iconClassName} />
+        </div>
+        <div
+          className="flex flex-nowrap items-center"
+          style={{
+            ...gapStyle,
+            transform: `scale(${scale})`,
+            minWidth: "fit-content",
+          }}
+        >
+          <AppTechStackLogos className={iconClassName} />
+        </div>
       </motion.div>
     </div>
   );

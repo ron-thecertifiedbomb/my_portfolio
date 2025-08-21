@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import throttle from "lodash.throttle";
+import { throttle } from "lodash";
 
 type ResponsiveValue<T> = {
   sm?: T;
