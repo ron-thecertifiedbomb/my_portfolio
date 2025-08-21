@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { AppContentContainer } from "../layout/AppContentContainer";
 import { AppLogo, AppSidebar } from "@/components/common";
 import { useFetchLogo } from "@/hooks/fetchLogo";
 

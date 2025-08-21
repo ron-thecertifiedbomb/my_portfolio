@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { AppExploreCards } from "@/components/common/AppExploreCards";
 import {
   AppContentContainer,
 } from "@/components/layout";
-import { fadeIn } from "@/lib/motion";
 import { fetchMyProjectsData } from "@/hooks/fetchHeroData";
-import { AppLabel } from "@/components/common";
+import { AppLabel, AppExploreCards } from "@/components/common";
 
 
 interface MyProject {

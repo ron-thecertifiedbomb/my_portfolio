@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "framer-motion";
 
@@ -16,8 +15,9 @@ type MotionElementProps = MotionProps & React.ComponentPropsWithoutRef<"p">;
 
 interface AppLabelProps extends MotionElementProps {
   variant?: LabelVariant;
-  children: ReactNode;
+  children: React.ReactNode;
 }
+
 export function AppLabel({
   variant = "p",
   className,
@@ -43,9 +43,16 @@ export function AppLabel({
     description: "text-xs sm:text-sm md:text-base lg:text-base",
   };
 
-  // Use motion if motion props are provided
-  const MotionComponent: any = Object.keys(props).some(key =>
-    ["initial", "animate", "variants", "transition", "whileHover", "whileTap"].includes(key)
+  const motionKeys = [
+    "initial",
+    "animate",
+    "variants",
+    "transition",
+    "whileHover",
+    "whileTap",
+  ];
+  const MotionComponent = Object.keys(props).some((key) =>
+    motionKeys.includes(key)
   )
     ? motion(Component)
     : Component;

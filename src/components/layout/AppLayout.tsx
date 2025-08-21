@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router";
-import { AppHeader } from "../common/AppHeader";
-import { AppFooter } from "../common/AppFooter";
-import { AppMainContainer } from "./AppMainContainer";
-import { AppSectionContainer } from "./AppSectionContainer";
-import { AppSplashScreen } from "../common/AppSplashScreen";
+import { AppMainContainer } from "@/components/layout";
+import { AppSplashScreen, AppHeader, AppFooter } from "@/components/common";
 
 export function AppLayout() {
   const [loading, setLoading] = useState(() => {
