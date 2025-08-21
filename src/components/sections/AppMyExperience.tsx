@@ -86,8 +86,8 @@ export function AppMyExperience() {
 
   return (
     <AppContentContainer className="p-4 sm:p-6 lg:p-8">
-      <AppLabel variant="h1" className="mb-4 md:mb-6 lg:mb-8">
-        My Experience
+      <AppLabel variant="h1" className="mb-4 sm:mb-6 lg:mb-8">
+        My Experiences
       </AppLabel>
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
