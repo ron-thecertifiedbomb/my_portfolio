@@ -55,9 +55,12 @@ export function AppExploreCards({
       </div>
 
       {active !== id ? (
-        <h3 className="absolute z-0 text-white font-semibold text-[14px] sm:text-[18px] lg:text-[26px] lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
-          ""
-        </h3>
+        <AppLabel
+          variant="p"
+          className="font-bold absolute z-0 text-gray-700 text-[14px] sm:text-[18px] lg:text-[20px] lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]"
+        >
+          click to view
+        </AppLabel>
       ) : (
         <div className="absolute bottom-0 w-full p-4 lg:p-6 flex flex-col justify-start bg-black/75 rounded-b-[12px]">
           <AppLabel variant="h4" className="font-medium -tracking-tight mb-2">
