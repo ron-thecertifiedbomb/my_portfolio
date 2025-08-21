@@ -36,11 +36,9 @@ export function AppLayout() {
 
   return (
     <AppMainContainer>
-      <AppSectionContainer>
-        <AppHeader />
-        <Outlet />
-        <AppFooter />
-      </AppSectionContainer>
+      <AppHeader />
+      <Outlet />
+      <AppFooter />
     </AppMainContainer>
   );
 }

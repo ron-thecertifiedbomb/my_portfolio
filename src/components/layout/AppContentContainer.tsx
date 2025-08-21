@@ -12,7 +12,13 @@ export function AppContentContainer({
   className,
 }: AppContentContainerProps) {
   return (
-    <section id={id} className={cn("", className)}>
+    <section
+      id={id}
+      className={cn(
+        "px-1 sm:px-1", 
+        className 
+      )}
+    >
       {children}
     </section>
   );

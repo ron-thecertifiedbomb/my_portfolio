@@ -30,7 +30,7 @@ export function AppMotionContentContainer({
 }: AppMotionContentContainerProps) {
   return (
     <motion.section
-      className={`w-full ${className}`}
+      className= {className}
       initial={initial}
       animate={animate}
       transition={transition}

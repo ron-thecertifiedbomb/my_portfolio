@@ -1,11 +1,7 @@
-"use client";
-
 import { useEffect, useState } from "react";
-import { AppTransitioningText } from "../common/AppTransitionintText";
-import { AppTint } from "../common/AppTint";
+import { AppTransitioningText, AppTint } from "@/components/common";
 import { AppImageScreensaver } from "../common/AppImageScreenSaver";
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
-import { AppMotionContentContainer } from "@/components/layout/";
 
 interface HeroQuote {
   id: number;
@@ -28,28 +24,28 @@ export function AppHero() {
   }, []);
 
   return (
-    <AppMotionContentContainer className="flex-1 space-y-6 mt-18 sm:mt-20 rounded-xl">
-      <AppImageScreensaver
-        images={images}
-        auto={true}
-        interval={7000}
-        transitionDuration={2}
-        className="
+    <AppImageScreensaver
+      images={images}
+      auto={true}
+      interval={7000}
+      transitionDuration={2}
+      className="
           h-[300px]  
           sm:h-[400px] 
           md:h-[500px] 
           lg:h-[600px] 
           w-full 
          rounded-xl
+         mt-20
+         mb-10
         "
-      >
-        <AppTint className="absolute inset-0 bg-black/70 rounded-xl" />
-        <AppTransitioningText
-          items={phrases}
-          interval={6000}
-          transitionDuration={2}
-        />
-      </AppImageScreensaver>
-    </AppMotionContentContainer>
+    >
+      <AppTint className="absolute inset-0 bg-black/70 rounded-xl" />
+      <AppTransitioningText
+        items={phrases}
+        interval={6000}
+        transitionDuration={2}
+      />
+    </AppImageScreensaver>
   );
 }

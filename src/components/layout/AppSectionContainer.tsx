@@ -15,7 +15,7 @@ export function AppSectionContainer({
     <section
       id={id}
       className={cn(
-        "w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", 
+        "w-full max-w-7xl mx-auto8", 
         className
       )}
       {...props}
