@@ -1,4 +1,4 @@
-import { fadeIn } from "@/lib/motion";
+
 import { AppCarousel, AppLabel } from "@/components/common";
 import { AppContentContainer } from "@/components/layout";
 
@@ -11,13 +11,8 @@ export function AppGallery() {
   ];
 
   return (
-    <AppContentContainer>
-      <AppLabel
-        variant="h2"
-        initial="hidden"
-        animate="show"
-        variants={fadeIn("up", "tween", 0.3, 1)}
-      >
+    <AppContentContainer className="p-4 sm:p-6 lg:p-8">
+      <AppLabel variant="h2" className="mb-4">
         My Gallery
       </AppLabel>
       <AppContentContainer>

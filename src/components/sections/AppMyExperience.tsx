@@ -86,14 +86,9 @@ export function AppMyExperience() {
   ];
 
   return (
-    <AppContentContainer>
-      <AppLabel
-        variant="h2"
-        initial="hidden"
-        animate="show"
-        variants={slideIn("up", "tween", 0.3, 1)}
-      >
-        About Me
+    <AppContentContainer className="p-4 sm:p-6 lg:p-8">
+      <AppLabel variant="h2" className="mb-4">
+        My Experience
       </AppLabel>
       <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (

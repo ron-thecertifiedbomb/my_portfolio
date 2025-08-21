@@ -36,14 +36,9 @@ export function AppProjects() {
   if (!projects.length) return null; 
 
   return (
-    <AppContentContainer>
-      <AppLabel
-        variant="h2"
-        initial="hidden"
-        animate="show"
-        variants={fadeIn("up", "tween", 0.3, 1)}
-      >
-        About Me
+    <AppContentContainer className="p-4 sm:p-6 lg:p-8">
+      <AppLabel variant="h2" className="mb-4">
+        My Projects
       </AppLabel>
       <AppContentContainer className="flex flex-col sm:flex-row sm:items-center gap-4 overflow-x-auto scrollbar-hide h-[400px]">
         {projects.map((project, index) => (
