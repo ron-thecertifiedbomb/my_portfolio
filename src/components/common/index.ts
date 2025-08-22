@@ -16,6 +16,7 @@ export { AppSplashScreen } from "./AppSplashScreen";
 export { AppSidebar } from "./AppSideBar";
 export { AppHeaderSpacer } from "./AppHeaderSpacer";
 export { AppIconsSection } from "./AppIconsSection";
+export { AppLoadingBar } from "./AppLoadingBar";
 
 export {
   PremiereProIcon,
