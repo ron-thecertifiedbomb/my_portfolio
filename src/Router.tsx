@@ -9,11 +9,9 @@ export default function Router() {
   return (
     <Routes>
       <Route element={<AppLayout />}>
-        <Route path="" element={<Home />} />
-        <Route path="pages">
-          <Route path="sample" element={<Sample />} />
-          <Route path="feature" element={<ComingSoon />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/sample" element={<Sample />} />
+        <Route path="/feature" element={<ComingSoon />} />
         <Route path="*" element={<NotMatch />} />
       </Route>
     </Routes>

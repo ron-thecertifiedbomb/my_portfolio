@@ -85,7 +85,7 @@ export function AppMyExperience() {
       <AppLabel variant="h1" className="mb-4 sm:mb-6 lg:mb-8">
         My Experiences
       </AppLabel>
-      <AppContentContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experiences.map((exp, index) => (
           <AppCard
             key={index}
@@ -98,7 +98,7 @@ export function AppMyExperience() {
             links={exp.links}
           />
         ))}
-      </AppContentContainer>
+      </div>
     </AppContentContainer>
   );
 }

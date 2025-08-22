@@ -1,7 +1,6 @@
 import { AppCarousel, AppLabel } from "@/components/common";
 import { AppContentContainer } from "@/components/layout";
 
-
 export function AppGallery() {
   const images = [
     { id: 1, src: "/assets/bg.jpg", alt: "Background 1" },
@@ -15,19 +14,18 @@ export function AppGallery() {
       <AppLabel variant="h2" className="mb-4">
         My Gallery
       </AppLabel>
-      <AppContentContainer>
-        <AppCarousel
-          items={images}
-          renderItem={(img) => (
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="h-full w-full object-cover rounded-xl"
-            />
-          )}
-          maxWidth="max-w-5xl"
-        />
-      </AppContentContainer>
+
+      <AppCarousel
+        items={images}
+        renderItem={(img) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="h-full w-full object-cover rounded-xl"
+          />
+        )}
+        maxWidth="max-w-5xl"
+      />
     </AppContentContainer>
   );
 }

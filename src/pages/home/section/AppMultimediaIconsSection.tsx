@@ -5,7 +5,7 @@ import { multimediaStack } from "@/config/techstack";
 
 export function AppMultimediaIconsSection() {
   return (
-    <AppContentContainer>
+
       <AppContentContainer className="overflow-hidden my-1 mx-auto w-[280px] sm:w-[360px] lg:w-[420px]  ">
         <Marquee speed={40} direction="left" pauseOnHover gradient={false}>
           {multimediaStack.map((tech) => (
@@ -21,6 +21,6 @@ export function AppMultimediaIconsSection() {
           ))}
         </Marquee>
       </AppContentContainer>
-    </AppContentContainer>
+
   );
 }

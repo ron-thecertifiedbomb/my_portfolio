@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import { AppMainContainer } from "@/components/layout";
 import { AppSplashScreen, AppHeader, AppFooter } from "@/components/common";
 
+
 export function AppLayout() {
   const [loading, setLoading] = useState(() => {
     const splashShown = sessionStorage.getItem("splashShown");

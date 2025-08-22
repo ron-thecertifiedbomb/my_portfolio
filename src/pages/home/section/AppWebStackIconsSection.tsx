@@ -6,7 +6,7 @@ import { webTechStack } from "@/config/techstack";
 
 export function AppWebStackIconsSection() {
   return (
-    <AppContentContainer>
+
       <AppContentContainer >
         <Marquee speed={40} direction="right" pauseOnHover gradient={false}>
           {webTechStack.map((tech) => (
@@ -22,6 +22,6 @@ export function AppWebStackIconsSection() {
           ))}
         </Marquee>
       </AppContentContainer>
-    </AppContentContainer>
+
   );
 }

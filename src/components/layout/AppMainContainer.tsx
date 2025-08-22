@@ -1,25 +1,16 @@
 import React from "react";
-import { cn } from "@/lib/utils";
-import { AppSectionContainer } from "@/components/layout/";
 
-interface AppMainContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AppMainContainerProps {
   children: React.ReactNode;
 }
 
-export function AppMainContainer({
-  children,
-  className,
-  ...props
-}: AppMainContainerProps) {
+export function AppMainContainer({ children }: AppMainContainerProps) {
   return (
     <main
-      className={cn(
-        "min-h-screen w-full flex flex-col items-center justify-start",
-        className
-      )}
-      {...props}
+      id="app-main-container"
+      className="h-screen w-full overflow-y-auto flex flex-col items-center justify-start scroll-smooth"
     >
-      <AppSectionContainer>{children}</AppSectionContainer>
+      {children}
     </main>
   );
 }

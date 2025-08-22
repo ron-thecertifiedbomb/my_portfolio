@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AppTransitioningText, AppTint, AppImageScreensaver } from "@/components/common";
 
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
+import { AppContentContainer } from "@/components/layout";
 
 interface HeroQuote {
   id: number;
@@ -24,6 +25,7 @@ export function AppHero() {
   }, []);
 
   return (
+   <AppContentContainer className="w-full">
     <AppImageScreensaver
       images={images}
       auto={true}
@@ -46,6 +48,7 @@ export function AppHero() {
         interval={6000}
         transitionDuration={2}
       />
-    </AppImageScreensaver>
+      </AppImageScreensaver>
+        </AppContentContainer>
   );
 }

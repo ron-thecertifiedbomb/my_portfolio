@@ -50,11 +50,11 @@ export function AppCard({
             </CardTitle>
           )}
 
-          <AppContentContainer className="flex flex-col gap-1 text-sm">
+          <div className="flex flex-col gap-1 text-sm">
             {subtitle && <AppLabel variant="h4">{subtitle}</AppLabel>}
             {period && <AppLabel variant="p">{period}</AppLabel>}
             {location && <AppLabel variant="p">{location}</AppLabel>}
-          </AppContentContainer>
+          </div>
         </CardHeader>
       )}
 
@@ -81,17 +81,17 @@ export function AppCard({
         )}
 
         {skills && skills.length > 0 && (
-          <AppContentContainer className="bg-stone-950 dark:bg-transparent rounded-lg inline-block mt-4">
+          <div className="bg-stone-950 dark:bg-transparent rounded-lg inline-block mt-4">
             <section className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <AppTechStackLogos
                   className="w-6 h-6"
-                   key={skill}
+                  key={skill}
                   skills={[skill]}
                 />
               ))}
             </section>
-          </AppContentContainer>
+          </div>
         )}
       </CardContent>
     </Card>

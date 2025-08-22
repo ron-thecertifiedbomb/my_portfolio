@@ -8,16 +8,19 @@ import {
   AppWebStackIconsSection,
 } from "@/pages/home/section";
 
+import { useScrollToTopWithHeader } from "@/hooks/useScrollToTopWithHeader";
+
 export default function Home() {
+  // Apply smooth scroll accounting for header
+  useScrollToTopWithHeader();
+
   return (
     <>
-      <AppHero />
-
+      {/* <AppHero />
+      <AppMyExperience /> */}
+      <AppAboutMe />
       <AppWebStackIconsSection />
       <AppMultimediaIconsSection />
-
-      <AppAboutMe />
-      <AppMyExperience />
       <AppProjects />
       <AppGallery />
     </>
