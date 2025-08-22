@@ -1,6 +1,6 @@
 // src/components/common/index.ts
 
-export { AppCard } from "./AppCard";
+export  { AppCard } from "./AppCard";
 export { AppCarousel } from "./AppCarousel";
 export { AppExploreCards } from "./AppExploreCards";
 export { AppFooter } from "./AppFooter";

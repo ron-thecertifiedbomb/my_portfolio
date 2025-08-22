@@ -1,7 +1,0 @@
-{
-  "recommendations": [
-    "openai.chatgpt",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint"
-  ]
-}

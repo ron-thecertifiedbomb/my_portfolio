@@ -1,5 +1,5 @@
-import { AppLabel, AppCard } from "@/components/common";
 import { AppContentContainer } from "@/components/layout";
+import { AppLabel, AppCard } from "@/components/common";
 
 export function AppAboutMe() {
   return (

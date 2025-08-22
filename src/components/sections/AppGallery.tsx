@@ -1,6 +1,6 @@
-
 import { AppCarousel, AppLabel } from "@/components/common";
 import { AppContentContainer } from "@/components/layout";
+
 
 export function AppGallery() {
   const images = [
