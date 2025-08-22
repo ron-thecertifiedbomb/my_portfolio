@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { AppTransitioningText, AppTint } from "@/components/common";
-import { AppImageScreensaver } from "../common/AppImageScreenSaver";
+import { AppTransitioningText, AppTint, AppImageScreensaver } from "@/components/common";
+
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
 
 interface HeroQuote {

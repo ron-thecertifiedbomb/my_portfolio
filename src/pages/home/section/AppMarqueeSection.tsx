@@ -1,5 +1,6 @@
-import { AppContentContainer } from "../layout/AppContentContainer";
-import { AppMarquee } from "../common/AppMarquee";
+import { AppMarquee } from "@/components/common";
+import { AppContentContainer } from "@/components/layout";
+
 
 export function AppMarqueeSection() {
   return (

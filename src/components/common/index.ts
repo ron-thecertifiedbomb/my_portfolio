@@ -1,5 +1,3 @@
-// src/components/common/index.ts
-
 export  { AppCard } from "./AppCard";
 export { AppCarousel } from "./AppCarousel";
 export { AppExploreCards } from "./AppExploreCards";
@@ -16,3 +14,5 @@ export { AppTint } from "./AppTint";
 export { AppTransitioningText } from "./AppTransitionintText";
 export { AppSplashScreen } from "./AppSplashScreen";
 export { AppSidebar } from "./AppSideBar";
+export { AppIcon } from "./AppIcon";
+export { AppSocialLinks } from "./AppSocialLinks";

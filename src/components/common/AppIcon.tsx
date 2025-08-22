@@ -7,7 +7,7 @@ type Props = {
   className?: string;
 };
 
-export function AppDynamicIcon({ name, className }: Props) {
+export function AppIcon({ name, className }: Props) {
   const IconComponent = Icons[name] as unknown as LucideIcon | undefined;
 
   return IconComponent ? (

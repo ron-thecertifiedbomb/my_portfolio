@@ -1,12 +1,11 @@
-
 import {
-  AppHero,
   AppAboutMe,
-  AppMarqueeSection,
-  AppProjects,
-  AppMyExperience,
   AppGallery,
-} from "@/components/sections";
+  AppHero,
+  AppMarqueeSection,
+  AppMyExperience,
+  AppProjects,
+} from "@/pages/home/section";
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
       <AppAboutMe />
       <AppMyExperience />
       <AppProjects />
-      <AppGallery /> 
+      <AppGallery />
     </>
   );
 }

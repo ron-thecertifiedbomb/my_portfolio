@@ -1,9 +1,5 @@
-import { AppCard } from "../common/AppCard";
-import {
-  // AppSectionMotionTitleContainer,
-  AppContentContainer,
-} from "@/components/layout";
-import { AppLabel } from "../common";
+import { AppCard, AppLabel } from "@/components/common";
+import { AppContentContainer } from "@/components/layout";
 
 interface MyExperienceProps {
   title?: string;
