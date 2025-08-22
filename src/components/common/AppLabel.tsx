@@ -1,20 +1,23 @@
 import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
+import React from "react";
 
 type LabelVariant = "h1" | "h2" | "h3" | "h4" | "p";
 
-type MotionElementProps = MotionProps & React.ComponentPropsWithoutRef<"p">;
-
-interface AppLabelProps extends MotionElementProps {
+interface AppLabelProps {
   variant?: LabelVariant;
   children: React.ReactNode;
   className?: string;
+  mode?: MotionProps; // motion props like initial, animate, transition
+  // HTML props for normal usage
+  [key: string]: any;
 }
 
 export function AppLabel({
   variant = "p",
   className,
   children,
+  mode,
   ...props
 }: AppLabelProps) {
   const Component =
@@ -36,24 +39,24 @@ export function AppLabel({
     p: "text-sm sm:text-base md:text-m leading-7",
   };
 
-  const motionKeys = [
-    "initial",
-    "animate",
-    "variants",
-    "transition",
-    "whileHover",
-    "whileTap",
-  ];
+  if (mode) {
+    // Render as motion component
+    const MotionComponent = motion(Component);
+    return (
+      <MotionComponent
+        className={cn(baseStyles[variant], className)}
+        {...mode}
+        {...props}
+      >
+        {children}
+      </MotionComponent>
+    );
+  }
 
-  const MotionComponent = Object.keys(props).some((key) =>
-    motionKeys.includes(key)
-  )
-    ? motion(Component)
-    : Component;
-
+  // Render as regular HTML element
   return (
-    <MotionComponent className={cn(baseStyles[variant], className)} {...props}>
+    <Component className={cn(baseStyles[variant], className)} {...props}>
       {children}
-    </MotionComponent>
+    </Component>
   );
 }
