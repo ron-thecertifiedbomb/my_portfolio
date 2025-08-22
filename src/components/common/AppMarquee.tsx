@@ -77,18 +77,18 @@ export function AppMarquee({
 
 return (
   <div className={`overflow-hidden ${className ?? ""}`}>
-    <div
-      ref={containerRef}
-      className="flex transform"
-      style={{ transform: `translateX(-${offset}px)` }} 
-    >
-      <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
+  <div
+    ref={containerRef}
+    className="flex transform" 
+    style={{ transform: `translateX(-${offset}px)` }} // Only dynamic part remains inline
+  >
+    <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
 
-      {/* Spacer between the two sets */}
-      <div className={`flex-shrink-0`} style={{ width: `${gap}px` }} />
+    {/* Spacer between the two sets */}
+    <div className={`flex-shrink-0`} style={{ width: `${gap}px` }} />
 
-      <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
-    </div>
+    <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
   </div>
+</div>
 );
 }
