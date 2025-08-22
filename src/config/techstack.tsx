@@ -14,6 +14,7 @@ import {
   SiCss,
   SiMobx,
   SiFirebase,
+  SiFigma,
 } from "@icons-pack/react-simple-icons";
 
 import {
@@ -109,6 +110,11 @@ export const webTechStack: Tech[] = [
     label: "Firebase",
     icon: <SiFirebase className="text-yellow-500" />,
     url: "https://firebase.google.com/",
+  },
+  {
+    label: "Figma",
+    icon: <SiFigma className="text-pink-500" />,
+    url: "https://www.figma.com/",
   },
 ];
 
