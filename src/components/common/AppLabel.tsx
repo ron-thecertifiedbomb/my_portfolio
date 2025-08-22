@@ -40,7 +40,7 @@ export function AppLabel({
   };
 
   if (mode) {
-    // Render as motion component
+
     const MotionComponent = motion(Component);
     return (
       <MotionComponent
@@ -53,7 +53,7 @@ export function AppLabel({
     );
   }
 
-  // Render as regular HTML element
+
   return (
     <Component className={cn(baseStyles[variant], className)} {...props}>
       {children}
