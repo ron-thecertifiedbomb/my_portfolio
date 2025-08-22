@@ -54,7 +54,7 @@ export function AppLayout() {
   if (routeLoading) {
     return (
       <AppLoadingBar
-        logoUrl="/assets/loading.png"
+        logoUrl="/assets/lizardinteractive.png"
         text="Loading..."
         duration={1.5}
         onFinish={() => setRouteLoading(false)}
