@@ -1,69 +1,94 @@
-import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
-import { AppTechStackLogos } from "./AppTechStackLogos";
+import React, { useEffect, useRef, useState } from "react";
 
 interface AppMarqueeProps {
-  className?: string;
-  iconClassName?: string;
+  children: React.ReactNode[];
   speed?: number;
-  scale?: number;
-  gap?: number; // spacing in px
+  className?: string;
+  direction?: "left" | "right";
+  gap?: number;
 }
 
 export function AppMarquee({
-  className,
-  iconClassName = "w-14 h-14",
+  children,
   speed = 50,
-  scale = 1,
+  className,
+  direction = "left",
   gap = 16,
 }: AppMarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
   const [contentWidth, setContentWidth] = useState(0);
 
-  // Measure content width
+  // Measure first set width
   useEffect(() => {
-    if (containerRef.current) {
-      setContentWidth(containerRef.current.scrollWidth / 2); // one repetition
-    }
-  }, []);
+    const measureWidth = () => {
+      if (containerRef.current) {
+        const firstSet =
+          containerRef.current.querySelector<HTMLDivElement>(".marquee-set");
+        if (firstSet) {
+          const width = firstSet.getBoundingClientRect().width;
+          setContentWidth(width);
+          setOffset(direction === "left" ? 0 : width);
+        }
+      }
+    };
 
-  const gapStyle = { gap: `${gap}px` };
+    measureWidth();
+    window.addEventListener("resize", measureWidth);
+    return () => window.removeEventListener("resize", measureWidth);
+  }, [children, direction]);
 
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <motion.div
-        ref={containerRef}
-        className="flex flex-nowrap items-center"
-        style={{ ...gapStyle }}
-        animate={{ x: [-0, -contentWidth] }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: contentWidth ? contentWidth / speed : 0,
-        }}
-      >
-        {/* Duplicate for seamless loop */}
-        <div
-          className="flex flex-nowrap items-center"
-          style={{
-            ...gapStyle,
-            transform: `scale(${scale})`,
-            minWidth: "fit-content",
-          }}
-        >
-          <AppTechStackLogos className={iconClassName} />
-        </div>
-        <div
-          className="flex flex-nowrap items-center"
-          style={{
-            ...gapStyle,
-            transform: `scale(${scale})`,
-            minWidth: "fit-content",
-          }}
-        >
-          <AppTechStackLogos className={iconClassName} />
-        </div>
-      </motion.div>
+  // Animate
+  useEffect(() => {
+    let animationFrame: number;
+    let lastTime: number;
+
+    const step = (time: number) => {
+      if (!lastTime) lastTime = time;
+      const delta = time - lastTime;
+      lastTime = time;
+
+      setOffset((prev) => {
+        const deltaOffset = (speed * delta) / 1000;
+        if (direction === "left") {
+          const next = prev + deltaOffset;
+          return next >= contentWidth ? next - contentWidth : next;
+        } else {
+          const next = prev - deltaOffset;
+          return next <= 0 ? next + contentWidth : next;
+        }
+      });
+
+      animationFrame = requestAnimationFrame(step);
+    };
+
+    animationFrame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [contentWidth, speed, direction]);
+
+  if (!children || children.length === 0) return null;
+
+  const renderChildren = () =>
+    React.Children.map(children, (child, i) => (
+      <div key={i} className="flex-shrink-0">
+        {child}
+      </div>
+    ));
+
+return (
+  <div className={`overflow-hidden ${className ?? ""}`}>
+    <div
+      ref={containerRef}
+      className="flex transform"
+      style={{ transform: `translateX(-${offset}px)` }} 
+    >
+      <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
+
+      {/* Spacer between the two sets */}
+      <div className={`flex-shrink-0`} style={{ width: `${gap}px` }} />
+
+      <div className="flex marquee-set gap-[16px]">{renderChildren()}</div>
     </div>
-  );
+  </div>
+);
 }

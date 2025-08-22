@@ -16,13 +16,20 @@ import {
   SiFirebase,
 } from "@icons-pack/react-simple-icons";
 
+import {
+  LightRoomIcon,
+  PhotoshopIcon,
+  PremiereProIcon,
+  AfterEffectsIcon,
+} from "@/components/common";
+
 interface Tech {
   label: string;
   icon: React.ReactNode;
   url?: string;
 }
 
-export const techStack: Tech[] = [
+export const webTechStack: Tech[] = [
   {
     label: "ReactJS",
     icon: <SiReact className="text-blue-400" />,
@@ -102,5 +109,29 @@ export const techStack: Tech[] = [
     label: "Firebase",
     icon: <SiFirebase className="text-yellow-500" />,
     url: "https://firebase.google.com/",
+  },
+];
+
+// Multimedia / Adobe Tools
+export const multimediaStack: Tech[] = [
+  {
+    label: "Lightroom",
+    icon: <LightRoomIcon className="w-6 h-6" />,
+    url: "https://www.adobe.com/products/photoshop-lightroom.html",
+  },
+  {
+    label: "Photoshop",
+    icon: <PhotoshopIcon className="w-6 h-6" />,
+    url: "https://www.adobe.com/products/photoshop.html",
+  },
+  {
+    label: "Premiere Pro",
+    icon: <PremiereProIcon className="w-6 h-6" />,
+    url: "https://www.adobe.com/products/premiere.html",
+  },
+  {
+    label: "After Effects",
+    icon: <AfterEffectsIcon className="w-6 h-6" />,
+    url: "https://www.adobe.com/products/aftereffects.html",
   },
 ];

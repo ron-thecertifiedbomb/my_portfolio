@@ -2,16 +2,20 @@ import {
   AppAboutMe,
   AppGallery,
   AppHero,
-  AppMarqueeSection,
+  AppMultimediaIconsSection,
   AppMyExperience,
   AppProjects,
+  AppWebStackIconsSection,
 } from "@/pages/home/section";
 
 export default function Home() {
   return (
     <>
       <AppHero />
-      <AppMarqueeSection />
+
+      <AppWebStackIconsSection />
+      <AppMultimediaIconsSection />
+
       <AppAboutMe />
       <AppMyExperience />
       <AppProjects />

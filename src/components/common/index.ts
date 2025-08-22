@@ -16,3 +16,9 @@ export { AppSplashScreen } from "./AppSplashScreen";
 export { AppSidebar } from "./AppSideBar";
 export { AppIcon } from "./AppIcon";
 export { AppSocialLinks } from "./AppSocialLinks";
+export {
+  PremiereProIcon,
+  PhotoshopIcon,
+  AfterEffectsIcon,
+  LightRoomIcon,
+} from "./AppCustomIcons";
