@@ -44,8 +44,8 @@ export function AppLayout() {
     return (
       <AppSplashScreen
         logoUrl="/assets/splash.png"
-        text="Welcome!"
         onFinish={() => setFirstLoad(false)}
+        duration={5}
       />
     );
   }

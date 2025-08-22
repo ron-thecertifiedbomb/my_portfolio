@@ -13,7 +13,7 @@ export function AppLoadingBar({
   logoUrl,
   text = "Loading...",
   onFinish,
-  duration = 2, // default 2s spin
+  duration = 2, 
 }: AppLoadingBarProps) {
   return (
     <AppMainContainer>
@@ -34,7 +34,6 @@ export function AppLoadingBar({
               ease: "linear",
             }}
             transform-origin="50% 50%"
-            className="mb-2"
           >
             <AppImage
               src={logoUrl}
