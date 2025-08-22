@@ -3,7 +3,7 @@ import { AppLabel, AppCard } from "@/components/common";
 
 export function AppAboutMe() {
   return (
-    <AppSectionContainer id="about" className="my-16 px-4">
+    <AppSectionContainer id="about" className="px-4">
       <AppLabel variant="h1" className="mb-4 md:mb-6 lg:mb-8">
         About Me
       </AppLabel>

@@ -38,30 +38,28 @@ export function AppImageScreensaver({
   }, [images.length, interval, auto]);
 
   return (
-
-      <div>
-        {images.length > 0 && (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              className="absolute top-0 left-0 h-full w-full rounded-xl overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: transitionDuration }}
-            >
-              <AppImage
-                src={images[currentIndex].src}
-                alt={images[currentIndex].alt || ""}
-                className="h-full w-full rounded-xl"
-              />
-            </motion.div>
-          </AnimatePresence>
-        )}
-        <div className="absolute inset-0 flex items-center justify-center text-white text-center pointer-events-none rounded-xl">
-          {children}
-        </div>
+    <div className={className}>
+      {images.length > 0 && (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            className="absolute top-0 left-0 h-full w-full rounded-xl overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: transitionDuration }}
+          >
+            <AppImage
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt || ""}
+              className="h-full w-full rounded-xl"
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
+      <div className="absolute inset-0 flex items-center justify-center text-white text-center pointer-events-none rounded-xl">
+        {children}
       </div>
-
+    </div>
   );
 }

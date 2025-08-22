@@ -14,6 +14,7 @@ export { AppTint } from "./AppTint";
 export { AppTransitioningText } from "./AppTransitionintText";
 export { AppSplashScreen } from "./AppSplashScreen";
 export { AppSidebar } from "./AppSideBar";
+export { AppHeaderSpacer } from "./AppHeaderSpacer";
 
  
  
