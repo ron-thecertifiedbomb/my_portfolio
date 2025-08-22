@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode, ReactElement } from "react";
 
 interface Tech {
   label: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   url?: string;
 }
 
@@ -31,17 +31,16 @@ export function AppTechStackLogos({
           rel="noopener noreferrer"
           aria-label={tech.label}
           title={tech.label}
-          className={`flex-shrink-0 flex items-center justify-center ${
-            className ?? ""
-          }`}
+          className="flex-shrink-0 flex items-center justify-center"
         >
-          {React.isValidElement(tech.icon)
+          {React.isValidElement<{ className?: string }>(tech.icon)
             ? React.cloneElement(
-                tech.icon as React.ReactElement<any>, // <--- use any here
+                tech.icon as ReactElement<{ className?: string }>,
                 {
                   className: `${
-                    (tech.icon as React.ReactElement<any>).props.className ?? ""
-                  }`,
+                    (tech.icon as ReactElement<{ className?: string }>).props
+                      .className ?? ""
+                  } ${className ?? ""}`,
                 }
               )
             : tech.icon}
