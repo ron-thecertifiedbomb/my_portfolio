@@ -1,4 +1,4 @@
-export  { AppCard } from "./AppCard";
+export { AppCard } from "./AppCard";
 export { AppCarousel } from "./AppCarousel";
 export { AppExploreCards } from "./AppExploreCards";
 export { AppFooter } from "./AppFooter";
@@ -15,9 +15,8 @@ export { AppTransitioningText } from "./AppTransitionintText";
 export { AppSplashScreen } from "./AppSplashScreen";
 export { AppSidebar } from "./AppSideBar";
 export { AppHeaderSpacer } from "./AppHeaderSpacer";
+export { AppIconsSection } from "./AppIconsSection";
 
- 
- 
 export {
   PremiereProIcon,
   PhotoshopIcon,

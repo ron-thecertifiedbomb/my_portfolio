@@ -1,15 +1,10 @@
 import React, { ReactNode, ReactElement } from "react";
 
-interface Tech {
-  label: string;
-  icon: ReactNode;
-  url?: string;
-}
 
 interface AppTechStackLogosProps {
   skills?: string[];
   className?: string;
-  stack?: Tech[];
+  stack?: { label: string; icon: ReactNode; url?: string }[];
 }
 
 export function AppTechStackLogos({
