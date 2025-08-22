@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <AppHero />
-      <AppAboutMe />
+      {/* <AppAboutMe />
       <AppIconsSection
         containerClassName="overflow-hidden my-1 mx-auto w-[280px] sm:w-[360px] lg:w-[420px]"
         iconClassName="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
@@ -28,7 +28,7 @@ export default function Home() {
       />
       <AppMyExperience />
       <AppProjects />
-      <AppGallery />
+      <AppGallery /> */}
     </>
   );
 }

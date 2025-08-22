@@ -1,21 +1,14 @@
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "framer-motion";
 
-type LabelVariant =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "p"
-  | "label"
-  | "title"
-  | "description";
+type LabelVariant = "h1" | "h2" | "h3" | "h4" | "p";
 
 type MotionElementProps = MotionProps & React.ComponentPropsWithoutRef<"p">;
 
 interface AppLabelProps extends MotionElementProps {
   variant?: LabelVariant;
   children: React.ReactNode;
+  className?: string;
 }
 
 export function AppLabel({
@@ -25,22 +18,22 @@ export function AppLabel({
   ...props
 }: AppLabelProps) {
   const Component =
-    variant === "p" ||
-    variant === "label" ||
-    variant === "title" ||
-    variant === "description"
-      ? "p"
-      : variant;
+    variant === "h1"
+      ? "h1"
+      : variant === "h2"
+      ? "h2"
+      : variant === "h3"
+      ? "h3"
+      : variant === "h4"
+      ? "h4"
+      : "p";
 
   const baseStyles: Record<LabelVariant, string> = {
-    h1: "text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold",
-    h2: "text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold",
+    h1: "text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-balance",
+    h2: "text-lg sm:text-2xl md:text-3xl lg:text-4xl tracking-tight",
     h3: "text-base sm:text-xl md:text-2xl lg:text-3xl font-semibold",
-    h4: "text-sm sm:text-lg md:text-xl lg:text-2xl font-medium",
-    p: "text-sm sm:text-base md:text-m leading-relaxed",
-    label: "text-sm sm:text-sm md:text-base lg:text-base",
-    title: "font-semibold text-xs sm:text-sm md:text-base",
-    description: "text-xs sm:text-sm md:text-base lg:text-base",
+    h4: "text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-tight",
+    p: "text-sm sm:text-base md:text-m leading-7",
   };
 
   const motionKeys = [
@@ -51,6 +44,7 @@ export function AppLabel({
     "whileHover",
     "whileTap",
   ];
+
   const MotionComponent = Object.keys(props).some((key) =>
     motionKeys.includes(key)
   )
