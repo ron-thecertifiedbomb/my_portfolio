@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AppLabel } from "@/components/common/AppLabel";
 import { AppTechStackLogos } from "./AppTechStackLogos";
-import { AppContentContainer } from "../layout/AppContentContainer";
+
 
 interface AppCardProps {
   title?: string;

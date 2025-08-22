@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { AppTransitioningText, AppTint, AppImageScreensaver } from "@/components/common";
+import {
+  AppTransitioningText,
+  AppTint,
+  AppImageScreensaver,
+  AppDialog,
+} from "@/components/common";
 
 import { fetchHeroImages, fetchHeroQuotes } from "@/hooks/fetchHeroData";
 import { AppSectionContainer } from "@/components/layout";
@@ -16,7 +21,6 @@ interface ScreensaverImage {
 }
 
 export function AppHero() {
-
   const [images, setImages] = useState<ScreensaverImage[]>([]);
   const [phrases, setPhrases] = useState<HeroQuote[]>([]);
 
@@ -26,10 +30,7 @@ export function AppHero() {
   }, []);
 
   return (
-    <AppSectionContainer
-      id="hero"
-      className="my-16 px-4 relative" // reduced vertical margin
-    >
+    <AppSectionContainer id="hero" className="my-16 px-4 relative">
       <AppImageScreensaver
         images={images}
         auto={true}
@@ -41,17 +42,16 @@ export function AppHero() {
           md:h-[500px] 
           lg:h-[600px] 
           w-full 
-         rounded-xl
-         mt-20
-         mb-10
-        "
+         rounded-xl     "
       >
-        <AppTint className="absolute inset-0 bg-black/70 rounded-xl" />
-        <AppTransitioningText
-          items={phrases}
-          interval={6000}
-          transitionDuration={2}
-        />
+        <div className="flex flex-col gap-">
+          <AppTransitioningText
+            items={phrases}
+            interval={6000}
+            transitionDuration={2}
+          />
+          <AppDialog />
+        </div>
       </AppImageScreensaver>
     </AppSectionContainer>
   );

@@ -65,9 +65,9 @@ export function AppLayout() {
   // Normal app layout
   return (
     <AppMainContainer>
-      {/* <AppHeader /> */}
+      <AppHeader />
       <Outlet />
-      {/* <AppFooter /> */}
+      <AppFooter />
     </AppMainContainer>
   );
 }

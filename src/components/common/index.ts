@@ -18,6 +18,7 @@ export { AppHeaderSpacer } from "./AppHeaderSpacer";
 export { AppIconsSection } from "./AppIconsSection";
 export { AppLoadingBar } from "./AppLoadingBar";
 export { AppDivContainer } from "./AppDivContainer";
+export { AppDialog } from "./AppDialog";
 
 export {
   PremiereProIcon,
