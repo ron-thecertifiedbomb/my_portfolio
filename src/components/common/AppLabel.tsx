@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import React from "react";
 
 type LabelVariant = "h1" | "h2" | "h3" | "h4" | "p";

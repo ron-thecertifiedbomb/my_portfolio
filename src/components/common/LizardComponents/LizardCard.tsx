@@ -1,4 +1,5 @@
-import { AppImage, AppLabel } from "@/components/common";
+import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
+import { LizardText } from "@/components/common/LizardComponents/LizardText";
 
 interface LizardCardProps {
   title: string;
@@ -16,30 +17,38 @@ export function LizardCard({
   return (
     <div
       className="
-        relative
-        w-[184px]
-        h-[248px]
-        rounded-2xl
-        bg-black
-        overflow-hidden
-        border border-[rgba(255,255,255,0.1)]
-        shadow-[0_4px_20px_rgba(0,0,0,0.3)]
-        [background:linear-gradient(90deg,rgba(0,0,0,0.20)_0%,rgba(200,50,71,0.14)_0%,rgba(0,0,0,0.10)_100%)]
-        p-4
-      "
+    relative
+    max-w-[184px]
+    max-h-[248px]
+    w-full
+    rounded-2xl
+    overflow-hidden
+    border border-white/10
+    shadow-[0_4px_20px_rgba(0,0,0,0.3)]
+    bg-gradient-to-r from-black/20 via-red-600/20 to-black/10
+    p-4
+  "
     >
       {/* Badge */}
       {badge && (
-        <div className="bg-red-500 px-2 py-0.5 rounded-sm opacity-60 flex mb-1 w-full justify-center items-center">
-          <AppLabel className="text-[8px] text-white font-light">
+        <div className="bg-red-500 px-2 py-0.5 rounded-sm opacity-60 flex items-center justify-between mb-1 w-full">
+          <LizardText className="text-[14px] text-white font-light">
             {badge}
-          </AppLabel>
+          </LizardText>
+
+          {logoSrc && (
+            <LizardImage
+              src="./assets/lizardinteractiveblack.png"
+              alt="logo"
+              objectFit="contain"
+              className="w-4 h-4 opacity-90 "
+            />
+          )}
         </div>
       )}
-
       {/* Faint watermark SVG */}
       {logoSrc && (
-        <AppImage
+        <LizardImage
           src={logoSrc}
           alt="logo"
           objectFit="contain"
@@ -49,16 +58,16 @@ export function LizardCard({
 
       {/* Card content */}
       <div className="flex flex-col items-start justify-start h-full mt-2">
-        <AppLabel className="text-[10px] text-white font-light">
+        <LizardText className="text-[10px] text-white font-light">
           {title}
-        </AppLabel>
+        </LizardText>
         {subtitle && (
-          <AppLabel
+          <LizardText
             variant="p"
             className="text-[4px] font-extralight text-gray-300"
           >
             {subtitle}
-          </AppLabel>
+          </LizardText>
         )}
       </div>
     </div>
