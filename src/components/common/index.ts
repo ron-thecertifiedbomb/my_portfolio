@@ -20,6 +20,7 @@ export { AppLoadingBar } from "./AppLoadingBar";
 export { AppDivContainer } from "./AppDivContainer";
 export { AppDialog } from "./AppDialog";
 export { LizardInteractiveButton } from "./LizardInteractiveButton";
+export { LizardCard } from "../common/LizardComponents/LizardCard";
 
 export {
   PremiereProIcon,

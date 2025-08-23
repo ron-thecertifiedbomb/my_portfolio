@@ -21,17 +21,18 @@ export function LizardInteractiveButton({
       className="
         rounded-full
         flex items-center justify-center
-        p-4
-        w-18 h-18 sm:w-20 sm:h-20 lg:w-22lg:h-22
+        p-3
+        w-18 h-18 sm:w-12 sm:h-12 lg:w-12 lg:h-12
         transition-transform duration-200
         overflow-hidden
+            cursor-pointer
       "
     >
       <AppImage
         src={src}
         alt={alt}
         objectFit="contain"
-        className={`w-18 sm:w-16 lg:w-20 h-auto block mx-auto ${className}`}
+        className={`w-18 sm:w-16 lg:w-18 h-auto block mx-auto ${className}`}
       />
     </Button>
   );
