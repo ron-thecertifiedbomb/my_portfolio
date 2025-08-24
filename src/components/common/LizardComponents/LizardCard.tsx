@@ -54,7 +54,7 @@ export function LizardCard({
           src={logoSrc}
           alt="logo"
           objectFit="contain"
-          className="absolute top-30 right-1 transform -translate-y-1/2 w-18 sm:w-16 lg:w-80 h-auto opacity-[0.03]"
+          className="absolute top-30 right-1 transform -translate-y-1/2 w-18 sm:w-16 lg:w-80 h-auto opacity-[0.03] fill-black"
         />
       )}
 
