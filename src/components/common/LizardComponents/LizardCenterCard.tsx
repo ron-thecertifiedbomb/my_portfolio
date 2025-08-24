@@ -29,7 +29,7 @@ export function LizardCenterCard({
           src={imageSrc}
           alt={imageAlt}
           objectFit="contain"
-          className="w-20 h-auto"
+          className="w-12 h-auto"
         />
       </div>
 
