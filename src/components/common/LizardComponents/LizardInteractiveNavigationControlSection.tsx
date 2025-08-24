@@ -14,7 +14,7 @@ export function LizardInteractiveNavigationControlSection({
 
   return (
     <div
-      className={`relative flex-col w-full h-auto flex justify-center items-center bg-transparent ${className}`}
+      className={`relative flex-col w-full h-auto flex justify-center items-center bg-transparent ${className}` }
     >
       <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px]">
         {/* Panel slides up from button */}
