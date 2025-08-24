@@ -3,6 +3,7 @@ import { LizardCard } from "@/components/common";
 import {
   LizardCardGrid,
   LizardCenterCard,
+  LizardText,
 } from "@/components/common/LizardComponents";
 import { centerCard } from "@/utils/lizardinteractivemockdata";
 
@@ -23,7 +24,9 @@ export function PlayGround() {
           p-6
         "
       >
-        <h1 className="font-iceland text-2xl">Iceland</h1>
+         <LizardText className="text-[18px] text-white font-light uppercase mb-8">
+                Craftmanship
+                  </LizardText>
         <div className="flex justify-center gap-2">
           <LizardCard
             title="My Services"
