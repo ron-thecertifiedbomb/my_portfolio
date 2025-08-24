@@ -19,7 +19,12 @@ export function LizardCenterCard({
 }: LizardCenterCardProps) {
   return (
     <div
-      className={`flex items-center bg-transparent border border-[rgba(255,255,255,0.1)] rounded-1xl shadow-md   bg-gradient-to-r from-black/20 via-red-600/20 to-black/10 ${className}`}
+      className={`
+    flex items-center max-w-[600px] w-full
+    border border-white/10 rounded-xl shadow-md
+    bg-gradient-to-r from-black/20 via-red-600/20 to-black/10
+    ${className}
+  `}
     >
       <div className="flex justify-center h-full px-5 py-4 border-r border-[rgba(255,255,255,0.2)]">
         <LizardImage
@@ -30,10 +35,10 @@ export function LizardCenterCard({
         />
       </div>
 
-      <div className="flex flex-col justify-start w-full h-full pl-4 py-2">
+      <div className="flex flex-col w-full h-full px-5 py-2">
         <LizardText
           variant="h4"
-          className="text-[18px] text-white font-light  tracking-[0.1em] mb-[3.92px]"
+          className="text-[14px] text-white font-light  tracking-[0.1em] mb-[3.92px]"
         >
           {title}
         </LizardText>
@@ -41,7 +46,7 @@ export function LizardCenterCard({
         {subtitle && (
           <LizardText
             variant="p"
-            className="text-[14px] text-[#7A7A7A] font-extralight opacity-100 tracking-[0.1em]"
+            className="text-[12px] text-[#7A7A7A] font-extralight opacity-100 tracking-[0.1em]"
           >
             {subtitle}
           </LizardText>
