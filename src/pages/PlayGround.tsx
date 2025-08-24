@@ -12,7 +12,7 @@ export function PlayGround() {
     <AppMainContainer className="w-screen h-screen flex items-center justify-center bg-black">
       <AppSectionContainer
         className="
-          w-full
+          w-full`
           h-screen
           max-w-[1400px]
           flex flex-col items-center 
@@ -24,9 +24,9 @@ export function PlayGround() {
           p-6
         "
       >
-         <LizardText className="text-[18px] text-white font-light uppercase mb-8">
-                Craftmanship
-                  </LizardText>
+        <LizardText className="text-[18px] text-white font-light uppercase mb-8">
+          Craftmanship
+        </LizardText>
         <div className="flex justify-center gap-2">
           <LizardCard
             title="My Services"
@@ -38,7 +38,7 @@ export function PlayGround() {
           <LizardCard
             title="Experiences"
             subtitle="MY SHORT DESCRIPTION HERE"
-            badge="About Me"
+            badge="Technology"
             logoSrc="/assets/lizardinteractive.svg"
           />
         </div>

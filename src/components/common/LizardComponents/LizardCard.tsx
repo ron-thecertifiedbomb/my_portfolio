@@ -25,24 +25,26 @@ export function LizardCard({
     overflow-hidden
     border border-white/10
     shadow-[0_4px_20px_rgba(0,0,0,0.3)]
-    bg-gradient-to-r from-black/20 via-red-600/20 to-black/10
+    bg-gradient-to-r from-black/20 via-red-900/20 to-black/1
     p-4
   "
     >
       {/* Badge */}
       {badge && (
-        <div className="bg-red-500 px-2 py-0.5 rounded-sm opacity-60 flex items-center justify-between mb-1 w-full">
-          <LizardText className="text-[14px] text-white font-light">
+        <div className="bg-red-500 px-2 py-0.5 rounded-sm opacity-60 flex items-center justify-between mb-1 w-full relative overflow-hidden">
+          <LizardText className="text-[14px] text-white font-light uppercase">
             {badge}
           </LizardText>
 
           {logoSrc && (
-            <LizardImage
-              src="./assets/lizardinteractiveblack.png"
-              alt="logo"
-              objectFit="contain"
-              className="w-4 h-4 opacity-90 "
-            />
+            <div className="absolute right-[-18px] top-5 -translate-y-1/2 w-10 h-10 pointer-events-none">
+              <LizardImage
+                src="./assets/lizardinteractiveblack.png"
+                alt="logo"
+                objectFit="contain"
+                className="w-6 h-6 opacity-70 scale-150"
+              />
+            </div>
           )}
         </div>
       )}
