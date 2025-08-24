@@ -2,24 +2,24 @@ import { cn } from "@/lib/utils";
 import { motion, HTMLMotionProps } from "framer-motion";
 import React from "react";
 
-interface AppSectionContainerProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  // basic HTML attributes
+interface LizardSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   children?: React.ReactNode;
   className?: string;
   fluid?: boolean;
+  fullHeight?: boolean; // new prop to stretch to footer
   mode?: HTMLMotionProps<"section">; // motion props
 }
 
-export function AppSectionContainer({
+export function LizardSection({
   id,
   children,
   className,
   fluid = false,
+  fullHeight = false,
   mode,
   ...props
-}: AppSectionContainerProps) {
+}: LizardSectionProps) {
   // Use motion.section only if mode exists
   const SectionComponent: any = mode ? motion.section : "section";
 
@@ -27,8 +27,9 @@ export function AppSectionContainer({
     <SectionComponent
       id={id}
       className={cn(
-        "w-full mx-auto ",
+        "w-full mx-auto flex flex-col",
         fluid ? "max-w-full" : "max-w-7xl",
+        fullHeight ? "flex-1 min-h-screen" : "",
         className
       )}
       {...(mode || {})} // motion props

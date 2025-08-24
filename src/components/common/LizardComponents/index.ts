@@ -6,3 +6,5 @@ export { LizardCardGrid } from "./LizardCardGrid";
 export { CraftmanshipSection } from "./sections/Craftmanship";
 export { LizardInteractivePanel } from "./LizardInteractivePanel";
 export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
+export { LizardSection } from "../LizardComponents/layout/LizardSection";
+export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContainer";

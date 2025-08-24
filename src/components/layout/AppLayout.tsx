@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { AppMainContainer } from "@/components/layout";
+
 import {
   AppFooter,
   AppHeader,
   AppLoadingBar,
   AppSplashScreen,
 } from "@/components/common";
-import { LizardInteractiveNavigationControlSection } from "@/components/common/LizardComponents";
+import { LizardInteractiveNavigationControlSection, LizardMainContainer } from "@/components/common/LizardComponents";
 
 export function AppLayout() {
   const location = useLocation();
@@ -65,9 +65,9 @@ export function AppLayout() {
 
 
   return (
-    <AppMainContainer>
+    <LizardMainContainer>
       <Outlet />
       <LizardInteractiveNavigationControlSection />
-    </AppMainContainer>
+    </LizardMainContainer>
   );
 }

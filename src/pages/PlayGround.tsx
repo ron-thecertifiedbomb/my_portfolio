@@ -1,13 +1,5 @@
-
-import { AppMainContainer, AppSectionContainer } from "@/components/layout";
+import { CraftmanshipSection } from "@/components/common/LizardComponents";
 
 export function PlayGround() {
-  return (
-    <AppMainContainer className="w-screen h-screen flex items-center justify-center bg-black">
-      <AppSectionContainer className="w-full h-screen flex items-center justify-center bg-black">
-   
-
-      </AppSectionContainer>
-    </AppMainContainer>
-  );
+  return <CraftmanshipSection />;
 }

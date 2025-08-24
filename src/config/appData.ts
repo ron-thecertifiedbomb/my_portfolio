@@ -5,7 +5,7 @@ export const appData = [
         key: "introduction",
         heading: "Introduction",
         content:
-          "I am a creative and passionate individual with a strong love for learning. I thrive on exploring new ideas, embracing challenges, and constantly growing both personally and professionally.",
+          "I am a creative and passionate individual with a strong love for learning. ",
         screen: "IntroductionScreen",
       },
       {
@@ -24,7 +24,7 @@ export const appData = [
         key: "aboutme",
         heading: "About Me",
         content:
-          "I am a dedicated professional with a passion for delivering high-quality services to my clients. My expertise lies in understanding client needs and translating them into effective solutions.",
+          "I am a dedicated professional with a passion for delivering high-quality services to my clients.",
         screen: "AboutMeScreen",
       },
     ],
