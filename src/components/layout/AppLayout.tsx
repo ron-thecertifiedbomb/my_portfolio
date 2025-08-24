@@ -7,6 +7,7 @@ import {
   AppLoadingBar,
   AppSplashScreen,
 } from "@/components/common";
+import { LizardInteractiveNavigationControlSection } from "@/components/common/LizardComponents";
 
 export function AppLayout() {
   const location = useLocation();
@@ -62,12 +63,11 @@ export function AppLayout() {
     );
   }
 
-  // Normal app layout
+
   return (
     <AppMainContainer>
-      {/* <AppHeader /> */}
       <Outlet />
-      <AppFooter />
+      <LizardInteractiveNavigationControlSection />
     </AppMainContainer>
   );
 }
