@@ -1,54 +1,53 @@
-
 import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
 import { LizardText } from "@/components/common/LizardComponents/LizardText";
 
-interface LizardCenterCardProps {
+interface CenterData {
   imageSrc: string;
   imageAlt?: string;
   title: string;
-  subtitle?: string;
+  description?: string;
+}
+
+interface LizardCenterCardProps {
+  centerData: CenterData;
   className?: string;
 }
 
 export function LizardCenterCard({
-  imageSrc,
-  imageAlt = "logo",
-  title,
-  subtitle,
-  className,
+  centerData,
+  className = "",
 }: LizardCenterCardProps) {
+  const { imageSrc, imageAlt = "logo", title, description } = centerData;
+
   return (
     <div
-      className={`
-    flex items-center max-w-[600px] w-full
-    border border-white/10 rounded-xl shadow-md
-    bg-gradient-to-r from-black/20 via-red-600/20 to-black/10
-    ${className}
-  `}
+      className={`w-full flex flex-row items-center bg-transparent rounded-2xl shadow-md  border-[0.5px] border-[rgba(255,255,255,0.1)] ${className}`}
     >
-      <div className="flex justify-center h-full px-5 py-4 border-r border-[rgba(255,255,255,0.2)]">
+      {/* Image (left) */}
+      <div className="flex-shrink-0 flex justify-center items-center p-4">
         <LizardImage
           src={imageSrc}
           alt={imageAlt}
           objectFit="contain"
-          className="w-18 sm:w-20 lg:w-15 h-auto"
+          className="w-20 h-auto"
         />
       </div>
 
-      <div className="flex flex-col w-full h-full px-5 py-2">
+      {/* Content (right) */}
+      <div className="flex flex-col p-4">
         <LizardText
           variant="h4"
-          className="text-[14px] text-white font-light  tracking-[0.1em] mb-[3.92px]"
+          className="font-iceland  text-[18px] text-white font-medium tracking-[0.08em] mb-[4px] uppercase"
         >
           {title}
         </LizardText>
 
-        {subtitle && (
+        {description && (
           <LizardText
             variant="p"
-            className="text-[12px] text-[#7A7A7A] font-extralight opacity-100 tracking-[0.1em]"
+            className="text-[12px] text-[#b3b3b3] font-light leading-snug tracking-wide"
           >
-            {subtitle}
+            {description}
           </LizardText>
         )}
       </div>

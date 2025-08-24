@@ -1,6 +1,10 @@
 import { AppMainContainer, AppSectionContainer } from "@/components/layout";
 import { LizardCard } from "@/components/common";
-import { LizardCenterCard } from "@/components/common/LizardComponents";
+import {
+  LizardCardGrid,
+  LizardCenterCard,
+} from "@/components/common/LizardComponents";
+import { centerCard } from "@/utils/lizardinteractivemockdata";
 
 export function PlayGround() {
   return (
@@ -19,7 +23,7 @@ export function PlayGround() {
           p-6
         "
       >
-        {/* Row that houses the cards */}
+        
         <div className="flex justify-center gap-2">
           <LizardCard
             title="My Services"
@@ -27,14 +31,10 @@ export function PlayGround() {
             badge="Technology"
             logoSrc="/assets/lizardinteractive.svg"
           />
-
-          <LizardCenterCard
-            imageSrc="/assets/circle.png"
-            title="WEB AND MOBILE DEVELOPER"
-            subtitle="USER RESEARCH, INTERFACE DESIGN, BRAND BUILDING, PRODUCT DESIGN, MOCKUPS, LOGO DESIGN."
-            className="max-h-[100px] h-full w-max-[469px] w-full"
+          <LizardCardGrid
+            cards={centerCard}
+            component={LizardCenterCard}
           />
-
           <LizardCard
             title="Experiences"
             subtitle="MY SHORT DESCRIPTION HERE"

@@ -6,7 +6,7 @@ type LabelVariant = "h1" | "h2" | "h3" | "h4" | "p";
 
 interface LizardTextProps {
   variant?: LabelVariant;
-  size?: string; // e.g. "text-xs" | "text-sm" | "text-lg"
+  size?: string; 
   children: React.ReactNode;
   className?: string;
   mode?: MotionProps;
