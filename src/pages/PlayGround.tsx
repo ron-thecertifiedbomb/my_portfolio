@@ -23,7 +23,7 @@ export function PlayGround() {
           p-6
         "
       >
-        
+        <h1 className="font-iceland text-2xl">Iceland</h1>
         <div className="flex justify-center gap-2">
           <LizardCard
             title="My Services"
@@ -31,10 +31,7 @@ export function PlayGround() {
             badge="Technology"
             logoSrc="/assets/lizardinteractive.svg"
           />
-          <LizardCardGrid
-            cards={centerCard}
-            component={LizardCenterCard}
-          />
+          <LizardCardGrid cards={centerCard} component={LizardCenterCard} />
           <LizardCard
             title="Experiences"
             subtitle="MY SHORT DESCRIPTION HERE"

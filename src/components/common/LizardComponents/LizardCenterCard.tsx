@@ -45,7 +45,7 @@ export function LizardCenterCard({
         {description && (
           <LizardText
             variant="p"
-            className="text-[12px] text-[#b3b3b3] font-light leading-snug tracking-wide"
+            className="text-[14px] text-[#b3b3b3] font-light leading-snug tracking-wide uppercase"
           >
             {description}
           </LizardText>
