@@ -1,4 +1,4 @@
-import LizardLogoSVG from "@/components/assets/lizardinteractiveinkscape.svg";
+import LizardLogoSVG from "@/components/assets/lizard.svg";
 import React from "react";
 
 interface LizardLogoProps {
