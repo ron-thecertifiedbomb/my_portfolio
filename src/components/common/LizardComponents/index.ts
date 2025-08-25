@@ -4,6 +4,7 @@ export { LizardCenterCard } from "./LizardCenterCard";
 export { LizardImage } from "./LizardImage";
 export { LizardCardGrid } from "./LizardCardGrid";
 export { SkillsScreen } from "./screens/SkillsScreen";
+export { IntroductionScreen } from "./screens/IntroductionScreen";
 export { LizardInteractivePanel } from "./LizardInteractivePanel";
 export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
 export { LizardSection } from "../LizardComponents/layout/LizardSection";
