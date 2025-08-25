@@ -17,7 +17,7 @@ export function SkillsScreen() {
    
         />
 
-        <LizardCenterCard className='flex-1 min-w-[250px] max-w-[620px]' />
+        <LizardCenterCard className='flex-1 min-w-[250px] max-w-[600px]' />
 
         <LizardCard
           badge="Technologies"

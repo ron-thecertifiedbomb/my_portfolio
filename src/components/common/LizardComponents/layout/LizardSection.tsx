@@ -28,7 +28,7 @@ export function LizardSection({
       id={id}
       className={cn(
         "w-full mx-auto flex flex-col",
-        fluid ? "max-w-full" : "max-w-7xl",
+        fluid ? "max-w-full" : "max-w-[1600px]",
         fullHeight ? "flex-1 min-h-screen" : "",
         className
       )}
