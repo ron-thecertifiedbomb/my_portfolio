@@ -6,6 +6,10 @@ import { useLizardStore } from "@/store/lizardStore";
 export function LizardInteractiveNavigationControlSection({ className = "" }) {
   const { hoveredPanel, setHoveredPanel } = useLizardStore();
 
+  const togglePanel = () => {
+    setHoveredPanel(hoveredPanel ? undefined : "show");
+  };
+
   return (
     <div className={`relative flex-col w-full h-auto flex justify-center items-center ${className}`}>
       <div className="relative flex flex-col items-center justify-center w-full max-w-[1100px]">
@@ -20,8 +24,7 @@ export function LizardInteractiveNavigationControlSection({ className = "" }) {
         {/* Button */}
         <div
           className="py-2 relative z-10 cursor-pointer mx-auto"
-          onMouseEnter={() => setHoveredPanel("show")}
-          
+          onClick={togglePanel} // click toggles panels
         >
           <LizardInteractiveButton src="/assets/lizardinteractive.svg" alt="Logo" />
         </div>

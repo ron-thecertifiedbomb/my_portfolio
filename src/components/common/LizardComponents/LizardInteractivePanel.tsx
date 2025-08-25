@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { LizardImage, LizardText } from "@/components/common/LizardComponents";
 import { useLizardStore } from "@/store/lizardStore";
 import { appData } from "@/config/appData";
@@ -11,31 +12,44 @@ export function LizardInteractivePanel() {
     setActivePanel,
   } = useLizardStore();
 
-  // Panels show if hovering button or hovering a panel or active panel exists
-  const showPanels = hoveredPanel === "show" || !!activePanel || hoveredPanel !== undefined;
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  if (!showPanels) return null;
+  // Hide panels on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setHoveredPanel(undefined);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setHoveredPanel]);
+
+  // Only show panels if button was clicked
+  if (hoveredPanel !== "show") return null;
 
   return (
-    <div className="absolute bottom-full mb-2 flex gap-4 w-full justify-center transition-all duration-500 ease-in-out">
+    <div
+      ref={containerRef}
+      className="absolute bottom-full mb-2 flex gap-4 w-full justify-center transition-transform duration-500 ease-in-out transform translate-y-0"
+    >
       {appData.navigationPanels.map((panel) => {
         const isActive = activePanel === panel.key;
 
         return (
           <div
             key={panel.key}
-            className={`box-content rounded-sm w-full max-w-[300px] pl-2 flex flex-col transition-colors duration-300 ease-in-out cursor-pointer hover:scale-105 hover:shadow-lg ${isActive
-                ? "bg-[#E84A4A]" // active background
-                : "bg-[#242425] hover:bg-white/10"
+            className={`box-content rounded-sm w-full max-w-[300px] pl-2 flex flex-col transition-colors duration-300 ease-in-out cursor-pointer hover:scale-105 hover:shadow-lg ${isActive ? "bg-[#E84A4A]" : "bg-[#242425] hover:bg-white/10"
               }`}
             onClick={() => {
               setCurrentScreen(panel.screen);
-              setActivePanel(panel.key); // set active
-              setHoveredPanel(undefined); // hide panels after click
+              setActivePanel(panel.key); // mark active
+              setHoveredPanel(undefined); // hide panel container
               console.log("Active screen:", panel.screen);
             }}
-            onMouseEnter={() => setHoveredPanel(panel.key)} // hovering a panel keeps it visible
-            onMouseLeave={() => setHoveredPanel(undefined)} // stops hovering, may hide
           >
             <div className="w-full bg-transparent relative overflow-hidden">
               <LizardText
