@@ -1,5 +1,5 @@
 import { useScrollToHeroOnLoad } from '@/hooks/useScrollToTopWithHeader'
-import { CraftmanshipSection, LizardSection } from '@/components/common/LizardComponents'
+import { SkillsScreen, LizardSection } from '@/components/common/LizardComponents'
 
 export default function Home() {
   useScrollToHeroOnLoad()
@@ -19,7 +19,7 @@ export default function Home() {
               rounded-sm
               bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(130,12,12,0.18)_14%,rgba(0,0,0,1)_150%)]"
         >
-      <CraftmanshipSection />
+      <SkillsScreen />
       </LizardSection>
   )
 }

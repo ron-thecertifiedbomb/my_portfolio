@@ -4,15 +4,17 @@ interface LizardInteractivePanelProps {
   heading: string;
   content: string;
   logoSrc?: string;
-  className?: string; // added className prop
-  onMouseEnter?: () => void; // added
-  onMouseLeave?: () => void; // added
+  screen?: string; // added screen for conditional rendering
+  className?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export function LizardInteractivePanel({
   heading,
   content,
   logoSrc,
+  screen,
   className = "",
   onMouseEnter,
   onMouseLeave,
@@ -22,6 +24,7 @@ export function LizardInteractivePanel({
       className={`box-content rounded-sm w-full max-w-[300px] bg-[#242425] pl-2 flex flex-col transition-colors duration-300 ease-in-out hover:bg-white/10 ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      data-screen={screen} // optional: can use this attribute for debugging or conditional rendering
     >
       <div className="w-full bg-transparent relative overflow-hidden">
         <LizardText

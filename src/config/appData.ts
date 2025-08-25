@@ -11,6 +11,8 @@ export interface Skill {
   imageAlt: string;
   title: string;
   description: string;
+  techStack?: string[];
+  screen?: string;
 }
 
 export interface AboutMe {
@@ -19,8 +21,24 @@ export interface AboutMe {
   screen: string;
 }
 
+export interface Project {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  screen?: string;
+}
+
+export interface Introduction {
+  heading: string;
+  content: string;
+  screen: string;
+}
+
 export interface AppData {
   navigationPanels: NavigationPanel[];
+  introduction: Introduction;
+  projects: Project[];
   skills: Skill[];
   aboutme: AboutMe;
 }
@@ -42,7 +60,7 @@ export const appData: AppData = {
     },
     {
       key: "skills",
-      heading: "Skills & Craftmanship",
+      heading: "Skills",
       content: "What I offer & technologies I work with",
       screen: "SkillsScreen",
     },
@@ -55,6 +73,37 @@ export const appData: AppData = {
     },
   ],
 
+  introduction: {
+    heading: "Introduction",
+    content:
+      "I am a creative and passionate individual with a strong love for learning.",
+    screen: "IntroductionScreen",
+  },
+
+  projects: [
+    {
+      title: "Project One",
+      description: "A modern web app built with React and Next.js.",
+      imageSrc: "/assets/project1.png",
+      imageAlt: "Screenshot of Project One",
+      screen: "ProjectsScreen",
+    },
+    {
+      title: "Project Two",
+      description: "A mobile app created using React Native and Expo.",
+      imageSrc: "/assets/project2.png",
+      imageAlt: "Screenshot of Project Two",
+      screen: "ProjectsScreen",
+    },
+    {
+      title: "Project Three",
+      description: "Fullstack application with Node.js, MongoDB, and Supabase.",
+      imageSrc: "/assets/project3.png",
+      imageAlt: "Screenshot of Project Three",
+      screen: "ProjectsScreen",
+    },
+  ],
+
   skills: [
     {
       type: "Web Development",
@@ -63,6 +112,18 @@ export const appData: AppData = {
       title: "Web Development",
       description:
         "Building modern, responsive websites using React, Next.js, and TailwindCSS.",
+      techStack: [
+        "ReactJS",
+        "Next.js",
+        "TailwindCSS",
+        "TypeScript",
+        "Redux",
+        "MobX",
+        "GraphQL",
+        "CSS",
+        "HTML5",
+      ],
+      screen: "SkillsScreen",
     },
     {
       type: "Mobile Development",
@@ -71,6 +132,15 @@ export const appData: AppData = {
       title: "Mobile Development",
       description:
         "Creating cross-platform mobile apps with React Native for both iOS and Android.",
+      techStack: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Redux",
+        "MobX",
+        "TailwindCSS",
+      ],
+      screen: "SkillsScreen",
     },
     {
       type: "Fullstack Application",
@@ -79,6 +149,17 @@ export const appData: AppData = {
       title: "Fullstack Application",
       description:
         "Developing scalable fullstack applications with seamless frontend and backend integration.",
+      techStack: [
+        "ReactJS",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "Supabase",
+        "GraphQL",
+        "TypeScript",
+        "TailwindCSS",
+      ],
+      screen: "SkillsScreen",
     },
     {
       type: "Video Editing",
@@ -87,6 +168,14 @@ export const appData: AppData = {
       title: "Video Editing",
       description:
         "Producing high-quality video content with professional editing, transitions, and effects.",
+      techStack: [
+        "Lightroom",
+        "Photoshop",
+        "Premiere Pro",
+        "After Effects",
+        "Figma",
+      ],
+      screen: "SkillsScreen",
     },
   ],
 

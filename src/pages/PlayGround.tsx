@@ -1,5 +1,5 @@
-import { CraftmanshipSection } from "@/components/common/LizardComponents";
+import { SkillsScreen } from "@/components/common/LizardComponents";
 
 export function PlayGround() {
-  return <CraftmanshipSection />;
+  return <SkillsScreen />;
 }
