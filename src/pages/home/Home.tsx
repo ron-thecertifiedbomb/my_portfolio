@@ -1,34 +1,25 @@
-import {
-  AppAboutMe,
-  AppGallery,
-  AppHero,
-  AppMyExperience,
-  AppProjects,
-} from "@/pages/home/section";
-import { useScrollToHeroOnLoad } from "@/hooks/useScrollToTopWithHeader";
-import { AppIconsSection } from "@/components/common/AppIconsSection";
-import { multimediaStack,webTechStack } from "@/config/techstack";
+import { useScrollToHeroOnLoad } from '@/hooks/useScrollToTopWithHeader'
+import { CraftmanshipSection, LizardSection } from '@/components/common/LizardComponents'
 
 export default function Home() {
-  useScrollToHeroOnLoad();
+  useScrollToHeroOnLoad()
 
   return (
-    <>
-      <AppHero />
-      {/* <AppAboutMe />
-      <AppIconsSection
-        containerClassName="overflow-hidden my-1 mx-auto w-[280px] sm:w-[360px] lg:w-[420px]"
-        iconClassName="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
-        stack={multimediaStack}
-      />
-      <AppIconsSection
-        containerClassName="overflow-hidden w-full mx-auto "
-        iconClassName="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20"
-        stack={webTechStack}
-      />
-      <AppMyExperience />
-      <AppProjects />
-      <AppGallery /> */}
-    </>
-  );
+        <LizardSection
+          className="
+          box-content
+              w-full
+              flex  
+              flex-col 
+              flex-1
+              pt-8
+              border-[0.5px] border-[rgba(255,255,255,0.1)]
+              shadow-[0_0_40px_10px_rgba(0,0,0,0.3)]
+              bg-black
+              rounded-sm
+              bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(130,12,12,0.18)_14%,rgba(0,0,0,1)_150%)]"
+        >
+      <CraftmanshipSection />
+      </LizardSection>
+  )
 }
