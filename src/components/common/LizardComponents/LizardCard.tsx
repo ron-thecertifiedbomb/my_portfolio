@@ -15,13 +15,16 @@ export function LizardCard({
   logoSrc,
 }: LizardCardProps) {
   return (
+
+
+
     <div
       className="
     relative
     max-w-[184px]
     max-h-[248px]
     w-full
-    rounded-2xl
+    rounded-sm
     overflow-hidden
     border border-white/10
     shadow-[0_4px_20px_rgba(0,0,0,0.3)]
@@ -54,7 +57,7 @@ export function LizardCard({
           src={logoSrc}
           alt="logo"
           objectFit="contain"
-          className="absolute top-30 right-1 transform -translate-y-1/2 w-18 sm:w-16 lg:w-80 h-auto opacity-[0.03] fill-black"
+          className="absolute top-30 right-1 transform -translate-y-1/2 w-18 sm:w-16 lg:w-60 h-auto opacity-[0.03] fill-black"
         />
       )}
 

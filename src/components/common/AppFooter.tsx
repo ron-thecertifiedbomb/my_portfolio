@@ -1,6 +1,5 @@
-import { LizardInteractiveButton } from "@/components/common/LizardInteractiveButton";
+import { LizardInteractiveButton } from "@/components/common/LizardComponents/LizardInteractiveButton";
 import { AppSectionContainer } from "@/components/layout";
-
 
 export function AppFooter() {
   return (

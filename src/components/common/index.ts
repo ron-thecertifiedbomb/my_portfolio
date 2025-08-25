@@ -19,8 +19,9 @@ export { AppIconsSection } from "./AppIconsSection";
 export { AppLoadingBar } from "./AppLoadingBar";
 export { AppDivContainer } from "./AppDivContainer";
 export { AppDialog } from "./AppDialog";
-export { LizardInteractiveButton } from "./LizardInteractiveButton";
+export { LizardInteractiveButton } from "./LizardComponents/LizardInteractiveButton";
 export { LizardCard } from "../common/LizardComponents/LizardCard";
+export { LizardThumbnail } from "../common/LizardComponents/LizardThumbnail";
 
 export {
   PremiereProIcon,

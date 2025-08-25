@@ -21,10 +21,10 @@ export function LizardCenterCard({
 
   return (
     <div
-      className={`w-full flex flex-row items-center bg-transparent rounded-2xl shadow-md  border-[0.5px] border-[rgba(255,255,255,0.1)] ${className}`}
+      className={`w-full flex flex-row items-center bg-transparent rounded-sm shadow-md  border-[0.5px] border-[rgba(255,255,255,0.1)] ${className}`}
     >
       {/* Image (left) */}
-      <div className="flex-shrink-0 flex justify-center items-center p-4">
+      <div className="flex-shrink-0 flex justify-center items-center p-4 border-r border-[rgba(255,255,255,0.1)]">
         <LizardImage
           src={imageSrc}
           alt={imageAlt}
@@ -37,7 +37,7 @@ export function LizardCenterCard({
       <div className="flex flex-col p-4">
         <LizardText
           variant="h4"
-          className="font-iceland  text-[18px] text-white font-medium tracking-[0.08em] mb-[4px] uppercase"
+          className="font-iceland  text-[25px] text-[#E84A4A] font-medium  uppercase"
         >
           {title}
         </LizardText>

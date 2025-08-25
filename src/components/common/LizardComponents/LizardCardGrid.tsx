@@ -29,7 +29,7 @@ export function LizardCardGrid({
 }: LizardCardGridProps) {
   return (
     <div
-      className={`flex flex-row flex-wrap gap-4 w-full max-w-[720px] bg-gradient-to-r from-black/20 via-red-600/20 to-black/10 ${className}`}
+      className={`flex flex-row flex-wrap gap-6 w-full max-w-[600px] bg-gradient-to-r from-black/20 via-red-600/20 to-black/10 ${className}`}
     >
       {cards.map((card, index) => (
         <Component key={index} centerData={card} />
