@@ -169,11 +169,11 @@ export const appData: AppData = {
       description:
         "Producing high-quality video content with professional editing, transitions, and effects.",
       techStack: [
-        "Lightroom",
         "Photoshop",
         "Premiere Pro",
         "After Effects",
         "Figma",
+        "Lightroom",
       ],
       screen: "SkillsScreen",
     },

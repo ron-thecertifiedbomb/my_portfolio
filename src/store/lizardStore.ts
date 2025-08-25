@@ -1,44 +1,68 @@
 import { create } from "zustand";
-import { appData, AppData } from "@/config/appData";
+import { appData, AppData, Skill } from "@/config/appData";
 
 interface LizardStoreState {
+  // Full app data
   appData: AppData;
 
   // Current active screen
   currentScreen: string;
   setCurrentScreen: (screen: string) => void;
 
-  // Hover states
+  // Navigation panel hover/active
   hoveredPanel?: string;
   setHoveredPanel: (panelKey?: string) => void;
 
+  activePanel?: string;
+  setActivePanel: (panelKey?: string) => void;
+
+  // Skills
+  skills: Skill[];
   hoveredSkill?: string;
   setHoveredSkill: (skillType?: string) => void;
+
+  selectedSkillType?: string;
+  setSelectedSkillType: (type?: string) => void;
+
+  // Getter: filtered skills based on selected type
+  getFilteredSkills: () => Skill[];
 
   // Selected project
   selectedProject?: string;
   setSelectedProject: (projectTitle?: string) => void;
-
-  // Active panel (clicked)
-  activePanel?: string;
-  setActivePanel: (panelKey?: string) => void;
 }
 
-export const useLizardStore = create<LizardStoreState>((set) => ({
+export const useLizardStore = create<LizardStoreState>((set, get) => ({
+  // Integrate appData
   appData,
 
+  // Current screen
   currentScreen: appData.introduction.screen,
   setCurrentScreen: (screen) => set({ currentScreen: screen }),
 
+  // Navigation panels
   hoveredPanel: undefined,
   setHoveredPanel: (panelKey) => set({ hoveredPanel: panelKey }),
 
+  activePanel: undefined,
+  setActivePanel: (panelKey) => set({ activePanel: panelKey }),
+
+  // Skills
+  skills: appData.skills,
   hoveredSkill: undefined,
   setHoveredSkill: (skillType) => set({ hoveredSkill: skillType }),
 
+  selectedSkillType: "Web Development",
+  setSelectedSkillType: (type) => set({ selectedSkillType: type }),
+
+  // Getter: filtered skills
+  getFilteredSkills: () => {
+    const { skills, selectedSkillType } = get();
+    if (!selectedSkillType) return skills;
+    return skills.filter((skill) => skill.type === selectedSkillType);
+  },
+
+  // Selected project
   selectedProject: undefined,
   setSelectedProject: (projectTitle) => set({ selectedProject: projectTitle }),
-
-  activePanel: undefined,
-  setActivePanel: (panelKey) => set({ activePanel: panelKey }),
 }));
