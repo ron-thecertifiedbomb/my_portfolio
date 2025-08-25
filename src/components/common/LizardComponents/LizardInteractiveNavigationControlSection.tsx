@@ -7,16 +7,16 @@ interface LizardInteractiveNavigationControlSectionProps {
   className?: string;
 }
 
-export function LizardInteractiveNavigationControlSection({
-  className = "",
-}: LizardInteractiveNavigationControlSectionProps) {
+export function LizardInteractiveNavigationControlSection({ className = "", }: LizardInteractiveNavigationControlSectionProps) {
+  
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div
-      className={`relative flex-col w-full h-auto flex justify-center items-center bg-transparent ${className}`}
-    >
-      <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px]">
+
+    <div className={`relative flex-col w-full h-auto flex justify-center items-center bg- ${className}`}>
+
+      
+      <div className="relative flex flex-col items-center justify-center w-full max-w-[1100px]">
         {/* Panel slides up from button */}
         <div
           onMouseEnter={() => setHovered(true)}

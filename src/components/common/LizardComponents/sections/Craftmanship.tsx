@@ -5,6 +5,7 @@ import {
   LizardSection,
   LizardText,
 } from "@/components/common/LizardComponents";
+import { skills } from "@/config";
 import { centerCard } from "@/utils/lizardinteractivemockdata";
 
 export function CraftmanshipSection() {
@@ -18,14 +19,14 @@ export function CraftmanshipSection() {
           flex  
           flex-col 
           flex-1
-          pt-5
+          pt-8
           border-[0.5px] border-[rgba(255,255,255,0.1)]
           shadow-[0_0_40px_10px_rgba(0,0,0,0.3)]
           bg-black
           rounded-sm
           bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(130,12,12,0.18)_14%,rgba(0,0,0,1)_150%)]"
     >
-      <LizardText className="text-[18px] text-white font-light uppercase mb-8 text-center">
+      <LizardText className="text-[18px] text-white font-light uppercase mb-4 text-center">
         Craftmanship
       </LizardText>
 
@@ -37,7 +38,7 @@ export function CraftmanshipSection() {
           logoSrc="/assets/lizardinteractive.svg"
         />
 
-        <LizardCardGrid cards={centerCard} component={LizardCenterCard} />
+        <LizardCardGrid cards={skills} component={LizardCenterCard} />
         <LizardCard
           title="Experiences"
           subtitle="MY SHORT DESCRIPTION HERE"

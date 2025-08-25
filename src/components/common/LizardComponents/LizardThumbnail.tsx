@@ -8,25 +8,22 @@ interface LizardThumbnailProps {
   logoSrc?: string;
 }
 
-export function LizardThumbnail({ title, content, badge, logoSrc }: LizardThumbnailProps) {
+export function LizardThumbnail({
+  title,
+  content,
+  badge,
+  logoSrc,
+}: LizardThumbnailProps) {
   return (
     <div
-      className="
-    relative
-    max-w-[184px]
+      className="relative max-w-[184px]
     h-auto
     w-full
     
-  bg-transparent
- 
-  "
+  bg-transparent"
     >
       <div className="flex flex-col">
-        <div
-          className="rounded-sm
-    overflow-hidden
-    border border-white/10 flex flex-col items-center justify-center p-4 mb-4 space-y-2"
-        >
+        <div className="rounded-sm overflow-hidden border border-white/10 flex flex-col items-center justify-center p-4 mb-4 space-y-2">
           {logoSrc && (
             <LizardImage
               src={logoSrc}
@@ -35,7 +32,7 @@ export function LizardThumbnail({ title, content, badge, logoSrc }: LizardThumbn
               className="w-full h-auto"
             />
           )}
-          <LizardText className="text-[12px]  text-[#7A7A7A]  font-light uppercase">
+          <LizardText className="text-[16px]  text-[#7A7A7A]  font-light uppercase">
             {title}
           </LizardText>
         </div>
