@@ -22,7 +22,7 @@ export { AppDialog } from "./AppDialog";
 export { LizardInteractiveButton } from "./LizardComponents/LizardInteractiveButton";
 export { LizardCard } from "../common/LizardComponents/LizardCard";
 export { LizardThumbnail } from "../common/LizardComponents/LizardThumbnail";
-
+export { LizardLogo } from "./LizardComponents/LizardLogo";
 export {
   PremiereProIcon,
   PhotoshopIcon,

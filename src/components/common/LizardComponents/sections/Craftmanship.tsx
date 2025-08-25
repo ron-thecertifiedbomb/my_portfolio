@@ -5,6 +5,7 @@ import {
   LizardSection,
   LizardText,
 } from "@/components/common/LizardComponents";
+import { LizardLogo } from "@/components/common/LizardComponents/LizardLogo";
 import { skills } from "@/config";
 import { centerCard } from "@/utils/lizardinteractivemockdata";
 
@@ -29,6 +30,7 @@ export function CraftmanshipSection() {
       <LizardText className="text-[18px] text-white font-light uppercase mb-4 text-center">
         Craftmanship
       </LizardText>
+      <LizardLogo className="w-32 h-32 text-blue-500" />
 
       <div className="flex justify-center gap-2">
         <LizardThumbnail
