@@ -4,8 +4,6 @@ import { LizardDateAndTime } from "./LizardDateAndTime";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 
 export function LizardHeader() {
-    
-
 
     return (
         <div className="flex w-full items-center gap-4 py-4 px-20">

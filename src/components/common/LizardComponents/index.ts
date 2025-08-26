@@ -24,7 +24,7 @@ export { LizardProfileCard } from "./LizardProfileCard";
 
 
 
-import LizardLogoAndTitle from "@/components/assets/lizardlogo.svg";
+import LizardLogoAndTitle from "@/components/assets/lizardandtext.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";
 
 export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
