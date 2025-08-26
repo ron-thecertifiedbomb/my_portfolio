@@ -9,10 +9,11 @@ interface LizardStoreState {
   currentScreen: string;
   setCurrentScreen: (screen: string) => void;
 
-  // Navigation panel hover/active
-  hoveredPanel?: string;
-  setHoveredPanel: (panelKey?: string) => void;
+  // Navigation panel visibility
+  showPanel: boolean;
+  setShowPanel: (value: boolean) => void;
 
+  // Active panel key
   activePanel?: string;
   setActivePanel: (panelKey?: string) => void;
 
@@ -40,10 +41,11 @@ export const useLizardStore = create<LizardStoreState>((set, get) => ({
   currentScreen: appData.introduction.screen,
   setCurrentScreen: (screen) => set({ currentScreen: screen }),
 
-  // Navigation panels
-  hoveredPanel: undefined,
-  setHoveredPanel: (panelKey) => set({ hoveredPanel: panelKey }),
+  // Navigation panel visibility
+  showPanel: false,
+  setShowPanel: (value) => set({ showPanel: value }),
 
+  // Active panel key
   activePanel: appData.navigationPanels[0].key,
   setActivePanel: (panelKey) => set({ activePanel: panelKey }),
 

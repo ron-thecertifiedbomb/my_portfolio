@@ -1,34 +1,21 @@
 // LizardInteractiveNavigationControlSection.tsx
-import { LizardInteractivePanel } from "@/components/common/LizardComponents/LizardInteractivePanel";
 import { LizardInteractiveButton } from "@/components/common/LizardComponents/LizardInteractiveButton";
 import { useLizardStore } from "@/store/lizardStore";
 
-export function LizardInteractiveNavigationControlSection({ className = "" }) {
-  const { hoveredPanel, setHoveredPanel } = useLizardStore();
+export function LizardInteractiveNavigationControlSection() {
 
-  const togglePanel = () => {
-    setHoveredPanel(hoveredPanel ? undefined : "show");
-  };
+  const { showPanel, setShowPanel } = useLizardStore();
+  const togglePanel = () => setShowPanel(!showPanel);
+
+  console.log(showPanel)
 
   return (
-    <div className={`relative flex-col w-full h-auto flex justify-center items-center ${className}`}>
-      <div className="relative flex flex-col items-center justify-center w-full max-w-[1400px]">
+    
+    <div className=" flex  mx-auto">
 
-        {/* Panels container */}
-        {hoveredPanel && (
-          <div className="absolute bottom-full  flex gap-4 w-full justify-center transition-all duration-500 ease-in-out">
-            <LizardInteractivePanel />
-          </div>
-        )}
-
-        {/* Button */}
-        <div
-          className="py-2 relative z-10 cursor-pointer mx-auto"
-          onClick={togglePanel} // click toggles panels
-        >
-          <LizardInteractiveButton src="/assets/lizardinteractive.svg" alt="Logo" />
-        </div>
+        <LizardInteractiveButton src="/assets/lizardinteractive.svg" alt="Logo" onClick={togglePanel} />
+ 
       </div>
-    </div>
+  
   );
 }

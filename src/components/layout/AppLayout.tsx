@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import {
-
   AppLoadingBar,
   AppSplashScreen,
 } from "@/components/common";
-import { LizardHeader, LizardInteractiveNavigationControlSection, LizardMainContainer } from "@/components/common/LizardComponents";
-
+import { LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer } from "@/components/common/LizardComponents";
+import { useLizardStore } from "@/store/lizardStore";
 
 export function AppLayout() {
   const location = useLocation();
+  const { showPanel, setShowPanel } = useLizardStore();
+  const panelWrapperRef = useRef<HTMLDivElement>(null);
 
   // First-time splash screen
   const [firstLoad, setFirstLoad] = useState(() => {
@@ -25,7 +26,6 @@ export function AppLayout() {
   useEffect(() => {
     if (firstLoad) {
       sessionStorage.setItem("splashShown", "true");
-
       const timer = setTimeout(() => setFirstLoad(false), 10000); // 10s splash
       return () => clearTimeout(timer);
     }
@@ -39,6 +39,20 @@ export function AppLayout() {
       return () => clearTimeout(timer);
     }
   }, [location.pathname, firstLoad]);
+
+  // Outside click to close panel
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (panelWrapperRef.current && !panelWrapperRef.current.contains(event.target as Node)) {
+        setShowPanel(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setShowPanel]);
 
   // Show first-time splash
   if (firstLoad) {
@@ -63,16 +77,17 @@ export function AppLayout() {
     );
   }
 
-
   return (
     <LizardMainContainer>
       <LizardHeader />
 
       <Outlet />
 
-
-      
-      <LizardInteractiveNavigationControlSection />
+      {/* Panel wrapper to detect outside clicks */}
+      <div ref={panelWrapperRef} className="relative w-full flex justify-center items-center ">
+        <LizardInteractivePanel />
+        <LizardInteractiveNavigationControlSection />
+      </div>
     </LizardMainContainer>
   );
 }
