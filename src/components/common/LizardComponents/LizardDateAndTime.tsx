@@ -21,14 +21,14 @@ export function LizardDateAndTime({ className = "", label, type = "time", time =
             : dateObj.toLocaleTimeString();
 
     return (
-        <div className={`flex gap-2 ${className}`}>
+        <div className={`flex gap-2 items-center justify-center ${className}`}>
 
             {label && (
-                <LizardText className="text-[#b3b3b3] text-[20px] uppercase">
+                <LizardText>
                     {label}
                 </LizardText>
             )}
-            <LizardText className="text-[20px]">{formattedDate}</LizardText>
+            <LizardText className={className}>{formattedDate}</LizardText>
         </div>
 
     );

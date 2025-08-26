@@ -2,8 +2,12 @@
 import {
 
     LizardContent,
-    LizardText,
+    LizardCoordinates,
+    LizardDateAndTime,
+    LizardLocator,
+
 } from '@/components/common/LizardComponents'
+
 
 
 export function IntroductionScreen() {
@@ -15,14 +19,17 @@ export function IntroductionScreen() {
                       flex  
                       flex-col 
                       flex-1
-                     
+                      items-center
+                      justify-center
                     "
         >
-            <LizardText className="text-[18px] text-white font-light uppercase mb-4 text-center">
+            {/* <LizardText className="text-[18px] text-white font-light uppercase mb-4 text-center">
                 Introduction Screen
-            </LizardText>
+            </LizardText> */}
 
-
+            <LizardDateAndTime className='text-[40px]' type="date" />
+            <LizardCoordinates />
+            <LizardLocator />
         </LizardContent>
     )
 }

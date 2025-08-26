@@ -20,3 +20,5 @@ export { LizardDateAndTime } from "./LizardDateAndTime";
 export { LizardInteractivePanel } from "./LizardInteractivePanel";
 export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
 export { LizardIcons } from "./LizardIcons";
+export { LizardLocator } from "./LizardLocator";
+export { LizardCoordinates } from "./LizardCoordinates";
