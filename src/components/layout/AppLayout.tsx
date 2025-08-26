@@ -67,7 +67,11 @@ export function AppLayout() {
   return (
     <LizardMainContainer>
       <LizardHeader />
+
       <Outlet />
+
+
+      
       <LizardInteractiveNavigationControlSection />
     </LizardMainContainer>
   );

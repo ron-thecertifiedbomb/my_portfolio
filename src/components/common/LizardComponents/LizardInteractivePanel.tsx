@@ -13,7 +13,7 @@ export function LizardInteractivePanel() {
   } = useLizardStore();
 
 
- 
+
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -52,19 +52,17 @@ export function LizardInteractivePanel() {
               }`}
             onClick={() => {
               setCurrentScreen(panel.screen);
-              setActivePanel(panel.key); // mark active
-              setHoveredPanel(undefined); // hide panel container
+              setActivePanel(panel.key);
+              setHoveredPanel(undefined);
               console.log("Active screen:", panel.screen);
             }}
           >
             <div className="w-full bg-transparent relative overflow-hidden">
-              <LizardText
-                variant="h1"
-                className="text-[20px] pl-3 py-2 text-white font-light uppercase"
-              >
-                {panel.heading.toUpperCase()}
-              </LizardText>
-
+              <div className="text-[25px] pl-3 py-1 text-white font-light">
+                <LizardText variant="h1">
+                  {panel.heading.toUpperCase()}
+                </LizardText>
+              </div>
               <LizardImage
                 src="/assets/union.png"
                 alt="logo"
@@ -73,12 +71,12 @@ export function LizardInteractivePanel() {
               />
             </div>
 
-            <div className="bg-black flex-1 flex">
+            <div className="bg-black flex-1 flex px-2">
               <LizardText
                 variant="h1"
-                className="text-[14px] p-3 text-white font-light uppercase"
+                className="text-[14px] p-3 text-[#b3b3b3] font-light"
               >
-                {panel.content}
+                {panel.content.toUpperCase()}
               </LizardText>
             </div>
           </div>

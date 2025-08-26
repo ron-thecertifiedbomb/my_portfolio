@@ -1,10 +1,9 @@
 
-
-export { LizardInteractivePanel } from "./LizardInteractivePanel";
-export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
 export { LizardSection } from "../LizardComponents/layout/LizardSection";
 export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContainer";
-export { LizardIcons } from "./LizardIcons";
+export { LizardContent } from "../LizardComponents/layout/LizardContent";
+
+
 
 export { SkillsScreen } from "./screens/SkillsScreen";
 export { IntroductionScreen } from "./screens/IntroductionScreen";
@@ -18,3 +17,6 @@ export { LizardCenterCard } from "./LizardCenterCard";
 export { LizardImage } from "./LizardImage";
 export { LizardCardGrid } from "./LizardCardGrid";
 export { LizardDateAndTime } from "./LizardDateAndTime";
+export { LizardInteractivePanel } from "./LizardInteractivePanel";
+export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNavigationControlSection";
+export { LizardIcons } from "./LizardIcons";
