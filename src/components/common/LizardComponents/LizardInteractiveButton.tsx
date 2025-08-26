@@ -1,39 +1,35 @@
-import { AppImage } from "@/components/common";
+import LizardLogoSVG from "@/components/assets/lizardicon.svg";
 import { Button } from "@/components/ui/button";
+import { LizardLogoContainer } from "./LizardLogoContainer";
 
 interface LizardInteractiveButtonProps {
   onClick?: () => void;
-  src: string;
-  alt: string;
+ 
   className?: string; // extra Tailwind classes for the image
 }
 
 export function LizardInteractiveButton({
   onClick,
-  src,
-  alt,
-  className = "",
+  className
+
 }: LizardInteractiveButtonProps) {
+  // Cast the imported SVG properly
+  const LizardLogo = LizardLogoSVG as unknown as React.FC<
+    React.SVGProps<SVGSVGElement>
+  >;
+
   return (
-    <Button
-      variant="outline"
+
+    <div
       onClick={onClick}
-      className="
-        rounded-full
-        flex items-center justify-center
-        p-3
-        w-18 h-18 sm:w-12 sm:h-12 lg:w-12 lg:h-12
-        transition-transform duration-200
-        overflow-hidden
-            cursor-pointer
-      "
+      className={`${className} cursor-pointer`}
+  
     >
-      <AppImage
-        src={src}
-        alt={alt}
-        objectFit="contain"
-        className={`w-18 sm:w-16 lg:w-18 h-auto block mx-auto ${className}`}
+      <LizardLogoContainer
+        svg={LizardLogo}
+        className="w-12 h-12 fill-[#88fb59ff] stroke-[#88fb59ff]"
       />
-    </Button>
+    </div>
+
   );
 }

@@ -9,5 +9,5 @@ export function LizardLogoContainer({
     svg: SvgIcon,
     className,
 }: LizardLogoContainerProps) {
-    return <SvgIcon className={className} />;
+    return <SvgIcon className={className} width="100%" height="100%" />;
 }

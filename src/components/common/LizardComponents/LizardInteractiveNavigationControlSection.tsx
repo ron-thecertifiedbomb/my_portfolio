@@ -13,7 +13,7 @@ export function LizardInteractiveNavigationControlSection() {
     
     <div className=" flex  mx-auto">
 
-        <LizardInteractiveButton src="/assets/lizardinteractive.svg" alt="Logo" onClick={togglePanel} />
+        <LizardInteractiveButton  onClick={togglePanel} />
  
       </div>
   
