@@ -1,11 +1,11 @@
-import LizardLogoAndTitle from "@/components/assets/lizardlogo.svg";
+
+import { LizardAndTitleLogo } from ".";
 import { LizardDateAndTime } from "./LizardDateAndTime";
 import { LizardLogoContainer } from "./LizardLogoContainer";
 
 export function LizardHeader() {
-    const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
-        React.SVGProps<SVGSVGElement>
-    >;
+    
+
 
     return (
         <div className="flex w-full items-center gap-4 py-4 px-20">
