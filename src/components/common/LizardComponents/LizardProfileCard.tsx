@@ -4,7 +4,14 @@ import { LizardLogoContainer } from "./LizardLogoContainer";
 import { LizardLogo } from "./LizardLogo";
 
 export function LizardProfileCard() {
-
+  
+  const profileItems = [
+    { label: "Name", value: "Ronan Sibunga" },
+    { label: "Occupation", value: "Fullstack Developer" },
+    { label: "Corporation", value: "Lizard Interactive" },
+    { label: "Availability", value: "Open for Hire", type: "highlight" as const },
+    { label: "Social", value: "Open Connection", type: "bordered" as const },
+  ];
 
   return (
     <div className="max-w-[260px] w-full h-auto">
@@ -68,6 +75,14 @@ export function LizardProfileCard() {
           <div className="w-full bg-[#E84A4A]">
             <LizardText className="text-1xl text-black leading-tight px-2 uppercase">
               Open for Hire
+            </LizardText>
+          </div>
+        </div>
+        <div className="w-full">
+          <LizardText className="leading-none uppercase mb-1">Social</LizardText>
+          <div className="w-full border-1 border-[#E84A4A] ">
+            <LizardText className="text-1xl text-[#E84A4A] leading-tight px-2 uppercase">
+              open connection
             </LizardText>
           </div>
         </div>

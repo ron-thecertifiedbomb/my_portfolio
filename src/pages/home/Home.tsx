@@ -24,24 +24,19 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-row w-full max-w-[1900px] gap-4 flex-1">
+    <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] w-full max-w-[1900px] gap-4 h-screen">
       {/* Left fixed card */}
-      <div className="inline-flex">
+      <div className="flex-none">
         <LizardProfileCard />
       </div>
 
-      <LizardSection
-        className="
-        box-content
-        w-full
-        flex  
-        flex-col"
-      >
+      {/* Center section stretches automatically */}
+      <LizardSection className="flex flex-col w-full">
         {renderScreen()}
       </LizardSection>
 
       {/* Right fixed card */}
-      <div className="inline-flex">
+      <div className="flex-none">
         <LizardProfileCard />
       </div>
     </div>
