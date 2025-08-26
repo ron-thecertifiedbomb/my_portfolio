@@ -6,7 +6,7 @@ export function LizardProfileCard() {
     <div className="max-w-[300px] w-full h-auto">
       {/* Logo block with corner accents */}
       <div className="relative p-[19px] w-full flex items-center justify-center border">
-        <LizardLogo className="fill-amber-50 w-30 h-30" />
+        <LizardLogo className=" fill-amber-50 w-40 h-40" />
 
         {/* Corner borders overlay (no full border) */}
         <div className="pointer-events-none absolute inset-0">
