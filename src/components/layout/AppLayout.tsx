@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import {
-  AppFooter,
-  AppHeader,
+
   AppLoadingBar,
   AppSplashScreen,
 } from "@/components/common";
-import { LizardInteractiveNavigationControlSection, LizardMainContainer } from "@/components/common/LizardComponents";
+import { LizardHeader, LizardInteractiveNavigationControlSection, LizardMainContainer } from "@/components/common/LizardComponents";
+
 
 export function AppLayout() {
   const location = useLocation();
@@ -66,6 +66,7 @@ export function AppLayout() {
 
   return (
     <LizardMainContainer>
+      <LizardHeader />
       <Outlet />
       <LizardInteractiveNavigationControlSection />
     </LizardMainContainer>
