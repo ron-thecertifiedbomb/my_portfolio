@@ -12,6 +12,9 @@ export function LizardInteractivePanel() {
     setActivePanel,
   } = useLizardStore();
 
+
+ 
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Hide panels on outside click
@@ -30,6 +33,9 @@ export function LizardInteractivePanel() {
 
   // Only show panels if button was clicked
   if (hoveredPanel !== "show") return null;
+
+
+  console.log(activePanel)
 
   return (
     <div

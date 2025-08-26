@@ -44,7 +44,7 @@ export const useLizardStore = create<LizardStoreState>((set, get) => ({
   hoveredPanel: undefined,
   setHoveredPanel: (panelKey) => set({ hoveredPanel: panelKey }),
 
-  activePanel: undefined,
+  activePanel: appData.navigationPanels[0].key,
   setActivePanel: (panelKey) => set({ activePanel: panelKey }),
 
   // Skills
@@ -52,7 +52,7 @@ export const useLizardStore = create<LizardStoreState>((set, get) => ({
   hoveredSkill: undefined,
   setHoveredSkill: (skillType) => set({ hoveredSkill: skillType }),
 
-  selectedSkillType: "Web Development",
+  selectedSkillType: appData.skills[0].type,
   setSelectedSkillType: (type) => set({ selectedSkillType: type }),
 
   // Getter: filtered skills
