@@ -40,7 +40,7 @@ export function LizardInteractivePanel() {
                 />
               </div>
 
-              <div className="bg-black flex-1 flex px-2 min-h-[175px]">
+              <div className="bg-black flex-1 flex px-2 min-h-[100px]">
                 <LizardText variant="h1" className="text-[14px] p-3 text-[#b3b3b3] font-light">
                   {panel.content.toUpperCase()}
                 </LizardText>

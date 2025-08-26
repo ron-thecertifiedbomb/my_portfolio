@@ -1,5 +1,5 @@
 import { useScrollToHeroOnLoad } from '@/hooks/useScrollToTopWithHeader'
-import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen } from '@/components/common/LizardComponents'
+import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen, LizardProfileCard } from '@/components/common/LizardComponents'
 import { useLizardStore } from '@/store/lizardStore'
 
 export default function Home() {
@@ -17,24 +17,34 @@ export default function Home() {
         return <SkillsScreen />
       case 'AboutMeScreen':
         return <AboutMeScreen />
-      
+
       default:
         return <IntroductionScreen />
     }
   }
 
   return (
-    <LizardSection
-      className="
+    <div className="flex flex-row w-full max-w-[1900px] gap-4 flex-1">
+      {/* Left fixed card */}
+      <div className="inline-flex">
+        <LizardProfileCard />
+      </div>
+
+      <LizardSection
+        className="
         box-content
         w-full
         flex  
-        flex-col 
-        flex-1
+        flex-col"
+      >
+        {renderScreen()}
+      </LizardSection>
 
-      "
-    >
-      {renderScreen()}
-    </LizardSection>
+      {/* Right fixed card */}
+      <div className="inline-flex">
+        <LizardProfileCard />
+      </div>
+    </div>
+
   )
 }

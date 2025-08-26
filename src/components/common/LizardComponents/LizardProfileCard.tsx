@@ -1,12 +1,19 @@
-import { LizardLogo } from "@/components/common";
+
 import { LizardText } from "@/components/common/LizardComponents";
+import { LizardLogoContainer } from "./LizardLogoContainer";
+import { LizardLogo } from "./LizardLogo";
 
 export function LizardProfileCard() {
+
+
   return (
-    <div className="max-w-[300px] w-full h-auto">
+    <div className="max-w-[260px] w-full h-auto">
       {/* Logo block with corner accents */}
       <div className="relative p-[19px] w-full flex items-center justify-center border">
-        <LizardLogo className=" fill-amber-50 w-40 h-40" />
+     <LizardLogoContainer
+          svg={LizardLogo}
+          className="w-12 h-12 fill-white stroke-white"
+        />
 
         {/* Corner borders overlay (no full border) */}
         <div className="pointer-events-none absolute inset-0">
@@ -37,21 +44,21 @@ export function LizardProfileCard() {
       <div className="flex flex-col items-start mt-8 gap-4 w-full">
         <div>
           <LizardText className="leading-none mb-1">NAME</LizardText>
-          <LizardText className="text-3xl text-[#E84A4A] leading-none whitespace-nowrap uppercase">
+          <LizardText className="text-1xl text-[#E84A4A] leading-none whitespace-nowrap uppercase">
             Ronan Sibunga
           </LizardText>
         </div>
 
         <div>
           <LizardText className="leading-none uppercase mb-1">Occupation</LizardText>
-          <LizardText className="text-3xl text-[#E84A4A] leading-none whitespace-nowrap uppercase">
+          <LizardText className="text-1xl text-[#E84A4A] leading-none whitespace-nowrap uppercase">
             Fullstack Developer
           </LizardText>
         </div>
 
         <div>
           <LizardText className="leading-none uppercase mb-1">Corporation</LizardText>
-          <LizardText className="text-3xl text-[#E84A4A] leading-tight whitespace-nowrap uppercase">
+          <LizardText className="text-1xl text-[#E84A4A] leading-tight whitespace-nowrap uppercase">
             Lizard Interactive
           </LizardText>
         </div>
@@ -59,7 +66,7 @@ export function LizardProfileCard() {
         <div className="w-full">
           <LizardText className="leading-none uppercase mb-1">Availability</LizardText>
           <div className="w-full bg-[#E84A4A]">
-            <LizardText className="text-3xl text-black leading-tight px-2 uppercase">
+            <LizardText className="text-1xl text-black leading-tight px-2 uppercase">
               Open for Hire
             </LizardText>
           </div>
