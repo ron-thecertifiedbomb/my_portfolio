@@ -28,8 +28,8 @@ export function IntroductionScreen() {
             </LizardText> */}
 
             <LizardDateAndTime className='text-[40px]' type="date" />
-            <LizardCoordinates />
-            <LizardLocator />
+            {/* <LizardCoordinates />
+            <LizardLocator /> */}
         </LizardContent>
     )
 }
