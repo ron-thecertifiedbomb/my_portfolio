@@ -22,3 +22,4 @@ export { LizardInteractiveNavigationControlSection } from "./LizardInteractiveNa
 export { LizardIcons } from "./LizardIcons";
 export { LizardLocator } from "./LizardLocator";
 export { LizardCoordinates } from "./LizardCoordinates";
+export { LizardProfileCard } from "./LizardProfileCard";
