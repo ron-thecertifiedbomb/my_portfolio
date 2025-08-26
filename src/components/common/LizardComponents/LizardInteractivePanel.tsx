@@ -8,7 +8,7 @@ export function LizardInteractivePanel() {
 
   return (
     // Outer container with overflow-hidden
-    <div className="fixed bottom-13 overflow-hidden flex justify-center">
+    <div className="fixed bottom-17 overflow-hidden flex justify-center">
       <div
         className={`inline-flex justify-center gap-4 transition-transform duration-500 ease-in-out
       ${showPanel ? "translate-y-0" : "translate-y-full pointer-events-none"}

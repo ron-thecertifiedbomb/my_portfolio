@@ -1,14 +1,15 @@
 import { LizardCard, LizardThumbnail } from '@/components/common'
-import { LizardCenterCard, LizardContent, LizardText } from '@/components/common/LizardComponents'
+import { LizardCardBorder, LizardCenterCard, LizardContent, LizardText } from '@/components/common/LizardComponents'
 
 export function SkillsScreen() {
   return (
+    <LizardCardBorder className='flex-1    flex-col '>
        <LizardContent
               className="
                 box-content
                 w-full
                 flex  
-                flex-col 
+             
                 flex-1
                 pt-8
                 border-[0.5px] border-[rgba(255,255,255,0.1)]
@@ -39,6 +40,7 @@ export function SkillsScreen() {
           className="flex-1 min-w-[200px] max-w-[220px] min-h-[200px]"
         />
       </div>
-    </LizardContent>
+      </LizardContent>
+    </LizardCardBorder>
   )
 }

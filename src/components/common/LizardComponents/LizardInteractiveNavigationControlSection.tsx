@@ -11,7 +11,7 @@ export function LizardInteractiveNavigationControlSection() {
 
   return (
     
-    <div className=" flex  mx-auto">
+    <div className=" flex  mx-auto p-2">
 
         <LizardInteractiveButton  onClick={togglePanel} />
  

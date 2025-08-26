@@ -24,22 +24,21 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] w-full max-w-[1900px] gap-4 h-screen">
-      {/* Left fixed card */}
-      <div className="flex-none">
-        <LizardProfileCard />
-      </div>
+    <div className="flex flex-row flex-1 gap-4 w-full max-w-[1600px]">
+  {/* Left fixed card */}
+  <div className="flex-none">
+    <LizardProfileCard />
+  </div>
 
-      {/* Center section stretches automatically */}
-      <LizardSection className="flex flex-col w-full">
-        {renderScreen()}
-      </LizardSection>
+  {/* Center section stretches automatically */}
+  <LizardSection className="flex flex-col w-full">
+    {renderScreen()}
+  </LizardSection>
 
-      {/* Right fixed card */}
-      <div className="flex-none">
-        <LizardProfileCard />
-      </div>
-    </div>
-
+  {/* Right fixed card */}
+  <div className="flex-none">
+    <LizardProfileCard />
+  </div>
+</div>
   )
 }

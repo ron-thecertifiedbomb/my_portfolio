@@ -38,10 +38,15 @@ export function LizardCardHeader({ items, className }: LizardCardHeaderProps) {
                 }
 
                 return (
-                    <div key={idx} className={wrapperClasses || undefined}>
-                        <LizardText className="leading-none uppercase mb-1">{label}</LizardText>
-                        <LizardText className={valueClasses}>{value}</LizardText>
-                    </div>
+                    <>
+                        <div key={idx} >
+                            <LizardText className="leading-none uppercase mb-1">{label}</LizardText>
+                            <div className={wrapperClasses || undefined}>
+                                <LizardText className={valueClasses}>{value}</LizardText>
+                            </div>
+
+                        </div>
+                    </>
                 );
             })}
         </div>
