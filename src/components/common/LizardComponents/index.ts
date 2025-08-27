@@ -22,6 +22,7 @@ export { LizardCoordinates } from "./LizardCoordinates";
 export { LizardProfileCard } from "./LizardProfileCard";
 export { LizardCardHeader } from "./LizardCardHeader";
 export { LizardCardBorder } from "./LizardCardBorder";
+export { LizardCardStyle } from "./LizardCardStyle";
 
 
 

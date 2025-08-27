@@ -8,7 +8,7 @@ interface LizardCardBorderProps {
 }
 
 export function LizardCardBorder({
-    cornerSize = "20px",
+    cornerSize = "10px",
     children,
     className,
 }: LizardCardBorderProps) {

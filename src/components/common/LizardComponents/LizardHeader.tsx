@@ -6,12 +6,12 @@ import { LizardLogoContainer } from "./LizardLogoContainer";
 export function LizardHeader() {
 
     return (
-        <div className="flex w-full items-center gap-4 py-4 px-20">
+        <div className="flex w-full items-center gap-4 py-6 px-20 mb-4">
             <div className="flex w-full justify-between">
                 <div>
                     <LizardLogoContainer
                         svg={LizardAndTitleLogo}
-                        className=" w-60 h-auto fill-[#88fb59ff] stroke-[#88fb59ff] "
+                        className=" w-50 h-auto fill-[#88fb59ff] stroke-[#88fb59ff] "
                     />
                 </div>
 
