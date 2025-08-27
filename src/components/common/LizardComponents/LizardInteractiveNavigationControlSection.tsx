@@ -1,10 +1,11 @@
 // LizardInteractiveNavigationControlSection.tsx
 import { LizardInteractiveButton } from "@/components/common/LizardComponents/LizardInteractiveButton";
-import { useLizardStore } from "@/store/lizardStore";
+import { useNavigationStore } from "@/store";
+
 
 export function LizardInteractiveNavigationControlSection() {
 
-  const { showPanel, setShowPanel } = useLizardStore();
+  const { showPanel, setShowPanel } = useNavigationStore();
   const togglePanel = () => setShowPanel(!showPanel);
 
   console.log(showPanel)

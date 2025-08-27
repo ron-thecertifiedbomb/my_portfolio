@@ -1,8 +1,9 @@
 import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
 import { LizardText } from "@/components/common/LizardComponents/LizardText";
 import { LizardIcons } from "./LizardIcons";
-import { useLizardStore } from "@/store/lizardStore";
+
 import { multimediaStack, webTechStack } from "@/config/techstack";
+import { useSkillsStore } from "@/store";
 
 interface LizardCardProps {
   badge?: string;
@@ -11,7 +12,7 @@ interface LizardCardProps {
 }
 
 export function LizardCard({ badge, logoSrc, className = "" }: LizardCardProps) {
-  const { getFilteredSkills } = useLizardStore();
+  const { getFilteredSkills } = useSkillsStore();
   const filteredSkills = getFilteredSkills();
   const allTechStack = [...webTechStack, ...multimediaStack];
 

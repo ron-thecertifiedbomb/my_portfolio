@@ -1,6 +1,7 @@
 import { useScrollToHeroOnLoad } from '@/hooks/useScrollToTopWithHeader'
 import { LizardSection, IntroductionScreen, SkillsScreen, ProjectScreen, AboutMeScreen, LizardProfileCard, LizardCardStyle } from '@/components/common/LizardComponents'
-import { useLizardStore } from '@/store/lizardStore'
+
+import { useNavigationStore } from '@/store';
 
 export default function Home() {
   useScrollToHeroOnLoad()
@@ -13,7 +14,7 @@ export default function Home() {
     { label: "social", value: "open connection", valueClassName: "text-[18px] px-2 py-1 mt-2 uppercase tracking-tight text-[#E84A4A] border-2 border-[#E84A4A] w-full leading-none" },
   ];
 
-  const { currentScreen } = useLizardStore()
+  const { currentScreen } = useNavigationStore()
 
   const renderScreen = () => {
     switch (currentScreen) {
@@ -33,20 +34,20 @@ export default function Home() {
 
   return (
     <div className="flex flex-row flex-1 gap-4 w-full max-w-[1600px]">
-  {/* Left fixed card */}
-  <div className="flex-none">
+      {/* Left fixed card */}
+      <div className="flex-none">
         <LizardCardStyle items={cardData} logoClassName={'w-12 h-auto fill-white'} />
-  </div>
+      </div>
 
-  {/* Center section stretches automatically */}
-  <LizardSection className="flex flex-col w-full">
-    {renderScreen()}
-  </LizardSection>
+      {/* Center section stretches automatically */}
+      <LizardSection className="flex flex-col w-full">
+        {renderScreen()}
+      </LizardSection>
 
-  {/* Right fixed card */}
-  <div className="flex-none">
-    <LizardProfileCard />
-  </div>
-</div>
+      {/* Right fixed card */}
+      <div className="flex-none">
+        <LizardProfileCard />
+      </div>
+    </div>
   )
 }

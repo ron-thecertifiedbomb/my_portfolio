@@ -1,13 +1,13 @@
 import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
 import { LizardText } from "@/components/common/LizardComponents/LizardText";
-import { useLizardStore } from "@/store/lizardStore";
+import { useSkillsStore } from "@/store";
 
 interface LizardCenterCardProps {
   className?: string;
 }
 
 export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
-  const { skills, selectedSkillType, setSelectedSkillType } = useLizardStore();
+  const { skills, selectedSkillType, setSelectedSkillType } = useSkillsStore();
 
   return (
     <div className={`flex flex-col gap-4 ${className}`}>

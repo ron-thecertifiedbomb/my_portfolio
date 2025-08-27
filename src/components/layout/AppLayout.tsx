@@ -6,11 +6,12 @@ import {
   AppSplashScreen,
 } from "@/components/common";
 import { LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer } from "@/components/common/LizardComponents";
-import { useLizardStore } from "@/store/lizardStore";
+
+import { useNavigationStore } from "@/store";
 
 export function AppLayout() {
   const location = useLocation();
-  const { showPanel, setShowPanel } = useLizardStore();
+  const { showPanel, setShowPanel } = useNavigationStore();
   const panelWrapperRef = useRef<HTMLDivElement>(null);
 
   // First-time splash screen

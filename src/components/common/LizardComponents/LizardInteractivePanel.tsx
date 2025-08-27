@@ -1,10 +1,11 @@
 import { LizardImage, LizardText } from "@/components/common/LizardComponents";
-import { useLizardStore } from "@/store/lizardStore";
+
 import { appData } from "@/config/appData";
+import { useNavigationStore } from "@/store";
 
 export function LizardInteractivePanel() {
   const { setCurrentScreen, activePanel, setActivePanel, showPanel, setShowPanel } =
-    useLizardStore();
+    useNavigationStore();
 
   return (
     // Outer container with overflow-hidden
