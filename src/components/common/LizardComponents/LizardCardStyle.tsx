@@ -9,15 +9,19 @@ interface LizardCardItem {
 }
 
 interface LizardCardStyleProps {
+    className?: string
     logoClassName?: string;
     items: LizardCardItem[];
 }
 
-export function LizardCardStyle({ logoClassName, items }: LizardCardStyleProps) {
+export function LizardCardStyle({ className, logoClassName, items }: LizardCardStyleProps) {
     return (
-        <div className="flex flex-col max-w-[170px] w-full">
-            <LizardCardBorder className="mb-8 p-4">
-                <LizardLogo className={logoClassName || "fill-white"} />
+        <div className={`flex flex-col w-full ${className} `}>
+            <LizardCardBorder className="mb-8 ">
+                <div className="border w-full flex items-center justify-center">
+                    <LizardLogo className={logoClassName || "fill-white"} />
+                </div>
+                
             </LizardCardBorder>
 
             {items.map((item, index) => (

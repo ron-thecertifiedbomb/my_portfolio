@@ -86,7 +86,7 @@ export function AppLayout() {
 
       {/* Panel wrapper to detect outside clicks */}
       <div ref={panelWrapperRef} className="relative w-full flex justify-center items-center ">
-        <LizardInteractivePanel />
+          <LizardInteractivePanel cardClassName="w-full max-w-[300px] " />
         <LizardInteractiveNavigationControlSection />
         </div>
       </LizardSubContainer>

@@ -27,8 +27,8 @@ export function LizardCard({ badge, logoSrc, className = "" }: LizardCardProps) 
     >
       {/* Badge */}
       {badge && (
-        <div className="bg-red-500 px-2 py-0.5 rounded-sm flex items-center justify-center mb-1 w-full relative overflow-hidden">
-          <LizardText className="text-[24px] text-white font-light uppercase">
+        <div className="bg-red-500 p-2 rounded-sm flex items-center justify-center mb-5 w-full relative overflow-hidden">
+          <LizardText className="text-[20px] text-white font-light uppercase">
             {badge}
           </LizardText>
 
@@ -72,7 +72,7 @@ export function LizardCard({ badge, logoSrc, className = "" }: LizardCardProps) 
                     ? tech.icon
                     : () => <>{tech.icon}</>,
               }))}
-              iconClassName="w-8 h-8"
+              iconClassName="w-6 h-6"
             />
           );
         })}

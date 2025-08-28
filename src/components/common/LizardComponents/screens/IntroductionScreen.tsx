@@ -27,7 +27,7 @@ export function IntroductionScreen() {
                 Introduction Screen
             </LizardText> */}
 
-            <LizardDateAndTime className='text-[40px]' type="date" />
+            {/* <LizardDateAndTime className='text-[40px]' type="date" /> */}
             {/* <LizardCoordinates />
             <LizardLocator /> */}
         </LizardContent>

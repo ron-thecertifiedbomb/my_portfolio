@@ -30,20 +30,20 @@ export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
             `}
           >
             {/* Image */}
-            <div className="flex-shrink-0 flex justify-center items-center p-4 border-r border-[rgba(255,255,255,0.1)]">
+            <div className="flex-shrink-0 flex justify-center items-center p-6 border-r border-[rgba(255,255,255,0.1)]">
               <LizardImage
                 src={skill.imageSrc}
                 alt={skill.imageAlt || "logo"}
                 objectFit="contain"
-                className="w-12 h-auto"
+                className="w-10 h-auto"
               />
             </div>
 
             {/* Content */}
-            <div className="flex flex-col p-4">
+            <div className="flex flex-col p-8">
               <LizardText
                 variant="h4"
-                className={`font-iceland text-[25px] font-medium uppercase ${isSelected ? "text-[#E84A4A]" : "text-[#b3b3b3]"
+                className={`font-iceland text-[25px] mb-2 font-medium uppercase ${isSelected ? "text-[#E84A4A]" : "text-[#b3b3b3]"
                   }`}
               >
                 {skill.title}
@@ -52,7 +52,7 @@ export function LizardCenterCard({ className = "" }: LizardCenterCardProps) {
               {skill.description && (
                 <LizardText
                   variant="p"
-                  className="text-[14px] text-[#b3b3b3] font-light leading-snug tracking-wide uppercase"
+                  className="text-[14px] text-[#b3b3b3]  tracking-wide uppercase"
                 >
                   {skill.description}
                 </LizardText>
