@@ -23,17 +23,22 @@ export { LizardProfileCard } from "./LizardProfileCard";
 export { LizardCardHeader } from "./LizardCardHeader";
 export { LizardCardBorder } from "./LizardCardBorder";
 export { LizardCardStyle } from "./LizardCardStyle";
+export { LizardAnimatedBackground } from "./LizardAnimatedBackground";
 
 
 
 
 import LizardLogoAndTitle from "@/components/assets/lizardandtext.svg";
 import LizardLogoSVG from "@/components/assets/lizardicon.svg";
+import CoverSVG from "@/components/assets/cover.svg";
 
 export const LizardAndTitleLogo = LizardLogoAndTitle as unknown as React.FC<
   React.SVGProps<SVGSVGElement>
 >;
 
 export const LizardLogo = LizardLogoSVG as unknown as React.FC<
+  React.SVGProps<SVGSVGElement>
+>;
+export const Cover = CoverSVG as unknown as React.FC<
   React.SVGProps<SVGSVGElement>
 >;

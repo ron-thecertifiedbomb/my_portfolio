@@ -1,6 +1,7 @@
-import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
-import { LizardText } from "@/components/common/LizardComponents/LizardText";
+
 import { useSkillsStore } from "@/store";
+import { LizardText } from "@/components/common/LizardComponents/LizardText";
+import { LizardImage } from "@/components/common/LizardComponents/LizardImage";
 
 interface LizardCenterCardProps {
   className?: string;
