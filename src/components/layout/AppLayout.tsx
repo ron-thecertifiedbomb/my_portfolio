@@ -5,7 +5,7 @@ import {
   AppLoadingBar,
   AppSplashScreen,
 } from "@/components/common";
-import { LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer } from "@/components/common/LizardComponents";
+import { LizardHeader, LizardInteractiveNavigationControlSection, LizardInteractivePanel, LizardMainContainer, LizardSubContainer } from "@/components/common/LizardComponents";
 
 import { useNavigationStore } from "@/store";
 
@@ -81,14 +81,15 @@ export function AppLayout() {
   return (
     <LizardMainContainer>
       <LizardHeader />
-
+<LizardSubContainer>
       <Outlet />
 
       {/* Panel wrapper to detect outside clicks */}
       <div ref={panelWrapperRef} className="relative w-full flex justify-center items-center ">
         <LizardInteractivePanel />
         <LizardInteractiveNavigationControlSection />
-      </div>
+        </div>
+      </LizardSubContainer>
     </LizardMainContainer>
   );
 }

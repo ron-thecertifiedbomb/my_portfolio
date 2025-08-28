@@ -1,6 +1,7 @@
 export { LizardSection } from "../LizardComponents/layout/LizardSection";
 export { LizardMainContainer } from "../LizardComponents/layout/LizardMainContainer";
 export { LizardContent } from "../LizardComponents/layout/LizardContent";
+export { LizardSubContainer } from "../LizardComponents/layout/LizardSubContainer";
 
 export { SkillsScreen } from "./screens/SkillsScreen";
 export { IntroductionScreen } from "./screens/IntroductionScreen";

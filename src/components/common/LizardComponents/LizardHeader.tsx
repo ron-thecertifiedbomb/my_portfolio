@@ -6,7 +6,7 @@ import { LizardLogoContainer } from "./LizardLogoContainer";
 export function LizardHeader() {
 
     return (
-        <div className="flex w-full items-center gap-4 py-6 px-20 mb-4">
+        <div className="flex w-full items-center gap-4 py-4 px-20 mb-4">
             <div className="flex w-full justify-between">
                 <div>
                     <LizardLogoContainer
