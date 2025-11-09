@@ -1,0 +1,143 @@
+/* ✅ Reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border included in dimensions */
+}
+
+/* ✅ Set base styles */
+html,
+body,
+html {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: #f8f8f8;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: "black";
+}
+
+#loading {
+  font-style: italic;
+  color: #999;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  height: 50px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.content_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+}
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ✅ Optional styles for responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.font {
+  margin-bottom: 2px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer {
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.drawerWrapper {
+  padding: 20px;
+}
+
+ul li {
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: "black";
+}
+
+ul li:hover {
+  color: #ff5733;
+  transition: color 0.2s;
+  color: "black";
+}
